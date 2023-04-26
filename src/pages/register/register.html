@@ -1,0 +1,45 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title">{{'register_now' | translate}}</span></ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div class="container">
+		<div class="banner" text-center>
+			<p>{{'register_now_text1' | translate}} <br>{{'register_now_text2' | translate}}</p>
+		</div>
+
+		<div class="form">
+			<ion-list no-lines>
+				<ion-item>
+					<ion-label>{{'mobil_number' | translate}}</ion-label>
+					<ion-input type="number" value=""></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label>{{'full_name' | translate}}</ion-label>
+					<ion-input type="name" value=""></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>{{'email_address' | translate}}</ion-label>
+					<ion-input type="email" value=""></ion-input>
+				</ion-item>
+
+			</ion-list>
+
+			<button ion-button block class="btn" (click)="verification()">{{'continue' | translate}}
+				<ion-icon class="zmdi zmdi-arrow-right" text-end></ion-icon>
+			</button>
+		</div>
+
+		<h2 (click)="sign_in()" text-center>{{'back_to_sign_in' | translate}}</h2>
+		<p text-center>
+			{{'will_send_an_otp_on_above' | translate}}<br>
+			{{'given_phone_number' | translate}}
+		</p>
+	</div> 
+</ion-content>

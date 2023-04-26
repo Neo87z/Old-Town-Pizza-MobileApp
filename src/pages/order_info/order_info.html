@@ -1,0 +1,56 @@
+<ion-header class="shadow">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title">{{'order_num' | translate}} 2214541</span></ion-title>
+	</ion-navbar>
+	<ion-row text-center>
+		<ion-col col-4>
+			<h3>{{'ordered_items' | translate}}</h3>
+			<h2>2 {{'items' | translate}}</h2>
+		</ion-col>
+		<ion-col col-4>
+			<h3>Cash on Delivery</h3>
+			<h2>$8.06</h2>
+		</ion-col>
+		<ion-col col-4>
+			<h3>{{'esrimated_time' | translate}}</h3>
+			<h2> 30 mins</h2>
+		</ion-col>
+	</ion-row>
+</ion-header>
+
+<ion-content class="bg_img">
+	<ion-list no-lines>
+		<h2>{{'your_order_status' | translate}}</h2>
+
+		<ion-item class="done">
+			<ion-icon item-start></ion-icon>
+			<h3 class="d-flex">{{'order_received' | translate}} <span class="end">11 June 2019, 11:20 am</span></h3>
+			<p>{{'we_ve_received_your_order' | translate}}</p>
+		</ion-item>
+		<ion-item class="done">
+			<ion-icon item-start></ion-icon>
+			<h3 class="d-flex">{{'preparing_your_food' | translate}} <span class="end">11 June 2019, 11:39 am</span></h3>
+			<p>{{'your_testy_food_being_prepared' | translate}}</p>
+		</ion-item>
+		<ion-item class="active">
+			<ion-icon item-start></ion-icon>
+			<h3 class="d-flex">{{'out_for_deliver' | translate}}</h3>
+			<p>George smith {{'is_delivering_in' | translate}} 10 mins.</p>
+
+			<h4 item-end text-center (click)="deliveryman_info()">{{'track_now' | translate}}</h4>
+		</ion-item>
+		<ion-item>
+			<ion-icon item-start></ion-icon>
+			<h3 class="d-flex">{{'delivered_on_time' | translate}}
+				<!--				<span class="end">11 June 2019, 11:20 am</span>-->
+			</h3>
+			<p>{{'we_ve_successfull_delivered_your_order_on_time' | translate}}</p>
+		</ion-item>
+	</ion-list>
+</ion-content>
+<ion-footer no-border>
+	<button ion-button full no-margin class="btn" (click)="ordered_items()">{{'view_ordered_item' | translate}} </button>
+</ion-footer>

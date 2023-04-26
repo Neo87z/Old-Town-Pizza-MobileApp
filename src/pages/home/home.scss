@@ -1,0 +1,205 @@
+page-home {
+    .header .toolbar .toolbar-content {
+        position: unset;
+        .title .toolbar-title {
+            padding: 0px 12px;
+            p {
+                margin: 0;
+                overflow: hidden;
+                ion-icon {
+                    color: var(--red-color);
+                    font-size: 1.8rem;
+                    min-width: 22px;
+                }
+                span {
+                    &.address {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        font-size: 1.45rem;
+                        font-weight: 500;
+                        letter-spacing: .5px;
+                        max-width: calc(100% - 30px);
+                        display: block;
+                    }
+                }
+            }
+            .end {
+                min-width: 30px;
+            }
+        }
+    }
+    .banner {
+        padding-top: 10px;
+        margin-bottom: 10px;
+        .scroll-x {
+            height: 120px;
+            white-space: nowrap;
+            .img_box {
+                display: inline-block;
+                width: 298px;
+                height: 113px;
+                margin: 0 5px;
+                &:first-child {
+                    margin-left: 15px;
+                }
+                &:last-child {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    .category {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        margin-bottom: 15px;
+        h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            margin-bottom: 14px;
+            color: var(--text-black);
+        }
+        .row {
+            margin: 0 -4px;
+            .col {
+                padding: 4px;
+                .category_box {
+                    position: relative;
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 2px;
+                    height: 100px;
+                    .img_box {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: #000000c7;
+                    }
+                    .text_box {
+                        position: absolute;
+                        z-index: 99;
+                        bottom: 12px;
+                        left: 0;
+                        width: 100%;
+                        padding: 0 13px;
+                        h3 {
+                            color: var(--white);
+                            margin: 0;
+                            font-size: 1.7rem;
+                            font-weight: 600;
+                            letter-spacing: .5px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                        p {
+                            margin: 0;
+                            color: var(--white);
+                            font-weight: 400;
+                            font-size: 1rem;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            opacity: .7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .best_seller {
+        margin-bottom: 10px;
+        h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding: 0 15px;
+            color: var(--text-black);
+        }
+        .scroll-x {
+            height: 200px;
+            white-space: nowrap;
+            .item_scroll {
+                display: inline-block;
+                margin: 0 4px;
+                position: relative;
+                padding: 0px 13px 13px 13px;
+                width: 125px;
+                overflow: hidden;
+                .img_box {
+                    width: 90px;
+                    height: 90px;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                    overflow: visible;
+                    img {
+                        &.crop_img {
+                            width: auto;
+                            height: auto;
+                        }
+                    }
+                    ion-icon {
+                        position: absolute;
+                        bottom: -14px;
+                        right: 5px;
+                        width: 14px;
+                    }
+                }
+                h3 {
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 1.45rem;
+                    margin-top: 7px;
+                    margin-bottom: 10px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    color: var(--text-black);
+                }
+                .button.btn[block] {
+                    background: var(--red-color);
+                    margin: 0;
+                    border-radius: 3px;
+                    height: 32px;
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    letter-spacing: .5px;
+                    box-shadow: 0px 19px 23px 0px rgba(241, 6, 6, 0.28);
+                }
+                &:first-child {
+                    margin-left: 15px;
+                }
+                &:last-child {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    .buy-this-app-class {
+        position: fixed;
+        right: 0px;
+        bottom: 75px;
+        z-index: 99;
+        background: transparent;
+        width: 100%;
+        text-align: end;
+    }
+    .button-size {
+        height: 40px;
+        margin-right: 25px !important;
+        margin-left: 25px !important;
+        background-color: #f8563a;
+    }
+}

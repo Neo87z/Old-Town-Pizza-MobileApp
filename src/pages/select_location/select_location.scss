@@ -1,0 +1,149 @@
+page-select_location {
+    .header {
+        background: var(--bg-white);
+        .search_box {
+            width: calc(100% - 39px);
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            ion-icon {
+                font-size: 2rem;
+                color: var(--text-light);
+                min-width: 30px;
+            }
+            .searchbar {
+                padding: 0;
+                background: none;
+                margin: 0;
+                border: none;
+                background: var(--bg-white);
+                .searchbar-input-container {
+                    background: var(--bg-white);
+                    .searchbar-search-icon {
+                        display: none;
+                    }
+                    .searchbar-input {
+                        background: var(--bg-white);
+                        padding: 0;
+                        box-shadow: none;
+                        font-size: 1.8rem;
+                        color: var(--text-black);
+                        &::-webkit-input-placeholder {
+                            color: var(--text-light2);
+                        }
+                        &:-ms-input-placeholder {
+                            color: var(--text-light2);
+                        }
+                        &:-moz-placeholder {
+                            color: var(--text-light2);
+                        }
+                    }
+                }
+            }
+        }
+        p {
+            width: calc(100% - 39px);
+            margin: 0 auto;
+            color: var(--text-light2);
+            padding-bottom: 14px;
+            padding-top: 14px;
+            font-weight: 400;
+            letter-spacing: .5px;
+            font-size: 1.2rem;
+        }
+    }
+    .container {
+        background: var(--bg-white);
+        padding: 16px 16px;
+        .use_current_location {
+            padding-bottom: 12px;
+            h2 {
+                margin: 0;
+                color: var(--primary);
+                font-size: 1.85rem;
+                font-weight: 500;
+                margin-bottom: 20px;
+                ion-icon {
+                    font-size: 2.1rem;
+                    min-width: 34px;
+                }
+            }
+        }
+        .recent_locations {
+            align-items: flex-start !important;
+            ion-icon {
+                font-size: 2.1rem;
+                min-width: 34px;
+                color: var(--text-black);
+            }
+            h2 {
+                margin: 0;
+                color: var(--text-black);
+                font-size: 1.85rem;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            h3 {
+                margin: 0;
+                color: var(--text-light);
+                font-size: 1.45rem;
+                margin-bottom: 13px;
+            }
+        }
+    }
+    .saved_address {
+        .list {
+            width: calc(100% - 25px);
+            margin: 0 auto;
+            margin-top: 20px;
+            h2 {
+                margin: 0;
+                font-size: 1.85rem;
+                font-weight: 500;
+                margin-bottom: 20px;
+                padding: 0 12px;
+                color: var(--text-black);
+                ion-icon {
+                    font-size: 2.4rem;
+                    min-width: 25px;
+                    color: var(--text-black);
+                }
+                span {
+                    color: var(--red-color);
+                    font-weight: 700;
+                }
+            }
+            .item {
+                padding: 12px 18px 12px 18px;
+                margin-bottom: 11.5px;
+                border-radius: 3px;
+                background: var(--bg-white);
+                .item-inner {
+                    padding: 0;
+                    .label {
+                        margin: 0;
+                        white-space: normal;
+                        h3 {
+                            margin: 0;
+                            font-size: 1.6rem;
+                            color: var(--text-black);
+                            font-weight: 600;
+                            padding-bottom: 7px;
+                            span {
+                                &.end {
+                                    color: var(--primary);
+                                }
+                            }
+                        }
+                        p {
+                            color: var(--text-light);
+                            font-size: 1.31rem;
+                            letter-spacing: .4px;
+                            line-height: 23px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

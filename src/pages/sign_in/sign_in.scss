@@ -1,0 +1,73 @@
+page-sign_in {
+    .form {
+        padding-bottom: 22px;
+        padding-top: 35px;
+    }
+    .container {
+        background: var(--bg-white);
+        box-shadow: 5px 7px 15px 3px rgba(252, 207, 154, 0.48);
+        .banner {
+            margin: 0px auto;
+            width: 100%;
+            padding-top: 20px;
+            img {
+                width: 200px;
+                margin-bottom: 10px;
+            }
+            h2 {
+                margin: 0;
+                font-weight: 500;
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+                color: var(--text-black);
+            }
+            p {
+                margin: 0;
+                color: var(--text-light);
+                font-size: 1.47rem;
+            }
+        }
+    }
+    .footer {
+        .quick_login {
+            width: calc(100% - 40px);
+            margin: 0 auto;
+            margin-bottom: 18px;
+            h2 {
+                margin: 0;
+                color: var(--text-black);
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 25px;
+            }
+            .row {
+                margin: 0 -5px;
+                .col {
+                    .button.btn {
+                        position: relative;
+                        z-index: 22;
+                        display: block;
+                        border: none;
+                        background: var(--fb-color);
+                        font-weight: 400;
+                        font-size: 1.3rem;
+                        box-shadow: 5px 7px 15px 3px rgba(252, 207, 154, 0.48);
+                        font-size: 1.4rem;
+                        ion-icon {
+                            min-width: 28px;
+                            max-width: 28px;
+                            padding: 0;
+                            img {
+                                width: 15px;
+                            }
+                        }
+                        &.google {
+                            background: var(--bg-white);
+                            color: var(--text-light);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

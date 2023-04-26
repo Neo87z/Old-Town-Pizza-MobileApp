@@ -1,0 +1,181 @@
+page-favorites {
+    .header {
+        background: var(--bg-white);
+        ion-scroll {
+            height: 42px;
+            white-space: nowrap;
+            .segment {
+                justify-content: unset !important;
+                display: block !important;
+                border: none !important;
+                .segment-button {
+                    display: inline-block;
+                    border: none !important;
+                    text-transform: none !important;
+                    opacity: 1 !important;
+                    position: relative;
+                    font-size: 1.9rem;
+                    width: 100px;
+                    text-align: justify;
+                    color: var(--text-black);
+                    font-weight: 500;
+                    &.segment-activated {
+                        color: var(--red-color);
+                        font-weight: 600;
+                    }
+                    &:first-child {
+                        margin-left: 15px;
+                    }
+                    &:last-child {
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .list {
+        width: calc(100% - 25px);
+        margin: 0 auto;
+        margin-top: 6.5px;
+        .card {
+            background: none;
+            width: auto;
+            margin: 0;
+            margin-bottom: 4.5px;
+            border-radius: 3px;
+            position: relative;
+            padding-bottom: 12px;
+            .item_details {
+                align-items: flex-start !important;
+                .img_box_btn {
+                    margin-left: 10px;
+                    min-width: 113px;
+                    .img_box {
+                        min-width: 113px;
+                        height: 113px;
+                        img {
+                            width: auto;
+                            height: auto;
+                        }
+                    }
+                    ion-icon {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        padding: 0 10px;
+                        top: -7px;
+                        img {
+                            width: 14px;
+                            display: inline;
+                        }
+                    }
+                    .button.btn[block] {
+                        background: var(--red-color);
+                        margin: 0;
+                        border-radius: 3px;
+                        height: 32px;
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        letter-spacing: .5px;
+                        box-shadow: 0px 5px 11px 0px rgba(241, 6, 6, 0.3411764705882353);
+                        max-width: 94px;
+                        margin: 0 auto;
+                    }
+                }
+                .text_box {
+                    position: relative;
+                    z-index: 999;
+                    padding: 27px 12px 0px 12px;
+                    width: 100%;
+                    max-width: calc(100% - 113px);
+                    overflow: hidden;
+                    h2 {
+                        margin: 0;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        font-size: 1.7rem;
+                        margin-bottom: 8px;
+                        color: var(--text-black);
+                    }
+                    P {
+                        color: var(--text-light);
+                        font-size: 1rem;
+                        letter-spacing: .4px;
+                        height: 43px;
+                        font-weight: 400;
+                        line-height: 14px;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+            .row {
+                margin: 0 -5px;
+                align-items: center;
+                .col {
+                    padding: 0 5px;
+                    h3 {
+                        margin: 0;
+                        color: var(--primary);
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                    }
+                    h5 {
+                        font-size: .8rem;
+                        color: var(--text-light);
+                    }
+                }
+            }
+            .item {
+                padding: 0;
+                position: relative;
+                min-height: unset;
+                padding-bottom: 10px;
+                background: var(--bg-white);
+                .item-inner {
+                    padding: 0;
+                    display: block;
+                    .input-wrapper {
+                        display: block;
+                    }
+                    .label {
+                        margin: 0;
+                        white-space: normal;
+                        font-size: 1rem;
+                    }
+                    .select {
+                        padding: 0;
+                        max-width: 100%;
+                        .select-text {
+                            font-size: 1.2rem;
+                            color: var(--text-black);
+                        }
+                        .select-icon {
+                            width: 15px;
+                            .select-icon-inner {
+                                border-top: 4px solid;
+                                border-right: 4px solid transparent;
+                                border-left: 4px solid transparent;
+                                color: var(--text-black);
+                            }
+                        }
+                    }
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 10px);
+                border-radius: 3px;
+                background: var(--bg-white);
+            }
+        }
+    }
+}

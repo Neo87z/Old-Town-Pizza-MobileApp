@@ -1,0 +1,45 @@
+page-deliveryman_info {
+    .map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 0px);
+        overflow: hidden;
+        ion-icon {
+            position: absolute;
+            z-index: 99;
+            font-size: 3.5rem;
+            &.from {
+                color: #ea5b31;
+            }
+            &.to {
+                color: var(--primary);
+            }
+        }
+        .car {
+            position: absolute;
+            z-index: 99;
+            width: 16px;
+        }
+    }
+    .footer {
+        background: var(--bg-white);
+        .container {
+            padding: 19px 18px 5px 18px;
+            h3 {
+                margin: 0;
+                color: var(--text-light);
+                font-size: 1.2rem;
+                margin-bottom: 7px;
+            }
+            h2 {
+                margin: 0;
+                color: var(--text-black);
+                font-size: 1.65rem;
+                font-weight: 500;
+                margin-bottom: 3px;
+            }
+        }
+    }
+}

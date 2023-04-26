@@ -1,0 +1,403 @@
+<ion-header class="shadow">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title">{{'explor_menu' | translate}}</span>
+			<ion-icon class="zmdi zmdi-search end" text-end></ion-icon>
+		</ion-title>
+	</ion-navbar>
+	<ion-scroll scrollX="true">
+		<ion-segment [(ngModel)]="all_categories">
+			<ion-segment-button value="pizza">
+				Pizza
+			</ion-segment-button>
+			<ion-segment-button value="comdo">
+				Comdo
+			</ion-segment-button>
+			<ion-segment-button value="slides">
+				Slides
+			</ion-segment-button>
+			<ion-segment-button value="beverages">
+				Beverages
+			</ion-segment-button>
+		</ion-segment>
+	</ion-scroll>
+</ion-header>
+
+<ion-content class="bg_img">
+
+	<div class="tab_container" [ngSwitch]="all_categories">
+
+
+		<ion-list no-lines *ngSwitchCase="'pizza'">
+
+			<ion-card *ngFor="let item of Pizza" class="shadow">
+
+				<div class="item_details d-flex">
+					<div class="text_box" (click)="item_info(item._id)">
+						<h2>{{item.PizzaName}}</h2>
+						<p>
+							{{item.Description}}
+						</p>
+						<ion-row>
+							<ion-col col-5>
+								<ion-item>
+									<ion-label>{{'size' | translate}}</ion-label>
+									<ion-select interface="action-sheet">
+										<ion-option value="1">Solo</ion-option>
+										<ion-option value="2">Small</ion-option>
+										<ion-option value="3" selected>Medium</ion-option>
+										<ion-option value="4">Large</ion-option>
+										<ion-option value="5">Jumbo</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+							<ion-col col-7>
+								<ion-item>
+									<ion-label>{{'crust' | translate}}</ion-label>
+									<ion-select  interface="action-sheet">
+										<ion-option selected value="1">Origin Crust</ion-option>
+										<ion-option value="2">Thin Crust</ion-option>
+										
+									</ion-select>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col col-5>
+								<h3>${{item.Price}}</h3>
+							</ion-col>
+							<ion-col col-7>
+								<h5>{{'customisation_available' | translate}}</h5>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="img_box_btn">
+						<div class="img_box center_img" (click)="item_info()">
+							<img src="assets/imgs/item_pizza1.png" class="crop_img">
+						</div>
+						
+						<button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+					</div>
+				</div>
+			</ion-card>
+
+
+
+			
+		</ion-list>
+
+
+		<ion-list no-lines *ngSwitchCase="'comdo'">
+			<ion-card class="shadow">
+				<div class="item_details d-flex">
+					<div class="text_box" (click)="item_info()">
+						<h2>Chiken Delight</h2>
+						<p>
+							is a chain of restaurants offering eat in, take out, and delivery service with a menu
+							featuring chicken, pizza and ribs
+						</p>
+						<ion-row>
+							<ion-col col-5>
+								<ion-item>
+									<ion-label>{{'size' | translate}}</ion-label>
+									<ion-select [(ngModel)]="size" interface="action-sheet">
+										<ion-option value="1">Small</ion-option>
+										<ion-option value="2">Medium</ion-option>
+										<ion-option value="3">Large</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+							<ion-col col-7>
+								<ion-item>
+									<ion-label>{{'crust' | translate}}</ion-label>
+									<ion-select [(ngModel)]="crust" interface="action-sheet">
+										<ion-option value="1">New Hand tossed</ion-option>
+										<ion-option value="2">Cheese Burst</ion-option>
+										<ion-option value="3">Classic Hand Tossed</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col col-5>
+								<h3>$7.99</h3>
+							</ion-col>
+							<ion-col col-7>
+								<h5>{{'customisation_available' | translate}}</h5>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="img_box_btn">
+						<div class="img_box center_img" (click)="item_info()">
+							<img src="assets/imgs/item_pizza2.png" class="crop_img">
+						</div>
+						<ion-icon text-end><img src="assets/imgs/veg_icon.png"></ion-icon>
+						<button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+					</div>
+				</div>
+			</ion-card>
+			<ion-card class="shadow">
+				<div class="item_details d-flex">
+					<div class="text_box" (click)="item_info()">
+						<h2>Farm house</h2>
+						<p>
+							A pizz that goes ballistic on veggies! Checkout this mouth watering overload ofcrunchy,
+							crisp capsicum, succulent, etc.
+						</p>
+						<ion-row>
+							<ion-col col-5>
+								<ion-item>
+									<ion-label>{{'size' | translate}}</ion-label>
+									<ion-select [(ngModel)]="size" interface="action-sheet">
+										<ion-option value="1">Small</ion-option>
+										<ion-option value="2">Medium</ion-option>
+										<ion-option value="3">Large</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+							<ion-col col-7>
+								<ion-item>
+									<ion-label>{{'crust' | translate}}</ion-label>
+									<ion-select [(ngModel)]="crust" interface="action-sheet">
+										<ion-option value="1">New Hand tossed</ion-option>
+										<ion-option value="2">Cheese Burst</ion-option>
+										<ion-option value="3">Classic Hand Tossed</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col col-5>
+								<h3>$5.99</h3>
+							</ion-col>
+							<ion-col col-7>
+								<h5>{{'customisation_available' | translate}}</h5>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="img_box_btn">
+						<div class="img_box center_img" (click)="item_info()">
+							<img src="assets/imgs/item_pizza1.png" class="crop_img">
+						</div>
+						<ion-icon text-end><img src="assets/imgs/veg_icon.png"></ion-icon>
+						<button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+					</div>
+				</div>
+			</ion-card>
+		</ion-list>
+
+
+
+		<ion-list no-lines *ngSwitchCase="'slides'">
+			<ion-card class="shadow">
+				<div class="item_details d-flex">
+					<div class="text_box" (click)="item_info()">
+						<h2>Farm house</h2>
+						<p>
+							A pizz that goes ballistic on veggies! Checkout this mouth watering overload ofcrunchy,
+							crisp capsicum, succulent, etc.
+						</p>
+						<ion-row>
+							<ion-col col-5>
+								<ion-item>
+									<ion-label>{{'size' | translate}}</ion-label>
+									<ion-select [(ngModel)]="size" interface="action-sheet">
+										<ion-option value="1">Small</ion-option>
+										<ion-option value="2">Medium</ion-option>
+										<ion-option value="3">Large</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+							<ion-col col-7>
+								<ion-item>
+									<ion-label>{{'crust' | translate}}</ion-label>
+									<ion-select [(ngModel)]="crust" interface="action-sheet">
+										<ion-option value="1">New Hand tossed</ion-option>
+										<ion-option value="2">Cheese Burst</ion-option>
+										<ion-option value="3">Classic Hand Tossed</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col col-5>
+								<h3>$5.99</h3>
+							</ion-col>
+							<ion-col col-7>
+								<h5>{{'customisation_available' | translate}}</h5>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="img_box_btn">
+						<div class="img_box center_img" (click)="item_info()">
+							<img src="assets/imgs/item_pizza1.png" class="crop_img">
+						</div>
+						<ion-icon text-end><img src="assets/imgs/veg_icon.png"></ion-icon>
+						<button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+					</div>
+				</div>
+			</ion-card>
+
+			<ion-card class="shadow">
+				<div class="item_details d-flex">
+					<div class="text_box" (click)="item_info()">
+						<h2>Chiken Delight</h2>
+						<p>
+							is a chain of restaurants offering eat in, take out, and delivery service with a menu
+							featuring chicken, pizza and ribs
+						</p>
+						<ion-row>
+							<ion-col col-5>
+								<ion-item>
+									<ion-label>{{'size' | translate}}</ion-label>
+									<ion-select [(ngModel)]="size" interface="action-sheet">
+										<ion-option value="1">Small</ion-option>
+										<ion-option value="2">Medium</ion-option>
+										<ion-option value="3">Large</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+							<ion-col col-7>
+								<ion-item>
+									<ion-label>{{'crust' | translate}}</ion-label>
+									<ion-select [(ngModel)]="crust" interface="action-sheet">
+										<ion-option value="1">New Hand tossed</ion-option>
+										<ion-option value="2">Cheese Burst</ion-option>
+										<ion-option value="3">Classic Hand Tossed</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col col-5>
+								<h3>$7.99</h3>
+							</ion-col>
+							<ion-col col-7>
+								<h5>{{'customisation_available' | translate}}</h5>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="img_box_btn">
+						<div class="img_box center_img" (click)="item_info()">
+							<img src="assets/imgs/item_pizza2.png" class="crop_img">
+						</div>
+						<ion-icon text-end><img src="assets/imgs/veg_icon.png"></ion-icon>
+						<button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+					</div>
+				</div>
+			</ion-card>
+		</ion-list>
+
+
+		<ion-list no-lines *ngSwitchCase="'beverages'">
+
+
+			<ion-card class="shadow">
+				<div class="item_details d-flex">
+					<div class="text_box" (click)="item_info()">
+						<h2>Chiken Delight</h2>
+						<p>
+							is a chain of restaurants offering eat in, take out, and delivery service with a menu
+							featuring chicken, pizza and ribs
+						</p>
+						<ion-row>
+							<ion-col col-5>
+								<ion-item>
+									<ion-label>{{'size' | translate}}</ion-label>
+									<ion-select [(ngModel)]="size" interface="action-sheet">
+										<ion-option value="1">Small</ion-option>
+										<ion-option value="2">Medium</ion-option>
+										<ion-option value="3">Large</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+							<ion-col col-7>
+								<ion-item>
+									<ion-label>{{'crust' | translate}}</ion-label>
+									<ion-select [(ngModel)]="crust" interface="action-sheet">
+										<ion-option value="1">New Hand tossed</ion-option>
+										<ion-option value="2">Cheese Burst</ion-option>
+										<ion-option value="3">Classic Hand Tossed</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col col-5>
+								<h3>$7.99</h3>
+							</ion-col>
+							<ion-col col-7>
+								<h5>{{'customisation_available' | translate}}</h5>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="img_box_btn">
+						<div class="img_box center_img" (click)="item_info()">
+							<img src="assets/imgs/item_pizza2.png" class="crop_img">
+						</div>
+						<ion-icon text-end><img src="assets/imgs/veg_icon.png"></ion-icon>
+						<button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+					</div>
+				</div>
+			</ion-card>
+
+			<ion-card class="shadow">
+				<div class="item_details d-flex">
+					<div class="text_box" (click)="item_info()">
+						<h2>Farm house</h2>
+						<p>
+							A pizz that goes ballistic on veggies! Checkout this mouth watering overload ofcrunchy,
+							crisp capsicum, succulent, etc.
+						</p>
+						<ion-row>
+							<ion-col col-5>
+								<ion-item>
+									<ion-label>{{'size' | translate}}</ion-label>
+									<ion-select [(ngModel)]="size" interface="action-sheet">
+										<ion-option value="1">Small</ion-option>
+										<ion-option value="2">Medium</ion-option>
+										<ion-option value="3">Large</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+							<ion-col col-7>
+								<ion-item>
+									<ion-label>{{'crust' | translate}}</ion-label>
+									<ion-select [(ngModel)]="crust" interface="action-sheet">
+										<ion-option value="1">New Hand tossed</ion-option>
+										<ion-option value="2">Cheese Burst</ion-option>
+										<ion-option value="3">Classic Hand Tossed</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col col-5>
+								<h3>$5.99</h3>
+							</ion-col>
+							<ion-col col-7>
+								<h5>{{'customisation_available' | translate}}</h5>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="img_box_btn">
+						<div class="img_box center_img" (click)="item_info()">
+							<img src="assets/imgs/item_pizza1.png" class="crop_img">
+						</div>
+						<ion-icon text-end><img src="assets/imgs/veg_icon.png"></ion-icon>
+						<button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+					</div>
+				</div>
+			</ion-card>
+		</ion-list>
+	</div>
+</ion-content>

@@ -1,0 +1,393 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<span class="center_title"></span>
+			<span [ngClass]="favorite_icon ? 'icon_box end active' : 'end icon_box'" (click)="toggleFavorite_icon()">
+
+				<ion-icon class="zmdi zmdi-favorite-outline"></ion-icon>
+				<ion-icon class="zmdi zmdi-favorite"></ion-icon>
+			</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="bg_img">
+	<div class="item_details">
+		<div class="img_box center_img">
+			<img src="assets/imgs/item_pizza1.png" class="crop_img">
+		</div>
+		<div class="text_box" text-center>
+			<h2>{{Pizza?.PizzaName}}</h2>
+			<p>
+				{{Pizza?.Description}}
+			</p>
+		</div>
+
+		<ion-row>
+			<ion-col col-3>
+				<h2>${{TotalPizzaPrice}}</h2>
+			</ion-col>
+			<ion-col col-6>
+				<div class="add_remove_btn_box d-flex">
+					<span class="text-center" (click)="RemovePizza()">-</span>
+					<strong class="text-center">{{PizzaCount}}</strong>
+					<span class="text-center" (click)="AddMorePizza()">+</span>
+				</div>
+			</ion-col>
+
+			<ion-col col-3>
+				<h3 class="d-flex">
+					<img src="assets/imgs/veg_icon.png">
+					Veg
+				</h3>
+			</ion-col>
+
+		</ion-row>
+	</div>
+
+	<div class="tab_box">
+		<ion-segment [(ngModel)]="tab">
+			<ion-segment-button value="select_size">
+				<h2>{{'select_size' | translate}} </h2>
+				<p>{{SelectedSize}}</p>
+			</ion-segment-button>
+			<ion-segment-button value="select_crust">
+				<h2>{{'select_crust' | translate}} </h2>
+				<p>{{SelectedCrustShow}}</p>
+			</ion-segment-button>
+			<ion-segment-button value="select_topins">
+				<h2>{{'select_topins' | translate}} </h2>
+				<p>Tap to choose</p>
+			</ion-segment-button>
+		</ion-segment>
+
+
+		<div class="tab_content" [ngSwitch]="tab">
+			<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_size'">
+				<ion-item class="shadow">
+					<ion-radio value="1" item-start (click)="changePizzaPrie('Solo')"></ion-radio>
+					<ion-label>
+						<h2>Solo</h2>
+						<p>${{Pizza?.SoloPrice}}</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2" item-start (click)="changePizzaPrie('Small')"></ion-radio>
+					<ion-label>
+						<h2>Small</h2>
+						<p>${{Pizza?.SmallPrice}}</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio checked="true" value="3" item-start (click)="changePizzaPrie('Medium')"></ion-radio>
+					<ion-label>
+						<h2>Medium</h2>
+						<p>${{Pizza?.MediumPrice}}</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="4" item-start (click)="changePizzaPrie('Large')"></ion-radio>
+					<ion-label>
+						<h2>Large</h2>
+						<p>${{Pizza?.LargePrice}}</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="5" item-start (click)="changePizzaPrie('Jumbo')"></ion-radio>
+					<ion-label>
+						<h2>Jumbo</h2>
+						<p>${{Pizza?.JumboPrice}}</p>
+					</ion-label>
+				</ion-item>
+
+			</ion-scroll>
+
+
+			<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_crust'">
+				<ion-item class="shadow">
+					<ion-radio checked="true" value="1" item-start (click)="changePizzaCrust('Regualar')"></ion-radio>
+					<ion-label>
+						<h2>Regular Crust</h2>
+						<p></p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2" item-start (click)="changePizzaCrust('ThinCrust')"></ion-radio>
+					<ion-label>
+						<h2>Thin Crust</h2>
+						<p></p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="3" item-start (click)="changePizzaCrust('GlutenFreeCrust')"></ion-radio>
+					<ion-label>
+						<h2>Gluten Free Crust</h2>
+						<p>$4.00</p>
+					</ion-label>
+				</ion-item>
+
+				<ion-item class="shadow">
+					<ion-radio value="4" item-start (click)="changePizzaCrust('GlutenFreeBrocluChedar')"></ion-radio>
+					<ion-label>
+						<h2>Gluten Free Brocli & Chedar Crust</h2>
+						<p>$4.00</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="5" item-start (click)="changePizzaCrust('GlutenFreeCaluflower')"></ion-radio>
+					<ion-label>
+						<h2>Gluten Free Cauliflower Crust</h2>
+						<p>$4.00</p>
+					</ion-label>
+				</ion-item>
+
+
+			</ion-scroll>
+
+			<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
+
+				<ion-item class="shadow">
+					<ion-radio checked="true" value="2000" item-start (click)="chnageToppingMoz()" ></ion-radio>
+					<ion-label>
+						<h2>Mozzarella Cheese</h2>
+						<p>$5.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2001" item-start (click)="chnageFetaToppngs()"></ion-radio>
+					<ion-label>
+						<h2>Feta Cheese</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+
+				<ion-item class="shadow">
+					<ion-radio value="2002" item-start></ion-radio>
+					<ion-label>
+						<h2>Ham </h2>
+						<p>$4.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2003" item-start></ion-radio>
+					<ion-label>
+						<h2>Salami</h2>
+						<p>$5.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2004" item-start></ion-radio>
+					<ion-label>
+						<h2>Crumbled Bacon</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2005" item-start></ion-radio>
+					<ion-label>
+						<h2>Sliced Bacon</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2006" item-start></ion-radio>
+					<ion-label>
+						<h2>Pepperoni</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2007" item-start></ion-radio>
+					<ion-label>
+						<h2>Italian Sausage</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2008" item-start></ion-radio>
+					<ion-label>
+						<h2>Ground Beef</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2009" item-start></ion-radio>
+					<ion-label>
+						<h2>Seasoned Chicken</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2010" item-start></ion-radio>
+					<ion-label>
+						<h2>Fresh Mushrooms</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2011" item-start></ion-radio>
+					<ion-label>
+						<h2>Red Onion</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2012" item-start></ion-radio>
+					<ion-label>
+						<h2>Green Peppers</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2013" item-start></ion-radio>
+					<ion-label>
+						<h2>Tomatoes</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2014" item-start></ion-radio>
+					<ion-label>
+						<h2>Olives</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2015" item-start></ion-radio>
+					<ion-label>
+						<h2>Hot Peppers</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2016" item-start></ion-radio>
+					<ion-label>
+						<h2>Jalapeno</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2017" item-start></ion-radio>
+					<ion-label>
+						<h2>Pineapple</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2018" item-start></ion-radio>
+					<ion-label>
+						<h2>BBQ Sauce</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2019" item-start></ion-radio>
+					<ion-label>
+						<h2>Donair Sauce</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2020" item-start></ion-radio>
+					<ion-label>
+						<h2>Pizza Sauce</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+				<ion-item class="shadow">
+					<ion-radio value="2021" item-start></ion-radio>
+					<ion-label>
+						<h2>Chorizo Sausage</h2>
+						<p>$7.99</p>
+					</ion-label>
+				</ion-item>
+			</ion-scroll>
+			<div *ngIf="showScrollFeta">
+				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
+					<ion-item class="shadow">
+						<ion-radio value="10022434" item-start></ion-radio>
+						<ion-label>
+							<h2>None </h2>
+							<p></p>
+						</ion-label>
+					</ion-item>
+
+					<ion-item class="shadow">
+						<ion-radio value="1002234" item-start></ion-radio>
+						<ion-label>
+							<h2>Regular </h2>
+							<p></p>
+						</ion-label>
+					</ion-item>
+
+					<ion-item class="shadow">
+						<ion-radio value="1002235" item-start></ion-radio>
+						<ion-label>
+							<h2>Extra </h2>
+							<p>$7.99</p>
+						</ion-label>
+					</ion-item>
+			
+				</ion-scroll>
+			</div>
+			<div *ngIf="showScroll">
+				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
+					<ion-item class="shadow">
+						<ion-radio value="10022234" item-start></ion-radio>
+						<ion-label>
+							<h2>None </h2>
+							<p></p>
+						</ion-label>
+					</ion-item>
+
+					<ion-item class="shadow">
+						<ion-radio value="100" item-start></ion-radio>
+						<ion-label>
+							<h2>Regular Cheese </h2>
+							<p></p>
+						</ion-label>
+					</ion-item>
+
+					<ion-item class="shadow">
+						<ion-radio value="200" item-start></ion-radio>
+						<ion-label>
+							<h2>30% Extra Cheese </h2>
+							<p>$7.99</p>
+						</ion-label>
+					</ion-item>
+					<ion-item class="shadow">
+						<ion-radio value="300" item-start></ion-radio>
+						<ion-label>
+							<h2>50% Extra Cheese</h2>
+							<p>$7.99</p>
+						</ion-label>
+					</ion-item>
+					<ion-item class="shadow">
+						<ion-radio value="400" item-start></ion-radio>
+						<ion-label>
+							<h2>Double Cheese</h2>
+							<p>$7.99</p>
+						</ion-label>
+					</ion-item>
+				</ion-scroll>
+			</div>
+
+			<button ion-button block class="btn" (click)="verification()">{{'Add To Cart' | translate}}
+				<ion-icon class="zmdi zmdi-arrow-right" text-end></ion-icon>
+			</button>
+		</div>
+	</div>
+</ion-content>
+<ion-footer no-border>
+	<button ion-button full no-margin class="btn" (click)="cart()">
+		<ion-icon text-start class="zmdi zmdi-shopping-basket"></ion-icon>
+		1 {{'item' | translate}} &nbsp; | &nbsp; $5.99
+		<strong>
+			{{'view_cart' | translate}}
+			<ion-icon text-end class="zmdi zmdi-arrow-right"></ion-icon>
+		</strong>
+	</button>
+</ion-footer>

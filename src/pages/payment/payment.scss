@@ -1,0 +1,109 @@
+page-payment {
+    .banner {
+        background: var(--bg-white);
+        padding-top: 21px;
+        padding-bottom: 21px;
+        h3 {
+            margin: 0;
+            font-size: 1.53rem;
+            margin-bottom: 5px;
+            color: var(--text-black);
+        }
+        h2 {
+            margin: 0;
+            color: var(--text-black);
+            font-size: 2.4rem;
+            font-weight: 500;
+        }
+    }
+    .list {
+        width: calc(100% - 25px);
+        margin: 0 auto;
+        margin-top: 30px;
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 26px;
+            color: var(--text-black);
+        }
+        .item {
+            padding: 12px 18px 12px 18px;
+            margin-bottom: 11.5px;
+            border-radius: 3px;
+            background: var(--bg-white);
+            .item-inner {
+                padding: 0;
+                .label {
+                    margin: 0;
+                    white-space: normal;
+                    .img_box {
+                        width: 56px;
+                        position: relative;
+                        overflow: hidden;
+                        height: 40px;
+                        margin-right: 20px;
+                        img {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            margin: auto;
+                            width: auto;
+                            height: auto;
+                        }
+                    }
+                    h3 {
+                        margin: 0;
+                        font-size: 1.54rem;
+                        color: var(--text-black);
+                    }
+                }
+                .radio {
+                    &[item-end] {
+                        margin: 0;
+                    }
+                    .radio-icon {
+                        &.radio-checked {
+                            border-color: var(--primary);
+                            .radio-inner {
+                                background: var(--primary);
+                            }
+                        }
+                    }
+                    &.radio-ios {
+                        .radio-icon {
+                            &.radio-checked {
+                                border-color: var(--primary);
+                                .radio-inner {
+                                    background: none;
+                                    border-color: var(--primary);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        .button.btn {
+            .button-inner {
+                display: flex;
+                align-items: center;
+                justify-content: unset;
+                padding: 0 3px;
+                strong {
+                    margin-right: 0;
+                    margin-left: auto;
+                    display: flex;
+                    align-items: center;
+                    ion-icon {
+                        min-width: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

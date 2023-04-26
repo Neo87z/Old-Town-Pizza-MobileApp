@@ -1,0 +1,241 @@
+<ion-header class="shadow">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title">{{'my_orders' | translate}}</span></ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="bg_img">
+	<ion-list no-lines>
+		<h2>{{'order_in_process' | translate}}</h2>
+		<ion-item class="shadow in_process" (click)="order_info()">
+			<div class="order_detail">
+				<h2 class="d-flex">{{'order_num' | translate}} 2214541 <span class="end">In Transist</span></h2>
+				<h3>2023, 11:20 am</h3>
+			</div>
+			<ion-row>
+				<ion-col col-4 text-start>
+					<p>
+						<small>{{'ordered' | translate}}</small>
+						2 {{'items' | translate}}
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-center>
+					<p>
+						<small>{{'payment' | translate}}</small>
+						$8.06
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-end>
+					<p>
+						Cash on Delivery
+					</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<h2>{{'past_orders' | translate}}</h2>
+
+
+		<ion-item class="shadow" (click)="order_info()">
+			<div class="order_detail">
+				<h2 class="d-flex">{{'order_num' | translate}} 2011457 <span class="end">Delivered</span></h2>
+				<h3>2023, 11:20 am</h3>
+			</div>
+			<ion-row>
+				<ion-col col-4 text-start>
+					<p>
+						<small>{{'ordered' | translate}}</small>
+						3 {{'items' | translate}}
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-center>
+					<p>
+						<small>{{'payment' | translate}}</small>
+						$12.50
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-end>
+					<p>
+						PayPal Money
+					</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item class="shadow" (click)="order_info()">
+			<div class="order_detail">
+				<h2 class="d-flex">{{'order_num' | translate}} 1955475 <span class="end">Delivered</span></h2>
+				<h3>2023, 11:20 am</h3>
+			</div>
+			<ion-row>
+				<ion-col col-4 text-start>
+					<p>
+						<small>{{'ordered' | translate}}</small>
+						3 {{'items' | translate}}
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-center>
+					<p>
+						<small>{{'payment' | translate}}</small>
+						$12.50
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-end>
+					<p>
+						PayPal Money
+					</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+
+		<ion-item class="shadow" (click)="order_info()">
+			<div class="order_detail">
+				<h2 class="d-flex">{{'order_num' | translate}} 2010644 <span class="end">Delivered</span></h2>
+				<h3>2023, 11:55 am</h3>
+			</div>
+			<ion-row>
+				<ion-col col-4 text-start>
+					<p>
+						<small>{{'ordered' | translate}}</small>
+						3 {{'items' | translate}}
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-center>
+					<p>
+						<small>{{'payment' | translate}}</small>
+						$12.50
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-end>
+					<p>
+						PayPal Money
+					</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="shadow" (click)="order_info()">
+			<div class="order_detail">
+				<h2 class="d-flex">{{'order_num' | translate}} 1955475 <span class="end">Delivered</span></h2>
+				<h3>2023, 11:20 am</h3>
+			</div>
+			<ion-row>
+				<ion-col col-4 text-start>
+					<p>
+						<small>{{'ordered' | translate}}</small>
+						3 {{'items' | translate}}
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-center>
+					<p>
+						<small>{{'payment' | translate}}</small>
+						$12.50
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-end>
+					<p>
+						PayPal Money
+					</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+
+		<ion-item class="shadow" (click)="order_info()">
+			<div class="order_detail">
+				<h2 class="d-flex">{{'order_num' | translate}} 2010644 <span class="end">Delivered</span></h2>
+				<h3>2023, 11:55 am</h3>
+			</div>
+			<ion-row>
+				<ion-col col-4 text-start>
+					<p>
+						<small>{{'ordered' | translate}}</small>
+						3 {{'items' | translate}}
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-center>
+					<p>
+						<small>{{'payment' | translate}}</small>
+						$12.50
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-end>
+					<p>
+						PayPal Money
+					</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="shadow" (click)="order_info()">
+			<div class="order_detail">
+				<h2 class="d-flex">{{'order_num' | translate}} 1955475 <span class="end">Delivered</span></h2>
+				<h3>2023, 11:20 am</h3>
+			</div>
+			<ion-row>
+				<ion-col col-4 text-start>
+					<p>
+						<small>{{'ordered' | translate}}</small>
+						3 {{'items' | translate}}
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-center>
+					<p>
+						<small>{{'payment' | translate}}</small>
+						$12.50
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-end>
+					<p>
+						PayPal Money
+					</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+
+		<ion-item class="shadow" (click)="order_info()">
+			<div class="order_detail">
+				<h2 class="d-flex">{{'order_num' | translate}} 2010644 <span class="end">Delivered</span></h2>
+				<h3>2023, 11:55 am</h3>
+			</div>
+			<ion-row>
+				<ion-col col-4 text-start>
+					<p>
+						<small>{{'ordered' | translate}}</small>
+						3 {{'items' | translate}}
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-center>
+					<p>
+						<small>{{'payment' | translate}}</small>
+						$12.50
+					</p>
+				</ion-col>
+
+				<ion-col col-4 text-end>
+					<p>
+						PayPal Money
+					</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+	</ion-list>
+</ion-content>

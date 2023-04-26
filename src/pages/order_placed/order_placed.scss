@@ -1,0 +1,27 @@
+page-order_placed {
+    .img_box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 121px);
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    h2 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        color: var(--text-black);
+    }
+    p {
+        margin: 0;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        margin-bottom: 23px;
+    }
+}

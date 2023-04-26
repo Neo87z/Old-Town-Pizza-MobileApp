@@ -1,0 +1,31 @@
+<ion-header class="bg-transparent">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title"></span></ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+	<div class="map">
+		<img src="assets/imgs/map.png">
+		<ion-icon class="zmdi zmdi-pin from" style="top: 16%; left: 30%; "></ion-icon>
+		<ion-icon class="zmdi zmdi-pin to" style="top: 46%; left: 30%; "></ion-icon>
+		<div class="car" style="top: 29%; left: 45%; transform: rotate(168deg);">
+			<img src="assets/imgs/delivery_car.png">
+		</div>
+	</div>
+</ion-content>
+
+<ion-footer no-border class="shadow">
+	<div class="container">
+		<h3 class="d-flex">{{'deliverman' | translate}} <span class="end">{{'arriving_in' | translate}}</span></h3>
+		<h2 class="d-flex"> David Anderson <span class="end"> 10 mins</span></h2>
+		<h3 class="d-flex"> +1 987 654 3210 <span class="end">3.2 km  {{'away' | translate}}</span></h3>
+	</div>
+	<button ion-button full no-margin class="btn" >
+				<ion-icon class="zmdi zmdi-phone" text-start></ion-icon>
+		{{'call_now' | translate}}
+			</button>
+</ion-footer>

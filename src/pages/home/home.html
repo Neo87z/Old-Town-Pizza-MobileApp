@@ -1,0 +1,244 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+        <ion-title>
+            <p class="d-flex" (click)="select_location()">
+                <ion-icon class="zmdi zmdi-pin" text-start></ion-icon>
+                <span class="address"></span>
+            </p>
+            <ion-icon class="zmdi zmdi-search end" text-end></ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="banner">
+        <ion-scroll scrollX="true">
+            <div class="img_box center_img">
+                <img src="assets/imgs/banner_1.png" class="crop_img">
+            </div>
+            <div class="img_box center_img">
+                <img src="assets/imgs/banner_2.png" class="crop_img">
+            </div>
+            <div class="img_box center_img">
+                <img src="assets/imgs/banner_1.png" class="crop_img">
+            </div>
+            <div class="img_box center_img">
+                <img src="assets/imgs/banner_2.png" class="crop_img">
+            </div>
+            <div class="img_box center_img">
+                <img src="assets/imgs/banner_1.png" class="crop_img">
+            </div>
+            <div class="img_box center_img">
+                <img src="assets/imgs/banner_2.png" class="crop_img">
+            </div>
+        </ion-scroll>
+    </div>
+
+
+    <div class="category">
+        <h2>{{'order_now' | translate}}</h2>
+
+        <ion-row>
+            <ion-col col-6>
+                <div class="category_box" (click)="explore_menu()">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/category_pizza.png" class="crop_img">
+                    </div>
+
+                    <div class="text_box">
+                        <h3>Pizza</h3>
+                        <p>28 {{'items_available' | translate}}</p>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col col-6>
+                <div class="category_box" (click)="explore_menu()">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/category_sides.png" class="crop_img">
+                    </div>
+
+                    <div class="text_box">
+                        <h3>Sides</h3>
+                        <p>18 {{'items_available' | translate}}</p>
+                    </div>
+                </div>
+            </ion-col>
+
+            <ion-col col-6>
+                <div class="category_box" (click)="explore_menu()">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/category_beverages.png" class="crop_img">
+                    </div>
+
+                    <div class="text_box">
+                        <h3>Beverages</h3>
+                        <p>12 {{'items_available' | translate}}</p>
+                    </div>
+                </div>
+            </ion-col>
+
+            <ion-col col-6>
+                <div class="category_box" (click)="explore_menu()">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/category_desserts.png" class="crop_img">
+                    </div>
+
+                    <div class="text_box">
+                        <h3>Desserts</h3>
+                        <p>19 {{'items_available' | translate}}</p>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </div>
+
+    <div class="best_seller">
+        <h2>{{'best_seller' | translate}}</h2>
+
+        <ion-scroll scrollX="true">
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_pizza1.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Farm House</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_icedcoke.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Iced coke</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_garlic_bread.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Garlic Bread</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_pizza1.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Farm House</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_pizza1.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Farm House</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_icedcoke.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Iced coke</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_garlic_bread.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Garlic Bread</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_pizza1.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Farm House</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+
+        </ion-scroll>
+    </div>
+
+
+    <div class="best_seller">
+        <h2>Recent Searches</h2>
+
+        <ion-scroll scrollX="true">
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_pizza1.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Farm House</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_icedcoke.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Iced coke</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_garlic_bread.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Garlic Bread</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_pizza1.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Farm House</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_pizza1.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Farm House</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_icedcoke.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Iced coke</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_garlic_bread.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Garlic Bread</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+            <div class="item_scroll shadow">
+                <div class="img_box center_img" (click)="item_info()">
+                    <img src="assets/imgs/item_pizza1.png" class="crop_img">
+                    <ion-icon><img src="assets/imgs/veg_icon.png"></ion-icon>
+                </div>
+                <h3 text-center>Farm House</h3>
+                <button ion-button block class="btn">{{'add_to_cart' | translate}} </button>
+            </div>
+
+        </ion-scroll>
+    </div>
+</ion-content>

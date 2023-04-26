@@ -1,0 +1,53 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+	  <ion-title><span class="center_title">sign_in</span></ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+
+<ion-content class="bg_img">
+	<div class="container">
+		<div class="banner" text-center>
+			<img src="assets/imgs/logo.png">
+			<h2>{{'welcome_back' | translate}}</h2>
+			<p>{{'please_enter_your_mobile_number_to' | translate}} <br>{{'login_via_otp' | translate}}</p>
+		</div>
+
+		<div class="form">
+			<ion-list no-lines>
+				<ion-item>
+					<ion-label>{{'mobil_number' | translate}}</ion-label>
+					<ion-input type="number" value=""></ion-input>
+				</ion-item>
+			</ion-list>
+
+			<button ion-button block class="btn" (click)="register()">{{'continue' | translate}}
+				<ion-icon class="zmdi zmdi-arrow-right" text-end></ion-icon>
+			</button>
+		</div>
+	</div>
+</ion-content>
+
+<ion-footer no-border>
+	<div class="quick_login" text-center>
+		<h2>{{'or_quick_continue_with' | translate}}</h2>
+		<ion-row> 
+			<ion-col col-6>
+				<button no-margin ion-button icon-start block class="btn" (click)="home()">
+					<ion-icon text-start> <img src="assets/imgs/ic_facebook.png"></ion-icon>
+					{{'facebook' | translate}}
+				</button>
+			</ion-col>
+			<ion-col col-6>
+				<button no-margin ion-button icon-start block class="btn google" (click)="home()">
+					<ion-icon text-start><img src="assets/imgs/ic_google.png"></ion-icon>
+					{{'gmail' | translate}}
+				</button>
+			</ion-col>
+		</ion-row>
+	</div>
+</ion-footer>

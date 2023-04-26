@@ -1,0 +1,68 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+	  <ion-title><span class="center_title">ordered_items</span></ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+
+<!--
+<ion-content >
+ 
+</ion-content>
+-->
+<ion-footer no-border>
+	<ion-list no-lines>
+		<h2 class="d-flex">{{'your_order_items' | translate}}
+			<ion-icon class="zmdi zmdi-chevron-down end" text-end></ion-icon>
+		</h2>
+
+		<ion-item class="">
+			<div class="item_details d-flex">
+				<div class="img_box center_img">
+					<img src="assets/imgs/item_pizza1.png" class="crop_img">
+				</div>
+				<div class="text_box">
+					<h2>Farm house</h2>
+					<h3 class="d-flex">
+						<small>Medium | New Hand tossed</small>
+						<span class="end" text-end>
+							$5.99
+						</span>
+					</h3>
+
+					<p>
+						Black Olives, Onion, capsicum, tomato, grilled mushroom, golden corn, Jalapeno Extra cheese
+					</p>
+				</div>
+			</div>
+		</ion-item>
+
+
+		<ion-item class="">
+			<div class="item_details d-flex">
+				<div class="img_box center_img">
+					<img src="assets/imgs/item_icedcoke.png" class="crop_img">
+				</div>
+				<div class="text_box">
+					<h2> Iced Code</h2>
+					<h3 class="d-flex">
+						<small> Large</small>
+						<span class="end" text-end>
+							$1.99
+						</span>
+					</h3>
+
+					<p>
+						No cutomisation available
+					</p>
+				</div>
+			</div>
+		</ion-item>
+	</ion-list>
+
+	<button ion-button full no-margin class="btn" (click)="dismiss()">{{'close' | translate}} </button>
+</ion-footer>

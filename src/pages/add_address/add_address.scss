@@ -1,0 +1,35 @@
+page-add_address {
+    .map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 0px);
+        overflow: hidden;
+        ion-icon {
+            position: absolute;
+            z-index: 99;
+            color: #ea5b31;
+            font-size: 3.5rem;
+        }
+    }
+    .footer {
+        background: var(--bg-white);
+        padding: 20px 0 10px 0;
+        .form .item {
+            &.item-textarea {
+                .item-inner .input-wrapper {
+                    display: block;
+                    .label {
+                        margin-bottom: 9px;
+                    }
+                    ion-textarea {
+                        .text-input {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

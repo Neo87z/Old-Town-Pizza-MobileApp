@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+        <ion-title><span class="center_title">{{'settings' | translate}}</span></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="bg_img">
+    <ion-list no-lines>
+        <div class="display_setting">
+            <h2>{{'display_setting' | translate}}</h2>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="d-flex " item-start style="margin: 0;">
+                    <ion-label>{{'dark_mode' | translate}}</ion-label>
+                    <ion-toggle [(ngModel)]="darkModeStatus" (ionChange)="onDarkMode()"></ion-toggle>
+                </div>
+                <p item-end>{{'experience_an_excitiing_dark_mode' | translate}}</p>
+            </ion-item>
+        </div>
+
+        <div class="select_language">
+            <h2>{{'select_language' | translate}}</h2>
+            <ion-item *ngFor="let language of config.availableLanguages" (click)="onLanguageClick(language)">
+                <ion-label>{{language.name}}</ion-label>
+                <!-- <ion-radio value="{{language.code}}"></ion-radio> -->
+                <span class="icon_box" item-end>
+                   <ion-icon *ngIf="defaultLanguageCode == language.code" name="md-globe"></ion-icon>
+                </span>
+            </ion-item>
+        </div>
+    </ion-list>
+</ion-content>
+<ion-footer no-border>
+    <button ion-button full class="btn" (click)="languageConfirm()" style="margin: 0;">
+		{{'save' | translate}}
+	</button>
+</ion-footer>

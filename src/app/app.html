@@ -1,0 +1,152 @@
+<ion-menu *ngIf="rtlSide == 'left'" side="left" [content]="content">
+    <ion-header>
+
+        <div class="profile_box">
+            <div class="profile_details">
+                <h3>{{'hey' | translate}}</h3>
+                <h2>Sam Smith</h2>
+                <h3>{{'have_a_nice_pizza' | translate}}</h3>
+            </div>
+        </div>
+        <ion-list no-lines>
+            <ion-item menuClose (click)="deliveryman_info()">
+                <ion-icon class="zmdi zmdi-bike" text-start item-start></ion-icon>
+                <h2>{{'track_current_order' | translate}}</h2>
+            </ion-item>
+        </ion-list>
+        <div class="buy_this_app shadow" *ngIf="config.demoMode" menuClose (click)="buyThisApp()">
+            <h2>
+                <!--                        <ion-icon class="zmdi zmdi-shopping-cart"></ion-icon>-->
+                {{"buy_this_app" | translate}}
+            </h2>
+        </div>
+    </ion-header>
+
+    <ion-content>
+        <ion-list no-lines>
+            <ion-item menuClose (click)="home()">
+                <ion-icon class="zmdi zmdi-store" text-start item-start></ion-icon>
+                <h2>{{'home' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="explore_menu()">
+                <ion-icon class="zmdi zmdi-cutlery" text-start item-start></ion-icon>
+                <h2>{{'explor_menu' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="offers_discounts()">
+                <ion-icon class="zmdi zmdi-label-heart" text-start item-start></ion-icon>
+                <h2>{{'offers_descounts' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="favorites()">
+                <ion-icon class="zmdi zmdi-favorite" text-start item-start></ion-icon>
+                <h2>{{'favorites' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="my_orders()">
+                <ion-icon class="zmdi zmdi-storage" text-start item-start></ion-icon>
+                <h2>{{'my_orders' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="my_profile()">
+                <ion-icon class="zmdi zmdi-account" text-start item-start></ion-icon>
+                <h2>{{'my_profile' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="contact_us()">
+                <ion-icon class="zmdi zmdi-phone" text-start item-start></ion-icon>
+                <h2>{{'contact_us' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="settings()">
+                <ion-icon item-start text-start item-start name="md-settings"></ion-icon>
+                <h2>{{'settings' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="sign_in()">
+                <ion-icon class="zmdi zmdi-power" text-start item-start></ion-icon>
+                <h2>{{'logout' | translate}}</h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer no-border *ngIf="config.demoMode">
+        <div class="developed_by d-flex" *ngIf="config.demoMode" menuClose (click)="developed_by()">
+            <h2>{{"developed_by" | translate}}</h2>
+            <div class="img_box end">
+                <img src="assets/imgs/opus.png" class="light-theme-logo">
+                <img src="assets/imgs/opus_logo_light.png" class="dark-theme-logo">
+            </div>
+        </div>
+    </ion-footer>
+</ion-menu>
+
+<ion-menu *ngIf="rtlSide == 'right'" side="right" [content]="content">
+    <ion-header>
+
+        <div class="profile_box">
+            <div class="profile_details">
+                <h3>{{'hey' | translate}}</h3>
+                <h2>Sam Smith</h2>
+                <h3>{{'have_a_nice_pizza' | translate}}</h3>
+            </div>
+        </div>
+
+        <ion-list no-lines>
+            <ion-item menuClose (click)="deliveryman_info()">
+                <ion-icon class="zmdi zmdi-bike" text-start item-start></ion-icon>
+                <h2>{{'track_current_order' | translate}}</h2>
+            </ion-item>
+        </ion-list>
+        <div class="buy_this_app shadow" *ngIf="config.demoMode" menuClose (click)="buyThisApp()">
+            <h2>
+                <!--                        <ion-icon class="zmdi zmdi-shopping-cart"></ion-icon>-->
+                {{"buy_this_app" | translate}}
+            </h2>
+        </div>
+    </ion-header>
+
+    <ion-content>
+        <ion-list no-lines>
+            <ion-item menuClose (click)="home()">
+                <ion-icon class="zmdi zmdi-store" text-start item-start></ion-icon>
+                <h2>{{'home' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="explore_menu()">
+                <ion-icon class="zmdi zmdi-cutlery" text-start item-start></ion-icon>
+                <h2>{{'explor_menu' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="offers_discounts()">
+                <ion-icon class="zmdi zmdi-label-heart" text-start item-start></ion-icon>
+                <h2>{{'offers_descounts' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="favorites()">
+                <ion-icon class="zmdi zmdi-favorite" text-start item-start></ion-icon>
+                <h2>{{'favorites' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="my_orders()">
+                <ion-icon class="zmdi zmdi-storage" text-start item-start></ion-icon>
+                <h2>{{'my_orders' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="my_profile()">
+                <ion-icon class="zmdi zmdi-account" text-start item-start></ion-icon>
+                <h2>{{'my_profile' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="contact_us()">
+                <ion-icon class="zmdi zmdi-phone" text-start item-start></ion-icon>
+                <h2>{{'contact_us' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="settings()">
+                <ion-icon item-start text-start item-start name="md-settings"></ion-icon>
+                <h2>{{'settings' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="sign_in()">
+                <ion-icon class="zmdi zmdi-power" text-start item-start></ion-icon>
+                <h2>{{'logout' | translate}}</h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer no-border *ngIf="config.demoMode">
+        <div class="developed_by d-flex" *ngIf="config.demoMode" menuClose (click)="developed_by()">
+            <h2>{{"developed_by" | translate}}</h2>
+            <div class="img_box end">
+                <img src="assets/imgs/opus.png" class="light-theme-logo">
+                <img src="assets/imgs/opus_logo_light.png" class="dark-theme-logo">
+            </div>
+        </div>
+    </ion-footer>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

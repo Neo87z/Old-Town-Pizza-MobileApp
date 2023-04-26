@@ -1,0 +1,45 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title">{{'my_profile' | translate}}</span></ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="bg_img">
+	<div class="container shadow">
+		<div class="form">
+			<ion-list no-lines>
+				<ion-item>
+					<ion-label>{{'mobil_number' | translate}}</ion-label>
+					<ion-input type="number" value="9876543210"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label>{{'full_name' | translate}}</ion-label>
+					<ion-input type="name" value="Sam Smith"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label>{{'email_address' | translate}}</ion-label>
+					<ion-input type="email" value="samsmith@mail.com"></ion-input>
+				</ion-item>
+			</ion-list>
+			<button ion-button block class="btn">{{'update_info' | translate}}</button>
+		</div>
+	</div>
+
+	<div class="saved_address">
+		<ion-list no-lines>
+			<h2 class="d-flex">{{'saved_address' | translate}} <span class="end" (click)="add_address()">+{{'add_new' | translate}} </span></h2>
+
+			<ion-item class="shadow">
+				<h3 class="d-flex"> Home <span class="end">{{'edit' | translate}}</span></h3>
+				<p>104, Adina Park, Opp HSBC Bank, Old golden street Washington DC, USA.</p>
+			</ion-item>
+			<ion-item class="shadow">
+				<h3 class="d-flex"> Office <span class="end">{{'edit' | translate}}</span></h3>
+				<p> B11, World trade park, Opposite, Silver leaf hotel, Washington DC, USA.</p>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

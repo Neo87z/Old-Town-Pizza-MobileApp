@@ -1,0 +1,29 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title">{{'phone_verification' | translate}}</span></ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div class="container">
+		<div class="banner" text-center>
+			<p>{{'add_4_digit_code_sent_on_your' | translate}} <br>{{'given_number' | translate}}</p>
+		</div>
+
+		<div class="form">
+			<ion-list no-lines>
+				<ion-item>
+					<!--				<ion-label>{{'mobil_number' | translate}}</ion-label>-->
+					<ion-input type="number" placeholder="{{'enter_4_digit_otp' | translate}}" value=""></ion-input>
+				</ion-item>
+			</ion-list>
+			<button ion-button block class="btn" (click)="home()">{{'submit' | translate}}
+				 
+			</button>
+			<h2 class="d-flex">0:22 {{'min_left' | translate}} <span class="end" text-uppercase>{{'resend' | translate}}</span></h2>
+		</div>
+	</div>
+</ion-content>

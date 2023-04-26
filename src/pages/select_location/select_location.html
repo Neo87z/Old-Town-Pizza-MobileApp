@@ -1,0 +1,48 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title"></span></ion-title>
+	</ion-navbar>
+	<div class="search_box d-flex">
+		<ion-icon class="zmdi zmdi-search" text-start></ion-icon>
+		<ion-searchbar (ionInput)="getItems($event)" placeholder="{{'search_text' | translate}}"></ion-searchbar>
+	</div>
+	<p>(eg. New York, City Graden, etc.)</p>
+</ion-header>
+
+<ion-content class="bg_img">
+	<div class="container shadow">
+		<div class="use_current_location">
+			<h2 class="d-flex">
+				<ion-icon class="zmdi zmdi-gps-dot" text-start></ion-icon> {{'use_current_location' | translate}}
+			</h2>
+		</div>
+
+		<div class="recent_locations d-flex">
+			<ion-icon class="zmdi zmdi-time-restore" text-start></ion-icon>
+			<div class="text_box">
+				<h2>{{'recent_locations' | translate}} </h2>
+				<h3>New York City, USA</h3>
+				<h3>Los Angleles, USA</h3>
+				<h3>New city Garden, Hemilton</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="saved_address">
+		<ion-list no-lines>
+			<h2 class="d-flex"><ion-icon class="zmdi zmdi-pin" text-start></ion-icon>{{'saved_address' | translate}}</h2>
+
+			<ion-item class="shadow">
+				<h3 class="d-flex"> Home </h3>
+				<p>104, Adina Park, Opp HSBC Bank, Old golden street Washington DC, USA.</p>
+			</ion-item>
+			<ion-item class="shadow">
+				<h3 class="d-flex"> Office </h3>
+				<p> B11, World trade park, Opposite, Silver leaf hotel, Washington DC, USA.</p>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

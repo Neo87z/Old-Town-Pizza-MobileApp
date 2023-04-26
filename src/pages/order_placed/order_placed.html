@@ -1,0 +1,27 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+	  <ion-title><span class="center_title"> </span></ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+
+<ion-content [fullscreen]="true">
+	<div class="img_box">
+		<img src="assets/imgs/order_placed.png">
+	</div> 
+</ion-content>
+<ion-footer no-border text-center>
+	<h2>{{'order_confirmed' | translate}}</h2>
+	
+	<p>
+		{{'order_placed_text1' | translate}}<br>
+		{{'order_placed_text2' | translate}}<br>
+		{{'order_placed_text3' | translate}}
+	</p>
+	
+	<button ion-button full no-margin class="btn" (click)="my_orders()">{{'my_orders' | translate}} </button>
+</ion-footer>

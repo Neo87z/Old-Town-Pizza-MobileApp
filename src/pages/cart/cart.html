@@ -1,0 +1,128 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title">{{'my_cart' | translate}} (2 {{'items' | translate}})</span></ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="bg_img">
+
+	<ion-list no-lines>
+		<ion-item class="shadow">
+			<div class="item_details d-flex">
+				<div class="img_box center_img">
+					<img src="assets/imgs/item_pizza1.png" class="crop_img">
+				</div>
+				<div class="text_box">
+					<h2>Farm house</h2>
+					<h3 class="d-flex">
+						<small>Medium | New Hand tossed</small>
+						<span class="end" text-end>
+							<img src="assets/imgs/veg_icon.png">
+						</span>
+					</h3>
+
+					<p>
+						Black Olives, Onion, capsicum, tomato, grilled mushroom, golden corn, Jalapeno Extra cheese
+					</p>
+				</div>
+			</div>
+
+			<div class="edit_order">
+				<ion-row>
+					<ion-col col-3 text-center>
+						<h3>{{'edit_order' | translate}}</h3>
+					</ion-col>
+					<ion-col col-6>
+						<div class="add_remove_btn_box d-flex">
+							<span class="text-center">-</span>
+							<strong class="text-center">1</strong>
+							<span class="text-center">+</span>
+						</div>
+					</ion-col>
+
+					<ion-col col-3 text-end>
+						<h2>$5.99</h2>
+					</ion-col>
+
+				</ion-row>
+			</div>
+		</ion-item>
+
+
+		<ion-item class="shadow">
+			<div class="item_details d-flex">
+				<div class="img_box center_img">
+					<img src="assets/imgs/item_icedcoke.png" class="crop_img">
+				</div>
+				<div class="text_box">
+					<h2> Iced Code</h2>
+					<h3 class="d-flex">
+						<small> Large</small>
+						<span class="end" text-end>
+							<img src="assets/imgs/veg_icon.png">
+						</span>
+					</h3>
+
+					<p>
+						No cutomisation available
+					</p>
+				</div>
+			</div>
+
+			<div class="edit_order">
+				<ion-row>
+					<ion-col col-3 text-center>
+						<h3>{{'edit_order' | translate}}</h3>
+					</ion-col>
+					<ion-col col-6>
+						<div class="add_remove_btn_box d-flex">
+							<span class="text-center">-</span>
+							<strong class="text-center">1</strong>
+							<span class="text-center">+</span>
+						</div>
+					</ion-col>
+
+					<ion-col col-3 text-end>
+						<h2>$1.99</h2>
+					</ion-col>
+
+				</ion-row>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-footer no-border>
+	<div class="offer d-flex">
+		<h2>
+			{{'select_offer_coupon_code' | translate}}
+			<span >{{'get_discount_with_your_order' | translate}}</span>
+		</h2> 
+
+		<h3 class="end" (click)="offers_discounts()">
+			{{'explore' | translate}}
+		</h3>
+	</div>
+
+	<div class="total_box">
+		<h3 class="d-flex">
+			{{'sub_total' | translate}}
+			<span class="end">$7.98</span>
+		</h3>
+		<h3 class="d-flex">
+			{{'tax' | translate}}(10%)
+			<span class="end">$0.80</span>
+		</h3>
+	</div>
+
+	<button ion-button full no-margin class="btn" (click)="delivery_info()">
+		{{'cuntinue_to_payment' | translate}}
+		<strong>
+			$ 8.06
+			<ion-icon text-end class="zmdi zmdi-arrow-right"></ion-icon>
+		</strong>
+	</button>
+</ion-footer>

@@ -1,0 +1,73 @@
+page-my_orders {
+    .list {
+        width: calc(100% - 25px);
+        margin: 0 auto;
+        //padding-top: 5px;
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 17px;
+            margin-top: 17px;
+            color: var(--text-black);
+        }
+        .item {
+            padding: 12px 0px 0px 0px;
+            margin-bottom: 11.5px;
+            border-radius: 3px;
+            background: var(--bg-white);
+            .item-inner {
+                padding: 0;
+                .label {
+                    margin: 0;
+                    white-space: normal;
+                    .order_detail {
+                        padding: 0 12px 12px 12px;
+                        h2 {
+                            margin: 0;
+                            font-size: 1.45rem;
+                            color: var(--text-black);
+                            margin-bottom: 5px;
+                            span {
+                                text-transform: uppercase;
+                                letter-spacing: .5px;
+                                color: var(--text-light);
+                            }
+                        }
+                        h3 {
+                            margin: 0;
+                            font-size: 1.2rem;
+                            color: var(--text-light);
+                        }
+                    }
+                    .row {
+                        margin: 0 -5px;
+                        background: var(--secondary);
+                        padding: 13px 12px;
+                        align-items: center;
+                        .col {
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            p {
+                                margin: 0;
+                                font-size: 1.18rem;
+                                color: var(--text-black);
+                                font-weight: 500;
+                                small {
+                                    color: var(--text-light);
+                                    font-size: 1.18rem;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.in_process {
+                .item-inner .label .order_detail h2 span {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+}

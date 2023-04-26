@@ -1,0 +1,85 @@
+page-ordered_items {
+    .footer {
+        background: var(--bg-white);
+        .list {
+            width: calc(100% - 25px);
+            margin: 0 auto;
+            padding-bottom: 10px;
+            padding-top: 20px;
+            h2 {
+                width: calc(100% - 25px);
+                margin: 0 auto;
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 30px;
+                color: var(--text-black);
+            }
+            .item {
+                padding: 0;
+                margin-bottom: 30px;
+                border-radius: 3px;
+                position: relative;
+                background: var(--bg-white);
+                .item-inner {
+                    padding: 0;
+                    .label {
+                        margin: 0;
+                        white-space: normal;
+                        .item_details {
+                            align-items: flex-start !important;
+                            .img_box {
+                                min-width: 113px;
+                                height: 113px;
+                                margin-right: 8px;
+                                img {
+                                    width: auto;
+                                    height: auto;
+                                }
+                            }
+                            .text_box {
+                                position: relative;
+                                z-index: 999;
+                                padding: 27px 12px 0px 12px;
+                                width: 100%;
+                                h2 {
+                                    margin: 0;
+                                    font-weight: 700;
+                                    text-transform: uppercase;
+                                    font-size: 1.7rem;
+                                }
+                                h3 {
+                                    margin: 0;
+                                    margin-bottom: 6px;
+                                    small {
+                                        color: var(--text-light);
+                                        font-size: .95rem;
+                                        letter-spacing: .5px;
+                                        font-weight: 400;
+                                    }
+                                    span {
+                                        color: var(--primary);
+                                        font-size: 1.6rem;
+                                        font-weight: 600;
+                                    }
+                                }
+                                P {
+                                    color: var(--text-light);
+                                    font-size: 1rem;
+                                    letter-spacing: .4px;
+                                    height: 37px;
+                                    overflow: hidden;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 3;
+                                    -webkit-box-orient: vertical;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .button.btn {
+            background: var(--red-color);
+        }
+    }
+}

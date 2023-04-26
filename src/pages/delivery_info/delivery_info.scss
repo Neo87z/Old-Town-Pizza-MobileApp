@@ -1,0 +1,179 @@
+page-delivery_info {
+    .list {
+        width: calc(100% - 25px);
+        margin: 0 auto;
+        margin-top: 20px;
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--text-black);
+        }
+        .card {
+            width: 100%;
+            margin: 0;
+            border-radius: 3px;
+            box-shadow: none;
+            margin-bottom: 23px;
+            padding: 12px 14px;
+            margin-bottom: 11.5px;
+            background: var(--bg-white);
+            p {
+                color: var(--text-light);
+                font-size: 1.2rem;
+                font-weight: 400;
+                padding-left: 30px;
+                margin: 0;
+                letter-spacing: 0;
+            }
+            .row {
+                margin: 0 -5px;
+                &.custom_row {
+                    padding-left: 30px;
+                }
+                .col {
+                    padding-bottom: 0;
+                    .item {
+                        background: none;
+                        padding: 0;
+                        min-height: unset;
+                        .item-inner {
+                            padding: 0;
+                            .label {
+                                margin: 0;
+                                h3 {
+                                    color: var(--text-black);
+                                    font-size: 1.5rem;
+                                }
+                            }
+                        }
+                        &.item-radio {
+                            .radio {
+                                min-width: 30px;
+                                .radio-icon {
+                                    .radio-inner {}
+                                    &.radio-checked {
+                                        border-color: var(--primary);
+                                        .radio-inner {
+                                            background: var(--primary);
+                                        }
+                                    }
+                                }
+                                &[item-start] {
+                                    margin: 0;
+                                }
+                                &.radio-ios {
+                                    .radio-icon {
+                                        .radio-inner {
+                                            background: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.item-datetime {
+                            width: fit-content;
+                            margin-right: 0;
+                            margin-left: auto;
+                            .datetime-text {
+                                min-width: unset;
+                            }
+                            &.select_date {
+                                margin-right: auto;
+                                margin-left: 0;
+                            }
+                        }
+                        .date_time {
+                            &[item-start] {
+                                margin: 0;
+                            }
+                            h3 {
+                                color: var(--red-color);
+                                font-size: 1.5rem;
+                                font-weight: 500;
+                                width: fit-content;
+                            }
+                            ion-icon {
+                                color: var(--red-color);
+                                font-size: 2.5rem;
+                                margin-left: 10px;
+                            }
+                            .datetime {
+                                padding: 0 0px;
+                                color: var(--primary);
+                                font-size: 1.5rem;
+                                font-weight: 500;
+                            }
+                        }
+                        &.item-input-has-value {
+                            h3 {
+                                display: none;
+                                margin-right: 0;
+                                margin-left: auto;
+                                width: fit-content;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .saved_address {
+        margin-top: 41px;
+        .list {
+            width: calc(100% - 25px);
+            margin: 0 auto;
+            margin-top: 20px;
+            h2 {
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 15px;
+                padding: 0 4px;
+                span {
+                    color: var(--red-color);
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    ion-icon {
+                        min-width: 21px;
+                        min-width: 14px;
+                        position: relative;
+                    }
+                }
+            }
+            .item {
+                padding: 12px 18px 12px 18px;
+                margin-bottom: 11.5px;
+                border-radius: 3px;
+                background: var(--bg-white);
+                .item-inner {
+                    padding: 0;
+                    .label {
+                        margin: 0;
+                        white-space: normal;
+                        h3 {
+                            margin: 0;
+                            font-size: 1.5rem;
+                            color: var(--text-black);
+                            font-weight: 500;
+                            padding-bottom: 7px;
+                            span {
+                                &.end {
+                                    color: var(--primary);
+                                }
+                            }
+                        }
+                        p {
+                            color: var(--text-light);
+                            font-size: 1.31rem;
+                            letter-spacing: .4px;
+                            line-height: 21px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

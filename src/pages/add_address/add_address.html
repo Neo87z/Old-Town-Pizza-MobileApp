@@ -1,0 +1,36 @@
+<ion-header class="shadow">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<span class="center_title">{{'add_address' | translate}}</span>
+			<ion-icon class="end zmdi zmdi-search" (click)="select_location()"></ion-icon>
+		</ion-title>
+	</ion-navbar> 
+</ion-header>
+
+<ion-content>
+	<div class="map">
+		<img src="assets/imgs/map.png">
+		<ion-icon class="zmdi zmdi-pin" style="top: 40%; left: 50%; "></ion-icon>
+	</div>
+</ion-content>
+
+<ion-footer no-border>
+	<div class="form">
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label>{{'address_title' | translate}}</ion-label>
+				<ion-input type="name" value="Home"></ion-input>
+			</ion-item>	
+			
+			<ion-item>
+				<ion-label>{{'enter_address' | translate}}</ion-label>
+				<ion-textarea type="address" rows="2" value="104, Adina Park, Opp HSBC Bank, Old golden street Washington DC, USA."></ion-textarea>
+			</ion-item>
+		</ion-list>
+
+		<button ion-button block class="btn">{{'add_address' | translate}}</button>
+	</div>
+</ion-footer>

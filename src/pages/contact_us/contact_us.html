@@ -1,0 +1,36 @@
+<ion-header class="bg-transparent">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title><span class="center_title"></span></ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="bg_img">
+	<div class="map">
+		<img src="assets/imgs/map.png">
+		<ion-icon  class="zmdi zmdi-pin" style="top: 40%; left: 50%; "></ion-icon>
+	</div>
+</ion-content>
+<ion-footer no-border>
+	<ion-list no-lines>
+		<ion-icon item-end class="zmdi zmdi-navigation"></ion-icon>
+		<ion-item class="shadow">
+			<h3>{{'rech_us' | translate}}</h3>
+			<h2>214, Foodie Street, kelvin Plaza, New York, USA</h2>
+		</ion-item>
+
+		<ion-item class="shadow">
+			<h3>{{'call_us' | translate}}</h3>
+			<h2> 1800-000-1234</h2>
+			<ion-icon item-end class="zmdi zmdi-phone"></ion-icon>
+		</ion-item>
+
+		<ion-item class="shadow">
+			<h3>{{'email_us' | translate}}</h3>
+			<h2> help@pizzamenia.com</h2>
+			<ion-icon item-end class="zmdi zmdi-email"></ion-icon>
+		</ion-item>
+	</ion-list>
+</ion-footer>
