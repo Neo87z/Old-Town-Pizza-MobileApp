@@ -60,6 +60,7 @@ export class Item_infoPage {
   private PizzaSauce: any;
   private Chorizo: any;
   private SauceMainMenueSelected: any;
+  private CurstPriceeeee : any;
 
 
   private SoloPizzaChecked: any;
@@ -294,12 +295,84 @@ export class Item_infoPage {
 
 
 
-  private FetaCheeseSelecteSideTrue : any;
-  private FetaCheeseeSelecteSide : any;
-  private FetaCheeseNoneSelcted : any;
-  private FetaCheeseLEftSelected : any;
-  private FetaCHeeseRightSelected : any;
-  private FetaHCeeseWholeSelcted : any;
+  private FetaCheeseSelecteSideTrue: any;
+  private FetaCheeseeSelecteSide: any;
+  private FetaCheeseNoneSelcted: any;
+  private FetaCheeseLEftSelected: any;
+  private FetaCHeeseRightSelected: any;
+  private FetaHCeeseWholeSelcted: any;
+
+  private ExtraToppingPrice: any;
+  private GoatCheesePrice: any;
+
+
+  private PizzaSize: any;
+  private PizzaCountLast: any;
+  private SelecteFiunalPizzaCrust: any;
+  private MozeraellaStaus: any;
+  private MozerellaSide: any;
+  private GoatCheeseSide: any;
+  private FetaCheeseSide: any;
+  private HamSide: any;
+  private SalamiSide: any;
+  private CurmbelBeconSide: any;
+  private SlicedBeaconSide: any;
+  private peporoniSide: any;
+  private ItalinSausgeSide: any;
+  private GroundBeefSide: any;
+  private SeasonChickensIde: any;
+  private ChorizoSide: any;
+  private MushrromSude: any;
+  private RedonionSide: any;
+  private greeenPeperSide: any;
+  private TomatoeSide: any;
+  private OlivesIDe: any;
+  private HotpperpSide: any;
+  private JalapenoSide: any;
+  private PineAppelSude: any;
+  private BBQSide : any;
+  private DonairSide : any;
+  private PizzaSaiceSode : any
+  private FinalToppingPrice : any;
+
+  private HamSideCount: any;
+  private SalamiSideCount: any;
+  private CurmbelBeconSideCount: any;
+  private SlicedBeaconSideCount: any;
+  private peporoniSideCount: any;
+  private ItalinSausgeSideCount: any;
+  private GroundBeefSideCount: any;
+  private SeasonChickensIdeCount: any;
+  private ChorizoSideCount: any;
+  private MushrromSudeCount: any;
+  private RedonionSideCount: any;
+  private greeenPeperSideCount: any;
+  private TomatoeSideCount: any;
+  private OlivesIDeCount: any;
+  private HotpperpSideCount: any;
+  private JalapenoSideCount: any;
+  private PineAppelSudeCount: any;
+  private BBQSideCount : any;
+  private DonairSideCount : any;
+  private PizzaSaiceSodeCount : any
+
+  private FinalFetaPrice : any;
+  private GoatChesePrice : any;
+  private MozzerellaPrice : any;
+
+  private MozerllaCount : any;
+  private GoatCheseCount : any;
+  private FetaCeseCount : any;
+  private FinalMozPrice : any;
+  private FinalPizzaaaPrice : any;
+  private FinalPizzaMianPrice : any;
+  private FinalDoughPrice : any;
+
+
+
+
+
+
 
 
 
@@ -325,6 +398,7 @@ export class Item_infoPage {
 
   }
   ngOnInit(): void {
+    
     this.LoadPizzaById();
     this.PizzaCount = 1;
     this.PizzaPriceByCrust = 0;
@@ -383,6 +457,7 @@ export class Item_infoPage {
     this.SalamiLeft = false;
     this.SalamiRight = false;
     this.SalamiWhole = false;
+    this.FinalPizzaaaPrice=0.0;
 
 
 
@@ -438,7 +513,7 @@ export class Item_infoPage {
     this.RedOnionRight = false;
     this.RedOnionWhole = false;
 
-    this.GreenPepoNone = false;
+    this.GreenPepoNone = true;
     this.GreenPepLeft = false;
     this.GreenPepRight = false;
     this.GreenPepWhole = false;
@@ -447,6 +522,8 @@ export class Item_infoPage {
     this.TomatoeLeft = false;
     this.TomatoeRight = false;
     this.TomatoeWhole = false;
+
+    this.MozerllaCount=0;
 
     this.TOlivesNone = true;
     this.TOlivesLeft = false;
@@ -505,6 +582,14 @@ export class Item_infoPage {
     this.FetaHCeeseWholeSelcted = false;
 
 
+    this.ExtraToppingPrice = 1.95;
+    this.GoatCheesePrice = 2.20;
+    this.CurstPriceeeee=0.0
+    this.CheckValus()
+
+
+
+
 
 
 
@@ -550,6 +635,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = false;
     this.SeasonSchickeSelcted = false;
     this.ChorizoSauseSelctec = false;
+    this.CheckValus()
 
   }
   SelectedSlicedBeaconFromMenue() {
@@ -564,6 +650,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = false;
     this.SeasonSchickeSelcted = false;
     this.ChorizoSauseSelctec = false;
+    this.CheckValus()
   }
   SelectePeporoniSelectedFromMenuye() {
     this.UnSelectAllSelections();
@@ -577,6 +664,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = false;
     this.SeasonSchickeSelcted = false;
     this.ChorizoSauseSelctec = false;
+    this.CheckValus()
   }
   SelecctedItalianSausgeSelctedFromMenue() {
     this.UnSelectAllSelections();
@@ -590,6 +678,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = false;
     this.SeasonSchickeSelcted = false;
     this.ChorizoSauseSelctec = false;
+    this.CheckValus()
   }
   SelectedGroudnBeefFromMenue() {
     this.UnSelectAllSelections();
@@ -603,6 +692,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = true;
     this.SeasonSchickeSelcted = false;
     this.ChorizoSauseSelctec = false;
+    this.CheckValus()
   }
   SelecedSeaonedChickneFromMenue() {
     this.UnSelectAllSelections();
@@ -616,6 +706,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = false;
     this.SeasonSchickeSelcted = true;
     this.ChorizoSauseSelctec = false;
+    this.CheckValus()
   }
   SelectedChorizoFrommainMenue() {
     this.UnSelectAllSelections();
@@ -629,6 +720,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = false;
     this.SeasonSchickeSelcted = false;
     this.ChorizoSauseSelctec = true;
+    this.CheckValus()
   }
 
   SelectedMushroomsFromMenue() {
@@ -643,6 +735,7 @@ export class Item_infoPage {
     this.HotPeper = false;
     this.Jalapeno = false;
     this.PineApple = false;
+    this.CheckValus()
 
   }
 
@@ -658,6 +751,7 @@ export class Item_infoPage {
     this.HotPeper = false;
     this.Jalapeno = false;
     this.PineApple = false;
+    this.CheckValus()
   }
 
   SelectedGreenPepperFromMenue() {
@@ -671,6 +765,7 @@ export class Item_infoPage {
     this.HotPeper = false;
     this.Jalapeno = false;
     this.PineApple = false;
+    this.CheckValus()
   }
 
   SelectedTomatoesFrommenue() {
@@ -686,6 +781,7 @@ export class Item_infoPage {
     this.HotPeper = false;
     this.Jalapeno = false;
     this.PineApple = false;
+    this.CheckValus()
   }
 
   SelectedOlivesFromMenue() {
@@ -700,6 +796,7 @@ export class Item_infoPage {
     this.HotPeper = false;
     this.Jalapeno = false;
     this.PineApple = false;
+    this.CheckValus()
   }
 
   SelectedHotpeperFromMenue() {
@@ -714,6 +811,7 @@ export class Item_infoPage {
     this.HotPeper = true;
     this.Jalapeno = false;
     this.PineApple = false;
+    this.CheckValus()
   }
 
   SelectedJalapenoFromMenue() {
@@ -728,6 +826,7 @@ export class Item_infoPage {
     this.HotPeper = false;
     this.Jalapeno = true;
     this.PineApple = false;
+    this.CheckValus()
   }
 
   SelectedPineAppleFromMenue() {
@@ -742,6 +841,7 @@ export class Item_infoPage {
     this.HotPeper = false;
     this.Jalapeno = false;
     this.PineApple = true;
+    this.CheckValus()
   }
 
   SelectedBBqSauceNone() {
@@ -752,6 +852,7 @@ export class Item_infoPage {
     this.BBqSauce = false;
     this.DonairSauceTopp = false;
     this.PiizaSaue = false;
+    this.CheckValus()
   }
 
   SelectedBBqSauce() {
@@ -761,6 +862,7 @@ export class Item_infoPage {
     this.BBqSauce = true;
     this.DonairSauceTopp = false;
     this.PiizaSaue = false;
+    this.CheckValus()
   }
 
   SelectedDonairSauce() {
@@ -769,6 +871,7 @@ export class Item_infoPage {
     this.BBqSauce = false;
     this.DonairSauceTopp = true;
     this.PiizaSaue = false;
+    this.CheckValus()
   }
 
   SelectedPizzaSauce() {
@@ -778,10 +881,12 @@ export class Item_infoPage {
     this.BBqSauce = false;
     this.DonairSauceTopp = false;
     this.PiizaSaue = true;
+    this.CheckValus()
   }
   SeledtedChorizo() {
     this.UnSelectAllSelections();
     this.Chorizo = true;
+    this.CheckValus()
   }
 
 
@@ -790,7 +895,7 @@ export class Item_infoPage {
 
 
   UnSelectAllSelections() {
-    this.showScrollFeta=false;
+    this.showScrollFeta = false;
     this.GoatCHeeseSelected = false;
     this.SelectedHam = false;
     this.SalamiSelected = false;
@@ -813,6 +918,7 @@ export class Item_infoPage {
     this.DonairSauce = false;
     this.PizzaSauce = false;
     this.Chorizo = false;
+    this.CheckValus()
 
   }
 
@@ -828,6 +934,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = false;
     this.SeasonSchickeSelcted = false;
     this.ChorizoSauseSelctec = false;
+    this.CheckValus()
   }
 
 
@@ -849,6 +956,7 @@ export class Item_infoPage {
       this.SelectedPreferedMozCheesePriceBool = false;
       this.CheeseMenueSelected = false;
       this.MozzerlaCheeseSelected = false;
+      
 
 
     });
@@ -868,6 +976,7 @@ export class Item_infoPage {
     this.groundBeefSelcted = false;
     this.SeasonSchickeSelcted = false;
     this.ChorizoSauseSelctec = false;
+    this.CheckValus()
 
   }
 
@@ -882,6 +991,7 @@ export class Item_infoPage {
       this.CrumBeaconLeft = false;
       this.CrumRight = false;
       this.CrumBeacoWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.CrumbelBeaconSelectedSide = "Left"
@@ -891,6 +1001,7 @@ export class Item_infoPage {
       this.CrumBeaconLeft = true;
       this.CrumRight = false;
       this.CrumBeacoWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.CrumbelBeaconSelectedSide = "Right"
@@ -900,6 +1011,7 @@ export class Item_infoPage {
       this.CrumBeaconLeft = false;
       this.CrumRight = true;
       this.CrumBeacoWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.CrumbelBeaconSelectedSide = "Whole"
@@ -909,6 +1021,7 @@ export class Item_infoPage {
       this.CrumBeaconLeft = false;
       this.CrumRight = false;
       this.CrumBeacoWhole = false;
+      this.CheckValus()
 
 
     }
@@ -923,6 +1036,7 @@ export class Item_infoPage {
       this.SalamiLeft = false;
       this.SalamiRight = false;
       this.SalamiWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.SalamiSelectedSide = "Left"
@@ -931,6 +1045,7 @@ export class Item_infoPage {
       this.SalamiLeft = true;
       this.SalamiRight = false;
       this.SalamiWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.SalamiSelectedSide = "Right"
@@ -939,6 +1054,7 @@ export class Item_infoPage {
       this.SalamiLeft = false;
       this.SalamiRight = true;
       this.SalamiWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.SalamiSelectedSide = "None"
@@ -947,6 +1063,7 @@ export class Item_infoPage {
       this.SalamiLeft = false;
       this.SalamiRight = false;
       this.SalamiWhole = false;
+      this.CheckValus()
 
 
     }
@@ -962,6 +1079,7 @@ export class Item_infoPage {
       this.HamLeft = false;
       this.HamRight = false;
       this.HamWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.HamSelectedSide = "Left"
@@ -970,6 +1088,7 @@ export class Item_infoPage {
       this.HamLeft = true;
       this.HamRight = false;
       this.HamWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.HamSelectedSide = "Right"
@@ -978,6 +1097,7 @@ export class Item_infoPage {
       this.HamLeft = false;
       this.HamRight = true;
       this.HamWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       console.log("here")
@@ -987,6 +1107,7 @@ export class Item_infoPage {
       this.HamLeft = false;
       this.HamRight = false;
       this.HamWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1001,6 +1122,7 @@ export class Item_infoPage {
       this.SlicedBeaconLeft = false;
       this.SlicedbeaconRight = false;
       this.SliceBeaconeWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.SlicedBeaconSelectedSide = "Left"
@@ -1009,6 +1131,7 @@ export class Item_infoPage {
       this.SlicedBeaconLeft = true;
       this.SlicedbeaconRight = false;
       this.SliceBeaconeWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.SlicedBeaconSelectedSide = "Right"
@@ -1017,6 +1140,7 @@ export class Item_infoPage {
       this.SlicedBeaconLeft = false;
       this.SlicedbeaconRight = true;
       this.SliceBeaconeWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.SlicedBeaconSelectedSide = "None"
@@ -1025,6 +1149,7 @@ export class Item_infoPage {
       this.SlicedBeaconLeft = false;
       this.SlicedbeaconRight = false;
       this.SliceBeaconeWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1040,6 +1165,7 @@ export class Item_infoPage {
       this.PeporiniLeft = false;
       this.PeporoniRight = false;
       this.PeporoniWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.PeporniSelectedSide = "Left"
@@ -1048,6 +1174,7 @@ export class Item_infoPage {
       this.PeporiniLeft = true;
       this.PeporoniRight = false;
       this.PeporoniWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.PeporniSelectedSide = "Right"
@@ -1056,6 +1183,7 @@ export class Item_infoPage {
       this.PeporiniLeft = false;
       this.PeporoniRight = true;
       this.PeporoniWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.PeporniSelectedSide = "None"
@@ -1064,6 +1192,7 @@ export class Item_infoPage {
       this.PeporiniLeft = false;
       this.PeporoniRight = false;
       this.PeporoniWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1078,6 +1207,7 @@ export class Item_infoPage {
       this.ItalinSausgeLeft = false;
       this.ItalinSausgeRight = false;
       this.ItalinSausgeWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.ItalinSelectedSide = "Left"
@@ -1086,6 +1216,7 @@ export class Item_infoPage {
       this.ItalinSausgeLeft = true;
       this.ItalinSausgeRight = false;
       this.ItalinSausgeWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.ItalinSelectedSide = "Right"
@@ -1094,6 +1225,7 @@ export class Item_infoPage {
       this.ItalinSausgeLeft = false;
       this.ItalinSausgeRight = true;
       this.ItalinSausgeWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.ItalinSelectedSide = "None"
@@ -1102,6 +1234,7 @@ export class Item_infoPage {
       this.ItalinSausgeLeft = false;
       this.ItalinSausgeRight = false;
       this.ItalinSausgeWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1116,6 +1249,7 @@ export class Item_infoPage {
       this.GroundBeefLeft = false;
       this.GroundBeefRight = false;
       this.GroundBeefWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.GroundBeefSelectedSide = "Left"
@@ -1124,6 +1258,7 @@ export class Item_infoPage {
       this.GroundBeefLeft = true;
       this.GroundBeefRight = false;
       this.GroundBeefWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.GroundBeefSelectedSide = "Right"
@@ -1132,6 +1267,7 @@ export class Item_infoPage {
       this.GroundBeefLeft = false;
       this.GroundBeefRight = true;
       this.GroundBeefWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.GroundBeefSelectedSide = "None"
@@ -1140,6 +1276,7 @@ export class Item_infoPage {
       this.GroundBeefLeft = false;
       this.GroundBeefRight = false;
       this.GroundBeefWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1154,6 +1291,7 @@ export class Item_infoPage {
       this.SeasonCheinLeft = false;
       this.SeasonedChienRiht = false;
       this.SeasonChiekneWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.SeasonChickenSelectedSide = "Left"
@@ -1162,6 +1300,7 @@ export class Item_infoPage {
       this.SeasonCheinLeft = true;
       this.SeasonedChienRiht = false;
       this.SeasonChiekneWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.SeasonChickenSelectedSide = "Right"
@@ -1170,6 +1309,7 @@ export class Item_infoPage {
       this.SeasonCheinLeft = false;
       this.SeasonedChienRiht = true;
       this.SeasonChiekneWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.SeasonChickenSelectedSide = "None"
@@ -1179,6 +1319,7 @@ export class Item_infoPage {
       this.SeasonedChienRiht = false;
       this.SeasonChiekneWhole = false;
 
+      this.CheckValus()
 
     }
 
@@ -1192,6 +1333,7 @@ export class Item_infoPage {
       this.MushroomsLeft = false;
       this.MushroomsRight = false;
       this.MushroomsWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.MushroomsSelectedSide = "Left"
@@ -1200,6 +1342,7 @@ export class Item_infoPage {
       this.MushroomsLeft = true;
       this.MushroomsRight = false;
       this.MushroomsWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.MushroomsSelectedSide = "Right"
@@ -1208,6 +1351,7 @@ export class Item_infoPage {
       this.MushroomsLeft = false;
       this.MushroomsRight = true;
       this.MushroomsWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.MushroomsSelectedSide = "None"
@@ -1216,6 +1360,7 @@ export class Item_infoPage {
       this.MushroomsLeft = false;
       this.MushroomsRight = false;
       this.MushroomsWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1229,6 +1374,7 @@ export class Item_infoPage {
       this.RedOnionLeft = false;
       this.RedOnionRight = false;
       this.RedOnionWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.RedOnionSelectedSide = "Left"
@@ -1237,6 +1383,7 @@ export class Item_infoPage {
       this.RedOnionLeft = true;
       this.RedOnionRight = false;
       this.RedOnionWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.RedOnionSelectedSide = "Right"
@@ -1245,6 +1392,7 @@ export class Item_infoPage {
       this.RedOnionLeft = false;
       this.RedOnionRight = true;
       this.RedOnionWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.RedOnionSelectedSide = "None"
@@ -1253,6 +1401,7 @@ export class Item_infoPage {
       this.RedOnionLeft = false;
       this.RedOnionRight = false;
       this.RedOnionWhole = false;
+      this.CheckValus()
 
     }
 
@@ -1265,6 +1414,7 @@ export class Item_infoPage {
       this.GreenPepLeft = false;
       this.GreenPepRight = false;
       this.GreenPepWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.GreenPepSelectedSide = "Left"
@@ -1273,6 +1423,7 @@ export class Item_infoPage {
       this.GreenPepLeft = true;
       this.GreenPepRight = false;
       this.GreenPepWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.GreenPepSelectedSide = "Right"
@@ -1281,6 +1432,7 @@ export class Item_infoPage {
       this.GreenPepLeft = false;
       this.GreenPepRight = true;
       this.GreenPepWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.GreenPepSelectedSide = "None"
@@ -1289,6 +1441,7 @@ export class Item_infoPage {
       this.GreenPepLeft = true;
       this.GreenPepRight = false;
       this.GreenPepWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1302,6 +1455,7 @@ export class Item_infoPage {
       this.TomatoeLeft = false;
       this.TomatoeRight = false;
       this.TomatoeWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.TomatoeSelectedSide = "Left"
@@ -1310,6 +1464,7 @@ export class Item_infoPage {
       this.TomatoeLeft = true;
       this.TomatoeRight = false;
       this.TomatoeWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.TomatoeSelectedSide = "Right"
@@ -1318,6 +1473,7 @@ export class Item_infoPage {
       this.TomatoeLeft = false;
       this.TomatoeRight = true;
       this.TomatoeWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.TomatoeSelectedSide = "None"
@@ -1326,6 +1482,7 @@ export class Item_infoPage {
       this.TomatoeLeft = false;
       this.TomatoeRight = false;
       this.TomatoeWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1339,6 +1496,7 @@ export class Item_infoPage {
       this.TOlivesLeft = false;
       this.TOlivesRight = false;
       this.TOlivesWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.TOlivesSelectedSide = "Left"
@@ -1347,6 +1505,7 @@ export class Item_infoPage {
       this.TOlivesLeft = true;
       this.TOlivesRight = false;
       this.TOlivesWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.TOlivesSelectedSide = "Right"
@@ -1355,6 +1514,7 @@ export class Item_infoPage {
       this.TOlivesLeft = false;
       this.TOlivesRight = true;
       this.TOlivesWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.TOlivesSelectedSide = "None"
@@ -1363,6 +1523,7 @@ export class Item_infoPage {
       this.TOlivesLeft = false;
       this.TOlivesRight = false;
       this.TOlivesWhole = true;
+      this.CheckValus()
 
 
     }
@@ -1376,6 +1537,7 @@ export class Item_infoPage {
       this.HotPeperLeft = false;
       this.HotPeperRight = false;
       this.HotPeperWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.HotPeperSelectedSide = "Left"
@@ -1384,6 +1546,7 @@ export class Item_infoPage {
       this.HotPeperLeft = true;
       this.HotPeperRight = false;
       this.HotPeperWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.HotPeperSelectedSide = "Right"
@@ -1392,6 +1555,7 @@ export class Item_infoPage {
       this.HotPeperLeft = false;
       this.HotPeperRight = true;
       this.HotPeperWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.HotPeperSelectedSide = "None"
@@ -1400,6 +1564,7 @@ export class Item_infoPage {
       this.HotPeperLeft = false;
       this.HotPeperRight = false;
       this.HotPeperWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1413,6 +1578,7 @@ export class Item_infoPage {
       this.JalapenoLeft = false;
       this.JalapenoRight = false;
       this.JalapenoWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.JalapenoSelectedSide = "Left"
@@ -1421,6 +1587,7 @@ export class Item_infoPage {
       this.JalapenoLeft = true;
       this.JalapenoRight = false;
       this.JalapenoWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.JalapenoSelectedSide = "Right"
@@ -1429,6 +1596,7 @@ export class Item_infoPage {
       this.JalapenoLeft = false;
       this.JalapenoRight = true;
       this.JalapenoWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.JalapenoSelectedSide = "None"
@@ -1437,6 +1605,7 @@ export class Item_infoPage {
       this.JalapenoLeft = false;
       this.JalapenoRight = false;
       this.JalapenoWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1450,6 +1619,7 @@ export class Item_infoPage {
       this.PineAppleLeft = false;
       this.PineAppleRight = false;
       this.PineAppleWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.PineAppleSelectedSide = "Left"
@@ -1458,6 +1628,7 @@ export class Item_infoPage {
       this.PineAppleLeft = true;
       this.PineAppleRight = false;
       this.PineAppleWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.PineAppleSelectedSide = "Right"
@@ -1466,6 +1637,7 @@ export class Item_infoPage {
       this.PineAppleLeft = false;
       this.PineAppleRight = true;
       this.PineAppleWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.PineAppleSelectedSide = "None"
@@ -1474,6 +1646,7 @@ export class Item_infoPage {
       this.PineAppleLeft = false;
       this.PineAppleRight = false;
       this.PineAppleWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1491,6 +1664,7 @@ export class Item_infoPage {
       this.ChorizoLeft = false;
       this.ChorizoRight = false;
       this.ChorizoWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.ChrozioSelectedSide = "Left"
@@ -1499,6 +1673,7 @@ export class Item_infoPage {
       this.ChorizoLeft = true;
       this.ChorizoRight = false;
       this.ChorizoWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.ChrozioSelectedSide = "Right"
@@ -1507,6 +1682,7 @@ export class Item_infoPage {
       this.ChorizoLeft = false;
       this.ChorizoRight = true;
       this.ChorizoWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.ChrozioSelectedSide = "None"
@@ -1515,6 +1691,7 @@ export class Item_infoPage {
       this.ChorizoLeft = false;
       this.ChorizoRight = false;
       this.ChorizoWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1529,6 +1706,7 @@ export class Item_infoPage {
       this.BBQSauceLeft = false;
       this.BBQSauceRight = false;
       this.BBQSauceWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.BBQSauceSelectedSide = "Left"
@@ -1537,6 +1715,7 @@ export class Item_infoPage {
       this.BBQSauceLeft = true;
       this.BBQSauceRight = false;
       this.BBQSauceWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.BBQSauceSelectedSide = "Right"
@@ -1545,6 +1724,7 @@ export class Item_infoPage {
       this.BBQSauceLeft = false;
       this.BBQSauceRight = true;
       this.BBQSauceWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.BBQSauceSelectedSide = "None"
@@ -1553,6 +1733,7 @@ export class Item_infoPage {
       this.BBQSauceLeft = false;
       this.BBQSauceRight = false;
       this.BBQSauceWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1567,6 +1748,7 @@ export class Item_infoPage {
       this.DonairLeft = false;
       this.DonairRight = false;
       this.DonairWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.DonairSelectedSide = "Left"
@@ -1575,6 +1757,7 @@ export class Item_infoPage {
       this.DonairLeft = true;
       this.DonairRight = false;
       this.DonairWhole = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.DonairSelectedSide = "Right"
@@ -1583,6 +1766,7 @@ export class Item_infoPage {
       this.DonairLeft = false;
       this.DonairRight = true;
       this.DonairWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.DonairSelectedSide = "None"
@@ -1591,6 +1775,7 @@ export class Item_infoPage {
       this.DonairLeft = false;
       this.DonairRight = false;
       this.DonairWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1605,6 +1790,7 @@ export class Item_infoPage {
       this.PizzaSauceLeft = false;
       this.PizzaSauceRight = false;
       this.PizzaSauceWhole = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.PizzaSauceSelectedSide = "Left"
@@ -1614,6 +1800,7 @@ export class Item_infoPage {
       this.PizzaSauceRight = false;
       this.PizzaSauceWhole = false;
 
+      this.CheckValus()
     } else if (side == "Right") {
       this.PizzaSauceSelectedSide = "Right"
       this.PizzaSauceSelctedTrue = true;
@@ -1621,6 +1808,7 @@ export class Item_infoPage {
       this.PizzaSauceLeft = false;
       this.PizzaSauceRight = true;
       this.PizzaSauceWhole = false;
+      this.CheckValus()
 
     } else if (side == "None") {
       this.PizzaSauceSelectedSide = "None"
@@ -1629,6 +1817,7 @@ export class Item_infoPage {
       this.PizzaSauceLeft = false;
       this.PizzaSauceRight = false;
       this.PizzaSauceWhole = false;
+      this.CheckValus()
 
 
     }
@@ -1645,6 +1834,7 @@ export class Item_infoPage {
       this.GoatCheeeseSelectedWhole = true;
       this.GoatCheeeseSlectLeft = false;
       this.GoatCheeesesideRight = false;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.GoatCheeeseSelctedMainSide = "Left"
@@ -1653,6 +1843,7 @@ export class Item_infoPage {
       this.GoatCheeeseSelectedWhole = false;
       this.GoatCheeeseSlectLeft = true;
       this.GoatCheeesesideRight = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.GoatCheeeseSelctedMainSide = "Right"
@@ -1661,14 +1852,16 @@ export class Item_infoPage {
       this.GoatCheeeseSelectedWhole = false;
       this.GoatCheeeseSlectLeft = false;
       this.GoatCheeesesideRight = true;
+      this.CheckValus()
 
-    }else if (side == "None"){
+    } else if (side == "None") {
       this.GoatCheeeseSelctedMainSide = "None"
       this.GoatCheeeseSelectedTrue = false;
       this.GoatCheeeseSelectedNone = true;
       this.GoatCheeeseSelectedWhole = false;
       this.GoatCheeeseSlectLeft = false;
       this.GoatCheeesesideRight = false;
+      this.CheckValus()
     }
 
   }
@@ -1683,33 +1876,37 @@ export class Item_infoPage {
       this.FetaCheeseLEftSelected = false;
       this.FetaCHeeseRightSelected = false;
       this.FetaHCeeseWholeSelcted = true;
+      this.CheckValus()
 
     } else if (side == "Left") {
-      this.FetaCheeseSelecteSideTrue =true;
+      this.FetaCheeseSelecteSideTrue = true;
 
       this.FetaCheeseeSelecteSide = "Left";
       this.FetaCheeseNoneSelcted = false;
       this.FetaCheeseLEftSelected = true;
       this.FetaCHeeseRightSelected = false;
       this.FetaHCeeseWholeSelcted = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
-      this.FetaCheeseSelecteSideTrue =true;
+      this.FetaCheeseSelecteSideTrue = true;
 
       this.FetaCheeseeSelecteSide = "Right";
       this.FetaCheeseNoneSelcted = false;
       this.FetaCheeseLEftSelected = false;
       this.FetaCHeeseRightSelected = true;
       this.FetaHCeeseWholeSelcted = false;
+      this.CheckValus()
 
-    }else if (side == "None"){
-      this.FetaCheeseSelecteSideTrue =false;
+    } else if (side == "None") {
+      this.FetaCheeseSelecteSideTrue = false;
 
       this.FetaCheeseeSelecteSide = "None";
       this.FetaCheeseNoneSelcted = true;
       this.FetaCheeseLEftSelected = false;
       this.FetaCHeeseRightSelected = false;
       this.FetaHCeeseWholeSelcted = false;
+      this.CheckValus()
     }
 
   }
@@ -1723,6 +1920,7 @@ export class Item_infoPage {
       this.MozzSideSelectedWhole = true;
       this.MozzSideSlectLeft = false;
       this.MozzerllasideRight = false;
+      this.CheckValus()
 
     } else if (side == "Left") {
       this.MozzeralaSelctedMainSide = "Left";
@@ -1731,6 +1929,7 @@ export class Item_infoPage {
       this.MozzSideSelectedWhole = false;
       this.MozzSideSlectLeft = true;
       this.MozzerllasideRight = false;
+      this.CheckValus()
 
     } else if (side == "Right") {
       this.MozzeralaSelctedMainSide = "Right";
@@ -1739,6 +1938,7 @@ export class Item_infoPage {
       this.MozzSideSelectedWhole = false;
       this.MozzSideSlectLeft = false;
       this.MozzerllasideRight = true;
+      this.CheckValus()
 
     }
 
@@ -1748,6 +1948,7 @@ export class Item_infoPage {
       console.log("30")
       this.SelectedPreferedMozCheesePrice = this.thriotyCheesePrice;
       this.SelectedPreferedGoatCheesePriceBool = true;
+      this.CheckValus()
 
     }
 
@@ -1755,12 +1956,14 @@ export class Item_infoPage {
       console.log("50")
       this.SelectedPreferedMozCheesePrice = this.fiftyCheesePricve;
       this.SelectedPreferedGoatCheesePriceBool = true;
+      this.CheckValus()
 
     }
     if (Choice === "double") {
       console.log("60")
       this.SelectedPreferedMozCheesePrice = this.DoubleCheesePrice;
       this.SelectedPreferedGoatCheesePriceBool = true;
+      this.CheckValus()
     }
 
 
@@ -1780,7 +1983,7 @@ export class Item_infoPage {
       this.Mozeraella50Extra = false;
       this.MozeralaDoublle = false;
 
-
+      this.CheckValus()
     }
 
     if (Choice === "50") {
@@ -1794,7 +1997,7 @@ export class Item_infoPage {
       this.Mozeraella50Extra = true;
       this.MozeralaDoublle = false;
 
-
+      this.CheckValus()
     }
     if (Choice === "double") {
       console.log("60")
@@ -1806,6 +2009,7 @@ export class Item_infoPage {
       this.Mozerealla30Extra = false;
       this.Mozeraella50Extra = false;
       this.MozeralaDoublle = true;
+      this.CheckValus()
     }
 
     if (Choice === "None") {
@@ -1818,6 +2022,7 @@ export class Item_infoPage {
       this.Mozerealla30Extra = false;
       this.Mozeraella50Extra = false;
       this.MozeralaDoublle = false;
+      this.CheckValus()
     }
     if (Choice === "Regular") {
       console.log("60")
@@ -1830,6 +2035,7 @@ export class Item_infoPage {
       this.Mozerealla30Extra = false;
       this.Mozeraella50Extra = false;
       this.MozeralaDoublle = false;
+      this.CheckValus()
     }
 
 
@@ -1844,27 +2050,32 @@ export class Item_infoPage {
       this.thriotyCheesePrice = 0.90;
       this.fiftyCheesePricve = 1.10;
       this.DoubleCheesePrice = 2.20;
+      this.CheckValus()
     }
 
     if (SizePizza === "Small") {
       this.thriotyCheesePrice = 1.40;
       this.fiftyCheesePricve = 1.95;
       this.DoubleCheesePrice = 3.60;
+      this.CheckValus()
     }
     if (SizePizza === "Medium") {
-      this.thriotyCheesePrice = 2.25;
-      this.fiftyCheesePricve = 2.75;
-      this.DoubleCheesePrice = 6.60;
+      this.thriotyCheesePrice = 1.95;
+      this.fiftyCheesePricve = 2.20;
+      this.DoubleCheesePrice = 4.40;
+      this.CheckValus()
     }
     if (SizePizza === "Large") {
       this.thriotyCheesePrice = 2.25;
       this.fiftyCheesePricve = 3.30;
       this.DoubleCheesePrice = 6.60;
+      this.CheckValus()
     }
     if (SizePizza === "Jumbo") {
       this.thriotyCheesePrice = 3.0;
       this.fiftyCheesePricve = 5.00;
       this.DoubleCheesePrice = 9.90;
+      this.CheckValus()
     }
 
 
@@ -1876,6 +2087,7 @@ export class Item_infoPage {
     this.TotalPizzaPrice = (parseFloat(this.PizzaPriceBySize)) * this.PizzaCount;
     this.TotalPizzaPrice = this.TotalPizzaPrice + parseFloat(this.PizzaPriceByCrust) + parseFloat(this.PizzaPriceByToppings)
     this.TotalPizzaPrice = parseFloat(this.TotalPizzaPrice).toFixed(2)
+    this.CheckValus()
 
 
   }
@@ -1886,11 +2098,13 @@ export class Item_infoPage {
       this.SelectedCrust = "Regualar"
       this.SelectedCrustShow = "Regular Crust"
       this.CalculatePizzaPrice();
+      this.CurstPriceeeee=0;
       this.RegularCrustSelectd = true;
       this.ThinCrustSelcted = false;
       this.GlutenFreeCrustSelected = false;
       this.GlutenFreBrocliChedar = false;
       this.GlutenFreeCauluflowerCrust = false;
+      this.CheckValus()
 
 
     } else if (crust == "ThinCrust") {
@@ -1898,11 +2112,13 @@ export class Item_infoPage {
       this.SelectedCrust = "ThinCrust"
       this.SelectedCrustShow = "Thin Crust"
       this.CalculatePizzaPrice();
+      this.CurstPriceeeee=0;
       this.RegularCrustSelectd = false;
       this.ThinCrustSelcted = true;
       this.GlutenFreeCrustSelected = false;
       this.GlutenFreBrocliChedar = false;
       this.GlutenFreeCauluflowerCrust = false;
+      this.CheckValus()
 
 
     } else if (crust == "GlutenFreeCrust") {
@@ -1910,11 +2126,13 @@ export class Item_infoPage {
       this.SelectedCrust = "GlutenFreeCrust"
       this.SelectedCrustShow = "Gluten Free Crust"
       this.CalculatePizzaPrice();
+      this.CurstPriceeeee=4.00
       this.RegularCrustSelectd = false;
       this.ThinCrustSelcted = false;
       this.GlutenFreeCrustSelected = true;
       this.GlutenFreBrocliChedar = false;
       this.GlutenFreeCauluflowerCrust = false;
+      this.CheckValus()
 
 
     } else if (crust == "GlutenFreeBrocluChedar") {
@@ -1922,11 +2140,13 @@ export class Item_infoPage {
       this.SelectedCrust = "GlutenFreeBrocluChedar"
       this.SelectedCrustShow = "Gluten Free Brocli & Chedar Crust"
       this.CalculatePizzaPrice();
+      this.CurstPriceeeee=4.00
       this.RegularCrustSelectd = false;
       this.ThinCrustSelcted = false;
       this.GlutenFreeCrustSelected = false;
       this.GlutenFreBrocliChedar = true;
       this.GlutenFreeCauluflowerCrust = false;
+      this.CheckValus()
 
 
     } else if (crust == "GlutenFreeCaluflower") {
@@ -1934,11 +2154,13 @@ export class Item_infoPage {
       this.SelectedCrust = "GlutenFreeCaluflower"
       this.SelectedCrustShow = "Gluten Free Cauliflower Crust"
       this.CalculatePizzaPrice();
+      this.CurstPriceeeee=4.00
       this.RegularCrustSelectd = false;
       this.ThinCrustSelcted = false;
       this.GlutenFreeCrustSelected = false;
       this.GlutenFreBrocliChedar = false;
       this.GlutenFreeCauluflowerCrust = true;
+      this.CheckValus()
 
 
     }
@@ -1955,11 +2177,13 @@ export class Item_infoPage {
     this.MozzeralSelected = false;
     this.GoatCheseSeletec = false;
     this.FetaCheeseSelected = true;
+    this.CheckValus()
   }
 
   chnageFetaToppngs() {
     this.showScroll = false;
     this.showScrollFeta = true;
+    this.CheckValus()
 
   }
   chnageToppingMoz() {
@@ -1969,11 +2193,13 @@ export class Item_infoPage {
     this.showScrollFeta = false;
     this.GoatCHeeseSelected = false;
     this.SelectedPreferedGoatCheesePriceBool = false;
+    this.CheckValus()
 
 
     this.MozzeralSelected = true;
     this.GoatCheseSeletec = false;
     this.FetaCheeseSelected = false;
+    this.CheckValus()
 
   }
 
@@ -1987,6 +2213,7 @@ export class Item_infoPage {
     this.MozzeralSelected = false;
     this.GoatCheseSeletec = true;
     this.FetaCheeseSelected = false;
+    this.CheckValus()
 
 
   }
@@ -2001,6 +2228,7 @@ export class Item_infoPage {
     this.MeatSelctedMaiNmenue = false;
     this.VegetablesSelectedMainMenue = false;
     this.SauceSelectedMainMenue = false;
+    this.CheckValus()
 
   }
   ChnageSauceMainMenue() {
@@ -2011,12 +2239,14 @@ export class Item_infoPage {
     this.CheeseMenueSelected = false;
     this.MozzerlaCheeseSelected = false;
     this.SelectedPreferedMozCheesePriceBool = false;
+    this.CheckValus()
 
 
     this.CheeseSelectedMainMenue = false;
     this.MeatSelctedMaiNmenue = false;
     this.VegetablesSelectedMainMenue = false;
     this.SauceSelectedMainMenue = true;
+    this.CheckValus()
 
   }
 
@@ -2032,6 +2262,7 @@ export class Item_infoPage {
     this.MeatSelctedMaiNmenue = false;
     this.VegetablesSelectedMainMenue = true;
     this.SauceSelectedMainMenue = false;
+    this.CheckValus()
 
   }
 
@@ -2048,6 +2279,7 @@ export class Item_infoPage {
     this.MeatSelctedMaiNmenue = true;
     this.VegetablesSelectedMainMenue = false;
     this.SauceSelectedMainMenue = false;
+    this.CheckValus()
 
   }
   changePizzaPrie(size) {
@@ -2061,6 +2293,9 @@ export class Item_infoPage {
       this.MediumPizzaChecked = false;
       this.LargePizzaChecked = false;
       this.JumboPizzaChecked = false;
+      this.ExtraToppingPrice = 0.90;
+      this.GoatCheesePrice = 1.65;
+      this.CheckValus()
 
     } else if (size === "Small") {
       this.PizzaPriceBySize = this.Pizza.SmallPrice;
@@ -2072,6 +2307,9 @@ export class Item_infoPage {
       this.MediumPizzaChecked = false;
       this.LargePizzaChecked = false;
       this.JumboPizzaChecked = false;
+      this.ExtraToppingPrice = 1.40;
+      this.GoatCheesePrice = 1.95;
+      this.CheckValus()
 
     } else if (size === "Medium") {
       this.PizzaPriceBySize = this.Pizza.MediumPrice;
@@ -2083,6 +2321,9 @@ export class Item_infoPage {
       this.MediumPizzaChecked = true;
       this.LargePizzaChecked = false;
       this.JumboPizzaChecked = false;
+      this.ExtraToppingPrice = 1.95;
+      this.GoatCheesePrice = 2.20;
+      this.CheckValus()
 
     } else if (size === "Large") {
       this.PizzaPriceBySize = this.Pizza.LargePrice;
@@ -2094,6 +2335,9 @@ export class Item_infoPage {
       this.MediumPizzaChecked = false;
       this.LargePizzaChecked = true;
       this.JumboPizzaChecked = false;
+      this.ExtraToppingPrice = 2.25;
+      this.GoatCheesePrice = 2.75;
+      this.CheckValus()
 
 
 
@@ -2107,6 +2351,9 @@ export class Item_infoPage {
       this.MediumPizzaChecked = false;
       this.LargePizzaChecked = false;
       this.JumboPizzaChecked = true;
+      this.ExtraToppingPrice = 3.00;
+      this.GoatCheesePrice = 3.05;
+      this.CheckValus()
 
 
 
@@ -2129,6 +2376,561 @@ export class Item_infoPage {
   AddMorePizza() {
     this.PizzaCount = this.PizzaCount + 1;
     this.CalculatePizzaPrice();
+  }
+
+  CheckValus() {
+
+    this.PizzaSize = this.SelectedSize
+    this.PizzaCountLast = this.PizzaCount;
+    this.SelecteFiunalPizzaCrust = this.SelectedCrustShow;
+
+
+    if (this.MozerellaCheeseNone == true) {
+      this.MozeraellaStaus = "None";
+      this.FinalMozPrice=0;
+    } else if (this.MozzerlaRefualr == true) {
+      this.MozeraellaStaus = "Regular";
+      this.FinalMozPrice=0;
+
+    } else if (this.Mozerealla30Extra == true) {
+      this.MozeraellaStaus = "30PercentExra";
+      this.FinalMozPrice=this.thriotyCheesePrice;
+
+    } else if (this.Mozeraella50Extra == true) {
+      this.MozeraellaStaus = "50Extra";
+      this.FinalMozPrice=this.fiftyCheesePricve;
+
+    } else if (this.MozeralaDoublle == true) {
+      this.MozeraellaStaus = "Double";
+      this.FinalMozPrice=this.DoubleCheesePrice;
+
+    }
+
+    if (this.MozzSideSelectedWhole == true) {
+      this.MozerellaSide = "Whole"
+      this.MozerllaCount=1;
+
+    } else if (this.MozzSideSlectLeft == true) {
+      this.MozerellaSide = "Left"
+      this.MozerllaCount=1;
+
+    } else if (this.MozzerllasideRight == true) {
+      this.MozerellaSide = "Right"
+      this.MozerllaCount=1;
+
+    } 
+
+    if (this.GoatCheeeseSelectedNone == true) {
+      this.GoatCheeseSide = "None"
+      this.GoatCheseCount=0;
+
+    } else if (this.GoatCheeeseSelectedWhole == true) {
+      this.GoatCheeseSide = "Whole"
+      this.GoatCheseCount=1;
+
+    } else if (this.GoatCheeeseSlectLeft == true) {
+      this.GoatCheeseSide = "Left"
+      this.GoatCheseCount=1;
+
+    } else if (this.GoatCheeesesideRight == true) {
+      this.GoatCheeseSide = "Right"
+      this.GoatCheseCount=1;
+
+    }
+
+    if (this.FetaCheeseNoneSelcted == true) {
+      this.FetaCheeseSide = "None"
+      this.FetaCeseCount=0;
+      
+
+    } else if (this.FetaHCeeseWholeSelcted == true) {
+      this.FetaCheeseSide = "Whole"
+      this.FetaCeseCount=1;
+
+    } else if (this.FetaCheeseLEftSelected == true) {
+      this.FetaCheeseSide = "Left"
+      this.FetaCeseCount=1;
+
+    } else if (this.FetaCHeeseRightSelected == true) {
+      this.FetaCheeseSide = "Right"
+      this.FetaCeseCount=1;
+
+    }
+
+    if (this.HamNone == true) {
+      this.HamSide = "None"
+      this.HamSideCount=0;
+
+    } else if (this.HamWhole == true) {
+      this.HamSide = "Whole"
+      this.HamSideCount=1;
+
+    } else if (this.HamLeft == true) {
+      this.HamSide = "Left"
+      this.HamSideCount=1;
+
+    } else if (this.HamRight == true) {
+      this.HamSide = "Right"
+      this.HamSideCount=1;
+
+    }
+
+
+    if (this.SalamiNone == true) {
+      this.SalamiSide = "None"
+      this.SalamiSideCount=0;
+
+    } else if (this.SalamiWhole == true) {
+      this.SalamiSide = "Whole"
+      this.SalamiSideCount=1;
+
+    } else if (this.SalamiLeft == true) {
+      this.SalamiSide = "Left"
+      this.SalamiSideCount=1;
+
+    } else if (this.SalamiRight == true) {
+      this.SalamiSide = "Right"
+      this.SalamiSideCount=1;
+
+    }
+
+
+    if (this.CrumBeaconeNone == true) {
+      this.CurmbelBeconSide = "None"
+      this.CurmbelBeconSideCount=0;
+
+    } else if (this.CrumBeacoWhole == true) {
+      this.CurmbelBeconSide = "Whole"
+      this.CurmbelBeconSideCount=1;
+
+    } else if (this.CrumBeaconLeft == true) {
+      this.CurmbelBeconSide = "Left"
+      this.CurmbelBeconSideCount=1;
+
+    } else if (this.CrumRight == true) {
+      this.CurmbelBeconSide = "Right"
+      this.CurmbelBeconSideCount=1;
+
+    }
+
+
+
+    if (this.SlicedBeaconNone == true) {
+      this.SlicedBeaconSide = "None"
+      this.SlicedBeaconSideCount=0;
+
+    } else if (this.SliceBeaconeWhole == true) {
+      this.SlicedBeaconSide = "Whole"
+      this.SlicedBeaconSideCount=1;
+
+    } else if (this.SlicedBeaconLeft == true) {
+      this.SlicedBeaconSide = "Left"
+      this.SlicedBeaconSideCount=1;
+
+    } else if (this.SlicedbeaconRight == true) {
+      this.SlicedBeaconSide = "Right"
+      this.SlicedBeaconSideCount=1;
+
+    }
+
+
+    if (this.PeporniNone == true) {
+      this.peporoniSide = "None"
+      this.peporoniSideCount=0;
+
+    } else if (this.PeporoniWhole == true) {
+      this.peporoniSide = "Whole"
+      this.peporoniSideCount=1;
+
+    } else if (this.PeporiniLeft == true) {
+      this.peporoniSide = "Left"
+      this.peporoniSideCount=1;
+
+    } else if (this.PeporoniRight == true) {
+      this.peporoniSide = "Right"
+      this.peporoniSideCount=1;
+
+    }
+
+    if (this.ItalianSuageNone == true) {
+      this.ItalinSausgeSide = "None"
+      this.ItalinSausgeSideCount=0;
+
+    } else if (this.ItalinSausgeWhole == true) {
+      this.ItalinSausgeSide = "Whole"
+      this.ItalinSausgeSideCount=1;
+
+    } else if (this.ItalinSausgeLeft == true) {
+      this.ItalinSausgeSide = "Left"
+      this.ItalinSausgeSideCount=1;
+
+    } else if (this.ItalinSausgeRight == true) {
+      this.ItalinSausgeSide = "Right"
+      this.ItalinSausgeSideCount=1;
+
+    }
+
+    if (this.GroundBEefNone == true) {
+      this.GroundBeefSide = "None"
+      this.GroundBeefSideCount=0;
+
+    } else if (this.GroundBeefWhole == true) {
+      this.GroundBeefSide = "Whole"
+      this.GroundBeefSideCount=1;
+
+    } else if (this.GroundBeefLeft == true) {
+      this.GroundBeefSide = "Left"
+      this.GroundBeefSideCount=1;
+
+    } else if (this.GroundBeefRight == true) {
+      this.GroundBeefSide = "Right"
+      this.GroundBeefSideCount=1;
+
+    }
+
+
+    if (this.SeasonChickenNone == true) {
+      this.SeasonChickensIde = "None"
+      this.SeasonChickensIdeCount=0;
+
+    } else if (this.SeasonChiekneWhole == true) {
+      this.SeasonChickensIde = "Whole"
+      this.SeasonChickensIdeCount=1;
+
+    } else if (this.SeasonCheinLeft == true) {
+      this.SeasonChickensIde = "Left"
+      this.SeasonChickensIdeCount=1;
+
+    } else if (this.SeasonedChienRiht == true) {
+      this.SeasonChickensIde = "Right"
+      this.SeasonChickensIdeCount=1;
+
+    }
+
+    if (this.ChorizoNone == true) {
+      this.ChorizoSide = "None"
+      this.ChorizoSideCount=0;
+
+    } else if (this.ChorizoWhole == true) {
+      this.ChorizoSide = "Whole"
+      this.ChorizoSideCount=1;
+
+    } else if (this.ChorizoLeft == true) {
+      this.ChorizoSide = "Left"
+      this.ChorizoSideCount=1;
+
+    } else if (this.ChorizoRight == true) {
+      this.ChorizoSide = "Right"
+      this.ChorizoSideCount=1;
+
+    }
+
+
+    if (this.MushroomsoNone == true) {
+      this.MushrromSude = "None"
+      this.MushrromSudeCount=0;
+
+    } else if (this.MushroomsWhole == true) {
+      this.MushrromSude = "Whole"
+      this.MushrromSudeCount=1;
+
+    } else if (this.MushroomsLeft == true) {
+      this.MushrromSude = "Left"
+      this.MushrromSudeCount=1;
+
+    } else if (this.MushroomsRight == true) {
+      this.MushrromSude = "Right"
+      this.MushrromSudeCount=1;
+
+    }
+
+
+
+    if (this.RedOnionsoNone == true) {
+      this.RedonionSide = "None"
+      this.RedonionSideCount=0;
+
+    } else if (this.RedOnionWhole == true) {
+      this.RedonionSide = "Whole"
+      this.RedonionSideCount=1;
+
+    } else if (this.RedOnionLeft == true) {
+      this.RedonionSide = "Left"
+      this.RedonionSideCount=1;
+
+    } else if (this.RedOnionRight == true) {
+      this.RedonionSide = "Right"
+      this.RedonionSideCount=1;
+
+    }
+
+    if (this.GreenPepoNone == true) {
+      this.greeenPeperSide = "None"
+      this.greeenPeperSideCount=0;
+
+    } else if (this.GreenPepWhole == true) {
+      this.greeenPeperSide = "Whole"
+      this.greeenPeperSideCount=1;
+
+    } else if (this.GreenPepLeft == true) {
+      this.greeenPeperSide = "Left"
+      this.greeenPeperSideCount=1;
+
+    } else if (this.GreenPepRight == true) {
+      this.greeenPeperSide = "Right"
+      this.greeenPeperSideCount=1;
+
+    }
+
+
+    if (this.TomatoeNone == true) {
+      this.TomatoeSide = "None"
+      this.TomatoeSideCount=0;
+
+    } else if (this.TomatoeWhole == true) {
+      this.TomatoeSide = "Whole"
+      this.TomatoeSideCount=1;
+
+    } else if (this.TomatoeLeft == true) {
+      this.TomatoeSide = "Left"
+      this.TomatoeSideCount=1;
+
+    } else if (this.TomatoeRight == true) {
+      this.TomatoeSide = "Right"
+      this.TomatoeSideCount=1;
+
+    }
+
+
+    if (this.TOlivesNone == true) {
+      this.OlivesIDe = "None"
+      this.OlivesIDeCount=0;
+
+    } else if (this.TOlivesWhole == true) {
+      this.OlivesIDe = "Whole"
+      this.OlivesIDeCount=1;
+
+    } else if (this.TOlivesLeft == true) {
+      this.OlivesIDe = "Left"
+      this.OlivesIDeCount=1;
+
+    } else if (this.TOlivesRight == true) {
+      this.OlivesIDe = "Right"
+      this.OlivesIDeCount=1;
+
+    }
+
+
+    
+    if (this.HotPeperNone == true) {
+      this.HotpperpSide = "None"
+      this.HotpperpSideCount=0;
+
+    } else if (this.HotPeperWhole == true) {
+      this.HotpperpSide = "Whole"
+      this.HotpperpSideCount=1;
+
+    } else if (this.HotPeperLeft == true) {
+      this.HotpperpSide = "Left"
+      this.HotpperpSideCount=1;
+
+    } else if (this.HotPeperRight == true) {
+      this.HotpperpSide = "Right"
+      this.HotpperpSideCount=1;
+
+    }
+
+
+    if (this.JalapenoNone == true) {
+      this.JalapenoSide = "None"
+      this.JalapenoSideCount=0;
+
+    } else if (this.JalapenoWhole == true) {
+      this.JalapenoSide = "Whole"
+      this.JalapenoSideCount=1;
+
+    } else if (this.JalapenoLeft == true) {
+      this.JalapenoSide = "Left"
+      this.JalapenoSideCount=1;
+
+    } else if (this.JalapenoRight == true) {
+      this.JalapenoSide = "Right"
+      this.JalapenoSideCount=1;
+
+    }
+
+
+    if (this.PineAppleNone == true) {
+      this.PineAppelSude = "None"
+      this.PineAppelSudeCount=0;
+
+    } else if (this.PineAppleWhole == true) {
+      this.PineAppelSude = "Whole"
+      this.PineAppelSudeCount=1;
+
+    } else if (this.PineAppleLeft == true) {
+      this.PineAppelSude = "Left"
+      this.PineAppelSudeCount=1;
+
+    } else if (this.PineAppleRight == true) {
+      this.PineAppelSude = "Right"
+      this.PineAppelSudeCount=1;
+
+    }
+
+    if (this.BBQSauceNone == true) {
+      this.BBQSide = "None"
+      this.BBQSideCount=0;
+
+    } else if (this.BBQSauceWhole == true) {
+      this.BBQSideCount=1;
+      this.BBQSide = "Whole"
+
+    } else if (this.BBQSauceLeft == true) {
+      this.BBQSideCount=1;
+      this.BBQSide = "Left"
+
+    } else if (this.BBQSauceRight == true) {
+      this.BBQSideCount=1;
+      this.BBQSide = "Right"
+
+    }
+
+
+
+    if (this.DonairNone == true) {
+      this.DonairSide = "None"
+      this.DonairSideCount=0;
+      
+
+    } else if (this.DonairWhole == true) {
+      this.DonairSide = "Whole"
+      this.DonairSideCount=1;
+
+    } else if (this.DonairLeft == true) {
+      this.DonairSide = "Left"
+      this.DonairSideCount=1;
+
+    } else if (this.DonairRight == true) {
+      this.DonairSide = "Right"
+      this.DonairSideCount=1;
+
+    }
+
+    
+    if (this.PizzaSauceNone == true) {
+      this.PizzaSaiceSode = "None"
+      this.PizzaSaiceSodeCount=0;
+
+    } else if (this.PizzaSauceWhole == true) {
+      this.PizzaSaiceSode = "Whole"
+      this.PizzaSaiceSodeCount=1;
+
+    } else if (this.PizzaSauceLeft == true) {
+      this.PizzaSaiceSode = "Left"
+      this.PizzaSaiceSodeCount=1;
+
+    } else if (this.PizzaSauceRight == true) {
+      this.PizzaSaiceSode = "Right"
+      this.PizzaSaiceSodeCount=1;
+
+    }
+
+
+    if(this.SoloPizzaChecked == true){
+      this.FinalDoughPrice=5.00;
+    }else if (this.SmallPizzaChecked == true){
+      this.FinalDoughPrice=10.56;
+
+    }else if(this.MediumPizzaChecked == true){
+      this.FinalDoughPrice=15.90;
+
+    }else if(this.LargePizzaChecked == true){
+      this.FinalDoughPrice=20.99;
+
+    }else if (this.JumboPizzaChecked == true){
+      this.FinalDoughPrice=30.11;
+
+    }
+
+  
+    this.FinalToppingPrice=this.HamSideCount+this.SalamiSideCount+this.CurmbelBeconSideCount+this.SlicedBeaconSideCount+this.peporoniSideCount+this.ItalinSausgeSideCount+this.GroundBeefSideCount+this.SeasonChickensIdeCount+this.ChorizoSideCount+this.MushrromSudeCount+this.RedonionSideCount+this.greeenPeperSideCount+this.TomatoeSideCount+this.OlivesIDeCount+this.HotpperpSideCount+this.JalapenoSideCount+this.PineAppelSudeCount+this.BBQSideCount+this.DonairSideCount+this.PizzaSaiceSodeCount;
+    this.FinalToppingPrice=this.FinalToppingPrice*this.ExtraToppingPrice;
+    this.GoatChesePrice=this.GoatCheesePrice*this.GoatCheseCount;
+    this.MozzerellaPrice=this.FinalMozPrice*this.MozerllaCount;
+
+
+
+
+
+
+    
+
+    console.log("Pizza Size",this.PizzaSize);
+    console.log("Pizza Count",this.PizzaCountLast);
+    console.log("Selected Crust ",this.SelecteFiunalPizzaCrust);
+    console.log("Mozeeral Stays",this.MozeraellaStaus);
+
+    console.log("Mozeralla Side",this.MozerellaSide);
+    console.log("Goat Cheewse Side",this.GoatCheeseSide);
+    console.log("Feta CHeese Side",this.FetaCheeseSide);
+    console.log("Ham Side ",this.HamSide);
+    console.log("Salami Side",this.SalamiSide);
+
+    console.log("C Beacon Side",this.CurmbelBeconSide);
+    console.log("Sliced Beacon Side",this.SlicedBeaconSide);
+    console.log("Peporni Side",this.peporoniSide);
+
+    console.log("ItalinSausgeSide Side",this.ItalinSausgeSide);
+    console.log("Ground BEef Side",this.GroundBeefSide);
+
+    console.log("SeasonChickensIde Side",this.SeasonChickensIde);
+    console.log("ChorizoSide Side",this.ChorizoSide);
+    console.log("MushrromSude side",this.MushrromSude);
+
+    console.log("RedonionSide Side",this.RedonionSide);
+    console.log("greeenPeperSide Suide",this.greeenPeperSide);
+    console.log("toamote Siode",this.TomatoeSide);
+
+    console.log("Olive SIdfe",this.OlivesIDe);
+    console.log("Hot Peper SIde",this.HotpperpSide);
+    console.log("Japeneo Side",this.JalapenoSide);
+    console.log("Pine Appe Side",this.PineAppelSude);
+
+    console.log("BBq Sie",this.BBQSide);
+    console.log("Donair Side",this.DonairSide);
+    console.log("PizaCCause Siode",this.PizzaSaiceSode);
+    console.log("Crust price", this.CurstPriceeeee);
+    console.log("Sekected Toppings",this.FinalToppingPrice)
+    console.log("Final Mozeral Price",this.MozzerellaPrice)
+    console.log("Final Goat Price",this.GoatChesePrice)
+    console.log("Pizza Pirce",this.FinalDoughPrice)
+
+    
+    
+    this.FinalPizzaaaPrice=this.FinalToppingPrice+this.MozzerellaPrice+this.GoatChesePrice+this.FinalDoughPrice+this.CurstPriceeeee;
+    this.FinalPizzaaaPrice=this.FinalPizzaaaPrice*this.PizzaCountLast;
+    console.log("Pizzaa FInallll Price",this.FinalPizzaaaPrice)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
 
