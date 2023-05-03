@@ -60,7 +60,7 @@ export class Item_infoPage {
   private PizzaSauce: any;
   private Chorizo: any;
   private SauceMainMenueSelected: any;
-  private CurstPriceeeee : any;
+  private CurstPriceeeee: any;
 
 
   private SoloPizzaChecked: any;
@@ -330,10 +330,10 @@ export class Item_infoPage {
   private HotpperpSide: any;
   private JalapenoSide: any;
   private PineAppelSude: any;
-  private BBQSide : any;
-  private DonairSide : any;
-  private PizzaSaiceSode : any
-  private FinalToppingPrice : any;
+  private BBQSide: any;
+  private DonairSide: any;
+  private PizzaSaiceSode: any
+  private FinalToppingPrice: any;
 
   private HamSideCount: any;
   private SalamiSideCount: any;
@@ -352,21 +352,100 @@ export class Item_infoPage {
   private HotpperpSideCount: any;
   private JalapenoSideCount: any;
   private PineAppelSudeCount: any;
-  private BBQSideCount : any;
-  private DonairSideCount : any;
-  private PizzaSaiceSodeCount : any
+  private BBQSideCount: any;
+  private DonairSideCount: any;
+  private PizzaSaiceSodeCount: any
 
-  private FinalFetaPrice : any;
-  private GoatChesePrice : any;
-  private MozzerellaPrice : any;
+  private FinalFetaPrice: any;
+  private GoatChesePrice: any;
+  private MozzerellaPrice: any;
 
-  private MozerllaCount : any;
-  private GoatCheseCount : any;
-  private FetaCeseCount : any;
-  private FinalMozPrice : any;
-  private FinalPizzaaaPrice : any;
-  private FinalPizzaMianPrice : any;
-  private FinalDoughPrice : any;
+  private MozerllaCount: any;
+  private GoatCheseCount: any;
+  private FetaCeseCount: any;
+  private FinalMozPrice: any;
+  private FinalPizzaaaPrice: any;
+  private FinalPizzaMianPrice: any;
+  private FinalDoughPrice: any;
+  private SelectedToppings: any;
+  private SelectedTopingsArraay: Array<any> = [];
+
+  private SelectedCheeseToppings: any;
+  private SelectedTopingsArraayCheese: Array<any> = [];
+
+  private SelectedVegToppings: any;
+  private SelectedTopingsArraayVege: Array<any> = [];
+
+  private SelectedSauceToppings: any;
+  private SelectedTopingsArraaySauce: Array<any> = [];
+
+
+  private FinalPizzaData: {
+    results: any;
+    PizzaID: string;
+    PizzaName: string;
+    ImageURL: string;
+    Description: string;
+    SoloPrice: string;
+    SmallPrice: string;
+    MediumPrice: string;
+    LargePrice: string;
+    JumboPrice: string;
+    CrustType: boolean;
+    MozerallCheese: boolean;
+    MozerallCheese30: boolean;
+    MozerallCheese50: boolean;
+    MozerallCheese100: boolean;
+    GoatCheese: boolean;
+    FetaCheese: boolean;
+    Ham: boolean;
+    Salami: boolean;
+    CrumbleBeacon: boolean;
+    SlicedBeacon: boolean;
+    Peporoni: boolean;
+    ItalianSausge: boolean;
+    GoundBeef: boolean;
+    SeasonedChicken: boolean;
+    FreshMushRooms: boolean;
+    RedOnions: boolean;
+    GreenPepper: boolean;
+    Tomatoe: boolean;
+    Olives: boolean;
+    HotPepper: boolean;
+    Jalapeno: boolean;
+    PineApple: boolean;
+    BBqsauce: boolean;
+    DonairSauce: boolean;
+    PizzaSauce: boolean;
+    Chorizo: boolean;
+    MozerallCheeseSide: String;
+    GoatCheeseSide: String;
+    FetaCheeseSide: String;
+    HamSide: String;
+    SalamiSide: String;
+    CrumbleBeaconSide: String;
+    SlicedBeaconSide: String;
+    PeporoniSide: String;
+    ItalianSausgeSide: String;
+    GoundBeefSide: String;
+    SeasonedChickenSide: String;
+    FreshMushRoomsSide: String;
+    RedOnionsSide: String;
+    GreenPepperSide: String;
+    TomatoeSide: String;
+    OlivesSide: String;
+    HotPepperSide: String;
+    JalapenoSide: String;
+    PineAppleSide: String;
+    BBqsauceSide: String;
+    DonairSauceSide: String;
+    PizzaSauceSide: String;
+    ChorizoSide: String;
+    FianlOrderPrice: String;
+  }
+
+
+
 
 
 
@@ -398,8 +477,9 @@ export class Item_infoPage {
 
   }
   ngOnInit(): void {
-    
-    this.LoadPizzaById();
+
+
+
     this.PizzaCount = 1;
     this.PizzaPriceByCrust = 0;
     this.PizzaPriceByToppings = 0;
@@ -457,7 +537,7 @@ export class Item_infoPage {
     this.SalamiLeft = false;
     this.SalamiRight = false;
     this.SalamiWhole = false;
-    this.FinalPizzaaaPrice=0.0;
+    this.FinalPizzaaaPrice = 0.0;
 
 
 
@@ -523,7 +603,7 @@ export class Item_infoPage {
     this.TomatoeRight = false;
     this.TomatoeWhole = false;
 
-    this.MozerllaCount=0;
+    this.MozerllaCount = 0;
 
     this.TOlivesNone = true;
     this.TOlivesLeft = false;
@@ -584,8 +664,10 @@ export class Item_infoPage {
 
     this.ExtraToppingPrice = 1.95;
     this.GoatCheesePrice = 2.20;
-    this.CurstPriceeeee=0.0
-    this.CheckValus()
+    this.CurstPriceeeee = 0.0
+    this.LoadPizzaById();
+
+
 
 
 
@@ -942,7 +1024,7 @@ export class Item_infoPage {
   async LoadPizzaById() {
 
 
-    this.PizzaService.getPizzaDetailsById(this.PizzaID).subscribe(res => {
+    await this.PizzaService.getPizzaDetailsById(this.PizzaID).subscribe(res => {
 
       this.Pizza = res[0]
       console.log(this.Pizza, "Firsdt")
@@ -956,7 +1038,9 @@ export class Item_infoPage {
       this.SelectedPreferedMozCheesePriceBool = false;
       this.CheeseMenueSelected = false;
       this.MozzerlaCheeseSelected = false;
-      
+      this.OverideValues()
+      this.CheckValus()
+
 
 
     });
@@ -1058,7 +1142,7 @@ export class Item_infoPage {
 
     } else if (side == "None") {
       this.SalamiSelectedSide = "None"
-      this.SalamiSelected = false;
+      this.SalamiSelected = true;
       this.SalamiNone = true;
       this.SalamiLeft = false;
       this.SalamiRight = false;
@@ -1438,7 +1522,7 @@ export class Item_infoPage {
       this.GreenPepSelectedSide = "None"
       this.GreenPepSelctedTrue = false;
       this.GreenPepoNone = true;
-      this.GreenPepLeft = true;
+      this.GreenPepLeft = false;
       this.GreenPepRight = false;
       this.GreenPepWhole = false;
       this.CheckValus()
@@ -1519,10 +1603,10 @@ export class Item_infoPage {
     } else if (side == "None") {
       this.TOlivesSelectedSide = "None"
       this.TOlivesSelctedTrue = false;
-      this.TOlivesNone = false;
+      this.TOlivesNone = true;
       this.TOlivesLeft = false;
       this.TOlivesRight = false;
-      this.TOlivesWhole = true;
+      this.TOlivesWhole = false;
       this.CheckValus()
 
 
@@ -2098,7 +2182,7 @@ export class Item_infoPage {
       this.SelectedCrust = "Regualar"
       this.SelectedCrustShow = "Regular Crust"
       this.CalculatePizzaPrice();
-      this.CurstPriceeeee=0;
+      this.CurstPriceeeee = 0;
       this.RegularCrustSelectd = true;
       this.ThinCrustSelcted = false;
       this.GlutenFreeCrustSelected = false;
@@ -2112,7 +2196,7 @@ export class Item_infoPage {
       this.SelectedCrust = "ThinCrust"
       this.SelectedCrustShow = "Thin Crust"
       this.CalculatePizzaPrice();
-      this.CurstPriceeeee=0;
+      this.CurstPriceeeee = 0;
       this.RegularCrustSelectd = false;
       this.ThinCrustSelcted = true;
       this.GlutenFreeCrustSelected = false;
@@ -2126,7 +2210,7 @@ export class Item_infoPage {
       this.SelectedCrust = "GlutenFreeCrust"
       this.SelectedCrustShow = "Gluten Free Crust"
       this.CalculatePizzaPrice();
-      this.CurstPriceeeee=4.00
+      this.CurstPriceeeee = 4.00
       this.RegularCrustSelectd = false;
       this.ThinCrustSelcted = false;
       this.GlutenFreeCrustSelected = true;
@@ -2140,7 +2224,7 @@ export class Item_infoPage {
       this.SelectedCrust = "GlutenFreeBrocluChedar"
       this.SelectedCrustShow = "Gluten Free Brocli & Chedar Crust"
       this.CalculatePizzaPrice();
-      this.CurstPriceeeee=4.00
+      this.CurstPriceeeee = 4.00
       this.RegularCrustSelectd = false;
       this.ThinCrustSelcted = false;
       this.GlutenFreeCrustSelected = false;
@@ -2154,7 +2238,7 @@ export class Item_infoPage {
       this.SelectedCrust = "GlutenFreeCaluflower"
       this.SelectedCrustShow = "Gluten Free Cauliflower Crust"
       this.CalculatePizzaPrice();
-      this.CurstPriceeeee=4.00
+      this.CurstPriceeeee = 4.00
       this.RegularCrustSelectd = false;
       this.ThinCrustSelcted = false;
       this.GlutenFreeCrustSelected = false;
@@ -2378,7 +2462,262 @@ export class Item_infoPage {
     this.CalculatePizzaPrice();
   }
 
+  ConvertToString() {
+    this.SelectedToppings = this.SelectedTopingsArraay.join(", ")
+    this.SelectedSauceToppings = this.SelectedTopingsArraaySauce.join(", ")
+    this.SelectedVegToppings = this.SelectedTopingsArraayVege.join(", ")
+    this.SelectedCheeseToppings = this.SelectedTopingsArraayCheese.join(", ")
+  }
+
+  OverideValues() {
+    console.log(this.Pizza.MozerallCheese, "Firsdt222")
+
+    if (this.Pizza.CrustType == "Regular") {
+      this.RegularCrustSelectd = true;
+      this.ThinCrustSelcted = false;
+      this.GlutenFreeCrustSelected = false;
+      this.GlutenFreBrocliChedar = false;
+      this.GlutenFreeCauluflowerCrust = false;
+      this.changePizzaCrust('Regualar');
+    } else if (this.Pizza.CrustType == "Thin") {
+      this.RegularCrustSelectd = false;
+      this.ThinCrustSelcted = true;
+      this.GlutenFreeCrustSelected = false;
+      this.GlutenFreBrocliChedar = false;
+      this.GlutenFreeCauluflowerCrust = false;
+      this.changePizzaCrust('ThinCrust');
+
+    } else if (this.Pizza.CrustType == "Gluten") {
+      this.RegularCrustSelectd = false;
+      this.ThinCrustSelcted = false;
+      this.GlutenFreeCrustSelected = true;
+      this.GlutenFreBrocliChedar = false;
+      this.GlutenFreeCauluflowerCrust = false;
+      this.changePizzaCrust('GlutenFreeCrust');
+
+    } else if (this.Pizza.CrustType == "GlutenBroc") {
+      this.RegularCrustSelectd = false;
+      this.ThinCrustSelcted = false;
+      this.GlutenFreeCrustSelected = false;
+      this.GlutenFreBrocliChedar = true;
+      this.GlutenFreeCauluflowerCrust = false;
+      this.changePizzaCrust('GlutenFreeBrocluChedar');
+
+    } else if (this.Pizza.CrustType == "GlutenCali") {
+      this.RegularCrustSelectd = false;
+      this.ThinCrustSelcted = false;
+      this.GlutenFreeCrustSelected = false;
+      this.GlutenFreBrocliChedar = false;
+      this.GlutenFreeCauluflowerCrust = true;
+      this.changePizzaCrust('GlutenFreeCaluflower');
+
+    }
+
+    if (this.Pizza.MozerallCheese == true) {
+      this.MozzerlaRefualr = true;
+      this.MozerellaCheeseNone = false;
+      this.MozzSideSelectedWhole = true;
+      this.SelectedToppings = "Cheese"
+      this.SelectedTopingsArraayCheese.push("Cheese")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.GoatCheese == true) {
+      this.GoatCheeeseSelectedNone = false;
+      this.GoatCheeeseSelectedWhole = true;
+      this.SelectedTopingsArraayCheese.push("Goat Cheese")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.FetaCheese == true) {
+      this.FetaCheeseNoneSelcted = false;
+      this.FetaHCeeseWholeSelcted = true;
+      this.SelectedTopingsArraayCheese.push("Feta Cheese")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.Ham == true) {
+      this.HamNone = false;
+      this.HamWhole = true;
+      this.SelectedTopingsArraay.push("Ham")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.Salami == true) {
+      this.SalamiNone = false;
+      this.SalamiWhole = true;
+      this.SelectedTopingsArraay.push("Salami")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.CrumbleBeacon == true) {
+      this.CrumBeaconeNone = false;
+      this.CrumBeacoWhole = true;
+      this.SelectedTopingsArraay.push("Crumbled Bacon")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.SlicedBeacon == true) {
+      this.SlicedBeaconNone = false;
+      this.SliceBeaconeWhole = true;
+      this.SelectedTopingsArraay.push("Sliced Bacon")
+      this.ConvertToString()
+
+    }
+
+
+    if (this.Pizza.Peporoni == true) {
+      this.PeporniNone = false;
+      this.PeporoniWhole = true;
+      this.SelectedTopingsArraay.push("Pepperoni")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.ItalianSausge == true) {
+      this.ItalianSuageNone = false;
+      this.ItalinSausgeWhole = true;
+      this.SelectedTopingsArraay.push("Italian Sausage")
+      this.ConvertToString()
+
+    }
+
+
+    if (this.Pizza.GoundBeef == true) {
+      this.GroundBEefNone = false;
+      this.GroundBeefWhole = true;
+      this.SelectedTopingsArraay.push("Ground Beef")
+      this.ConvertToString()
+
+    }
+
+
+    if (this.Pizza.SeasonedChicken == true) {
+      this.SeasonChickenNone = false;
+      this.SeasonChiekneWhole = true;
+      this.SelectedTopingsArraay.push("Chicken")
+      this.ConvertToString()
+
+    }
+
+
+    if (this.Pizza.Chorizo == true) {
+      this.ChorizoNone = false;
+      this.ChorizoWhole = true;
+      this.SelectedTopingsArraay.push("Chorizo")
+      this.ConvertToString()
+
+    }
+
+
+
+
+    if (this.Pizza.FreshMushRooms == true) {
+      this.MushroomsoNone = false;
+      this.MushroomsWhole = true;
+      this.SelectedTopingsArraayVege.push("Mushrooms")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.RedOnions == true) {
+      this.RedOnionsoNone = false;
+      this.RedOnionWhole = true;
+      this.SelectedTopingsArraayVege.push("Red Onion")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.GreenPepper == true) {
+      this.GreenPepoNone = false;
+      this.GreenPepWhole = true;
+      this.SelectedTopingsArraayVege.push("Green Pepper")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.Tomatoe == true) {
+      this.TomatoeNone = false;
+      this.TomatoeWhole = true;
+      this.SelectedTopingsArraayVege.push("Tomatoe")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.Olives == true) {
+      this.TOlivesNone = false;
+      this.TOlivesWhole = true;
+      this.SelectedTopingsArraayVege.push("Olives")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.HotPepper == true) {
+      this.HotPeperNone = false;
+      this.HotPeperWhole = true;
+      this.SelectedTopingsArraayVege.push("Hot Pepper")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.Jalapeno == true) {
+      this.JalapenoNone = false;
+      this.JalapenoWhole = true;
+      this.SelectedTopingsArraayVege.push("Jalapeno")
+      this.ConvertToString()
+
+    }
+
+    if (this.Pizza.PineApple == true) {
+      this.PineAppleNone = false;
+      this.PineAppleWhole = true;
+      this.SelectedTopingsArraayVege.push("Pineapple")
+      this.ConvertToString()
+
+    }
+
+
+    if (this.Pizza.BBqsauce == true) {
+      this.BBQSauceNone = false;
+      this.BBQSauceWhole = true;
+      this.SelectedTopingsArraaySauce.push("BBQ Sauce")
+      this.ConvertToString()
+
+    }
+
+
+    if (this.Pizza.DonairSauce == true) {
+      this.DonairNone = false;
+      this.DonairWhole = true;
+      this.SelectedTopingsArraaySauce.push("Donair Sauce")
+      this.ConvertToString()
+
+    }
+
+
+    if (this.Pizza.PizzaSauce == true) {
+      this.PizzaSauceNone = false;
+      this.PizzaSauceWhole = true;
+      this.SelectedTopingsArraaySauce.push("Pizza Sauce")
+      this.ConvertToString()
+
+    }
+
+
+
+
+
+
+  }
+
   CheckValus() {
+
 
     this.PizzaSize = this.SelectedSize
     this.PizzaCountLast = this.PizzaCount;
@@ -2387,129 +2726,129 @@ export class Item_infoPage {
 
     if (this.MozerellaCheeseNone == true) {
       this.MozeraellaStaus = "None";
-      this.FinalMozPrice=0;
+      this.FinalMozPrice = 0;
     } else if (this.MozzerlaRefualr == true) {
       this.MozeraellaStaus = "Regular";
-      this.FinalMozPrice=0;
+      this.FinalMozPrice = 0;
 
     } else if (this.Mozerealla30Extra == true) {
       this.MozeraellaStaus = "30PercentExra";
-      this.FinalMozPrice=this.thriotyCheesePrice;
+      this.FinalMozPrice = this.thriotyCheesePrice;
 
     } else if (this.Mozeraella50Extra == true) {
       this.MozeraellaStaus = "50Extra";
-      this.FinalMozPrice=this.fiftyCheesePricve;
+      this.FinalMozPrice = this.fiftyCheesePricve;
 
     } else if (this.MozeralaDoublle == true) {
       this.MozeraellaStaus = "Double";
-      this.FinalMozPrice=this.DoubleCheesePrice;
+      this.FinalMozPrice = this.DoubleCheesePrice;
 
     }
 
     if (this.MozzSideSelectedWhole == true) {
       this.MozerellaSide = "Whole"
-      this.MozerllaCount=1;
+      this.MozerllaCount = 1;
 
     } else if (this.MozzSideSlectLeft == true) {
       this.MozerellaSide = "Left"
-      this.MozerllaCount=1;
+      this.MozerllaCount = 1;
 
     } else if (this.MozzerllasideRight == true) {
       this.MozerellaSide = "Right"
-      this.MozerllaCount=1;
+      this.MozerllaCount = 1;
 
-    } 
+    }
 
     if (this.GoatCheeeseSelectedNone == true) {
       this.GoatCheeseSide = "None"
-      this.GoatCheseCount=0;
+      this.GoatCheseCount = 0;
 
     } else if (this.GoatCheeeseSelectedWhole == true) {
       this.GoatCheeseSide = "Whole"
-      this.GoatCheseCount=1;
+      this.GoatCheseCount = 1;
 
     } else if (this.GoatCheeeseSlectLeft == true) {
       this.GoatCheeseSide = "Left"
-      this.GoatCheseCount=1;
+      this.GoatCheseCount = 1;
 
     } else if (this.GoatCheeesesideRight == true) {
       this.GoatCheeseSide = "Right"
-      this.GoatCheseCount=1;
+      this.GoatCheseCount = 1;
 
     }
 
     if (this.FetaCheeseNoneSelcted == true) {
       this.FetaCheeseSide = "None"
-      this.FetaCeseCount=0;
-      
+      this.FetaCeseCount = 0;
+
 
     } else if (this.FetaHCeeseWholeSelcted == true) {
       this.FetaCheeseSide = "Whole"
-      this.FetaCeseCount=1;
+      this.FetaCeseCount = 1;
 
     } else if (this.FetaCheeseLEftSelected == true) {
       this.FetaCheeseSide = "Left"
-      this.FetaCeseCount=1;
+      this.FetaCeseCount = 1;
 
     } else if (this.FetaCHeeseRightSelected == true) {
       this.FetaCheeseSide = "Right"
-      this.FetaCeseCount=1;
+      this.FetaCeseCount = 1;
 
     }
 
     if (this.HamNone == true) {
       this.HamSide = "None"
-      this.HamSideCount=0;
+      this.HamSideCount = 0;
 
     } else if (this.HamWhole == true) {
       this.HamSide = "Whole"
-      this.HamSideCount=1;
+      this.HamSideCount = 1;
 
     } else if (this.HamLeft == true) {
       this.HamSide = "Left"
-      this.HamSideCount=1;
+      this.HamSideCount = 1;
 
     } else if (this.HamRight == true) {
       this.HamSide = "Right"
-      this.HamSideCount=1;
+      this.HamSideCount = 1;
 
     }
 
 
     if (this.SalamiNone == true) {
       this.SalamiSide = "None"
-      this.SalamiSideCount=0;
+      this.SalamiSideCount = 0;
 
     } else if (this.SalamiWhole == true) {
       this.SalamiSide = "Whole"
-      this.SalamiSideCount=1;
+      this.SalamiSideCount = 1;
 
     } else if (this.SalamiLeft == true) {
       this.SalamiSide = "Left"
-      this.SalamiSideCount=1;
+      this.SalamiSideCount = 1;
 
     } else if (this.SalamiRight == true) {
       this.SalamiSide = "Right"
-      this.SalamiSideCount=1;
+      this.SalamiSideCount = 1;
 
     }
 
 
     if (this.CrumBeaconeNone == true) {
       this.CurmbelBeconSide = "None"
-      this.CurmbelBeconSideCount=0;
+      this.CurmbelBeconSideCount = 0;
 
     } else if (this.CrumBeacoWhole == true) {
       this.CurmbelBeconSide = "Whole"
-      this.CurmbelBeconSideCount=1;
+      this.CurmbelBeconSideCount = 1;
 
     } else if (this.CrumBeaconLeft == true) {
       this.CurmbelBeconSide = "Left"
-      this.CurmbelBeconSideCount=1;
+      this.CurmbelBeconSideCount = 1;
 
     } else if (this.CrumRight == true) {
       this.CurmbelBeconSide = "Right"
-      this.CurmbelBeconSideCount=1;
+      this.CurmbelBeconSideCount = 1;
 
     }
 
@@ -2517,130 +2856,130 @@ export class Item_infoPage {
 
     if (this.SlicedBeaconNone == true) {
       this.SlicedBeaconSide = "None"
-      this.SlicedBeaconSideCount=0;
+      this.SlicedBeaconSideCount = 0;
 
     } else if (this.SliceBeaconeWhole == true) {
       this.SlicedBeaconSide = "Whole"
-      this.SlicedBeaconSideCount=1;
+      this.SlicedBeaconSideCount = 1;
 
     } else if (this.SlicedBeaconLeft == true) {
       this.SlicedBeaconSide = "Left"
-      this.SlicedBeaconSideCount=1;
+      this.SlicedBeaconSideCount = 1;
 
     } else if (this.SlicedbeaconRight == true) {
       this.SlicedBeaconSide = "Right"
-      this.SlicedBeaconSideCount=1;
+      this.SlicedBeaconSideCount = 1;
 
     }
 
 
     if (this.PeporniNone == true) {
       this.peporoniSide = "None"
-      this.peporoniSideCount=0;
+      this.peporoniSideCount = 0;
 
     } else if (this.PeporoniWhole == true) {
       this.peporoniSide = "Whole"
-      this.peporoniSideCount=1;
+      this.peporoniSideCount = 1;
 
     } else if (this.PeporiniLeft == true) {
       this.peporoniSide = "Left"
-      this.peporoniSideCount=1;
+      this.peporoniSideCount = 1;
 
     } else if (this.PeporoniRight == true) {
       this.peporoniSide = "Right"
-      this.peporoniSideCount=1;
+      this.peporoniSideCount = 1;
 
     }
 
     if (this.ItalianSuageNone == true) {
       this.ItalinSausgeSide = "None"
-      this.ItalinSausgeSideCount=0;
+      this.ItalinSausgeSideCount = 0;
 
     } else if (this.ItalinSausgeWhole == true) {
       this.ItalinSausgeSide = "Whole"
-      this.ItalinSausgeSideCount=1;
+      this.ItalinSausgeSideCount = 1;
 
     } else if (this.ItalinSausgeLeft == true) {
       this.ItalinSausgeSide = "Left"
-      this.ItalinSausgeSideCount=1;
+      this.ItalinSausgeSideCount = 1;
 
     } else if (this.ItalinSausgeRight == true) {
       this.ItalinSausgeSide = "Right"
-      this.ItalinSausgeSideCount=1;
+      this.ItalinSausgeSideCount = 1;
 
     }
 
     if (this.GroundBEefNone == true) {
       this.GroundBeefSide = "None"
-      this.GroundBeefSideCount=0;
+      this.GroundBeefSideCount = 0;
 
     } else if (this.GroundBeefWhole == true) {
       this.GroundBeefSide = "Whole"
-      this.GroundBeefSideCount=1;
+      this.GroundBeefSideCount = 1;
 
     } else if (this.GroundBeefLeft == true) {
       this.GroundBeefSide = "Left"
-      this.GroundBeefSideCount=1;
+      this.GroundBeefSideCount = 1;
 
     } else if (this.GroundBeefRight == true) {
       this.GroundBeefSide = "Right"
-      this.GroundBeefSideCount=1;
+      this.GroundBeefSideCount = 1;
 
     }
 
 
     if (this.SeasonChickenNone == true) {
       this.SeasonChickensIde = "None"
-      this.SeasonChickensIdeCount=0;
+      this.SeasonChickensIdeCount = 0;
 
     } else if (this.SeasonChiekneWhole == true) {
       this.SeasonChickensIde = "Whole"
-      this.SeasonChickensIdeCount=1;
+      this.SeasonChickensIdeCount = 1;
 
     } else if (this.SeasonCheinLeft == true) {
       this.SeasonChickensIde = "Left"
-      this.SeasonChickensIdeCount=1;
+      this.SeasonChickensIdeCount = 1;
 
     } else if (this.SeasonedChienRiht == true) {
       this.SeasonChickensIde = "Right"
-      this.SeasonChickensIdeCount=1;
+      this.SeasonChickensIdeCount = 1;
 
     }
 
     if (this.ChorizoNone == true) {
       this.ChorizoSide = "None"
-      this.ChorizoSideCount=0;
+      this.ChorizoSideCount = 0;
 
     } else if (this.ChorizoWhole == true) {
       this.ChorizoSide = "Whole"
-      this.ChorizoSideCount=1;
+      this.ChorizoSideCount = 1;
 
     } else if (this.ChorizoLeft == true) {
       this.ChorizoSide = "Left"
-      this.ChorizoSideCount=1;
+      this.ChorizoSideCount = 1;
 
     } else if (this.ChorizoRight == true) {
       this.ChorizoSide = "Right"
-      this.ChorizoSideCount=1;
+      this.ChorizoSideCount = 1;
 
     }
 
 
     if (this.MushroomsoNone == true) {
       this.MushrromSude = "None"
-      this.MushrromSudeCount=0;
+      this.MushrromSudeCount = 0;
 
     } else if (this.MushroomsWhole == true) {
       this.MushrromSude = "Whole"
-      this.MushrromSudeCount=1;
+      this.MushrromSudeCount = 1;
 
     } else if (this.MushroomsLeft == true) {
       this.MushrromSude = "Left"
-      this.MushrromSudeCount=1;
+      this.MushrromSudeCount = 1;
 
     } else if (this.MushroomsRight == true) {
       this.MushrromSude = "Right"
-      this.MushrromSudeCount=1;
+      this.MushrromSudeCount = 1;
 
     }
 
@@ -2648,150 +2987,150 @@ export class Item_infoPage {
 
     if (this.RedOnionsoNone == true) {
       this.RedonionSide = "None"
-      this.RedonionSideCount=0;
+      this.RedonionSideCount = 0;
 
     } else if (this.RedOnionWhole == true) {
       this.RedonionSide = "Whole"
-      this.RedonionSideCount=1;
+      this.RedonionSideCount = 1;
 
     } else if (this.RedOnionLeft == true) {
       this.RedonionSide = "Left"
-      this.RedonionSideCount=1;
+      this.RedonionSideCount = 1;
 
     } else if (this.RedOnionRight == true) {
       this.RedonionSide = "Right"
-      this.RedonionSideCount=1;
+      this.RedonionSideCount = 1;
 
     }
 
     if (this.GreenPepoNone == true) {
       this.greeenPeperSide = "None"
-      this.greeenPeperSideCount=0;
+      this.greeenPeperSideCount = 0;
 
     } else if (this.GreenPepWhole == true) {
       this.greeenPeperSide = "Whole"
-      this.greeenPeperSideCount=1;
+      this.greeenPeperSideCount = 1;
 
     } else if (this.GreenPepLeft == true) {
       this.greeenPeperSide = "Left"
-      this.greeenPeperSideCount=1;
+      this.greeenPeperSideCount = 1;
 
     } else if (this.GreenPepRight == true) {
       this.greeenPeperSide = "Right"
-      this.greeenPeperSideCount=1;
+      this.greeenPeperSideCount = 1;
 
     }
 
 
     if (this.TomatoeNone == true) {
       this.TomatoeSide = "None"
-      this.TomatoeSideCount=0;
+      this.TomatoeSideCount = 0;
 
     } else if (this.TomatoeWhole == true) {
       this.TomatoeSide = "Whole"
-      this.TomatoeSideCount=1;
+      this.TomatoeSideCount = 1;
 
     } else if (this.TomatoeLeft == true) {
       this.TomatoeSide = "Left"
-      this.TomatoeSideCount=1;
+      this.TomatoeSideCount = 1;
 
     } else if (this.TomatoeRight == true) {
       this.TomatoeSide = "Right"
-      this.TomatoeSideCount=1;
+      this.TomatoeSideCount = 1;
 
     }
 
 
     if (this.TOlivesNone == true) {
       this.OlivesIDe = "None"
-      this.OlivesIDeCount=0;
+      this.OlivesIDeCount = 0;
 
     } else if (this.TOlivesWhole == true) {
       this.OlivesIDe = "Whole"
-      this.OlivesIDeCount=1;
+      this.OlivesIDeCount = 1;
 
     } else if (this.TOlivesLeft == true) {
       this.OlivesIDe = "Left"
-      this.OlivesIDeCount=1;
+      this.OlivesIDeCount = 1;
 
     } else if (this.TOlivesRight == true) {
       this.OlivesIDe = "Right"
-      this.OlivesIDeCount=1;
+      this.OlivesIDeCount = 1;
 
     }
 
 
-    
+
     if (this.HotPeperNone == true) {
       this.HotpperpSide = "None"
-      this.HotpperpSideCount=0;
+      this.HotpperpSideCount = 0;
 
     } else if (this.HotPeperWhole == true) {
       this.HotpperpSide = "Whole"
-      this.HotpperpSideCount=1;
+      this.HotpperpSideCount = 1;
 
     } else if (this.HotPeperLeft == true) {
       this.HotpperpSide = "Left"
-      this.HotpperpSideCount=1;
+      this.HotpperpSideCount = 1;
 
     } else if (this.HotPeperRight == true) {
       this.HotpperpSide = "Right"
-      this.HotpperpSideCount=1;
+      this.HotpperpSideCount = 1;
 
     }
 
 
     if (this.JalapenoNone == true) {
       this.JalapenoSide = "None"
-      this.JalapenoSideCount=0;
+      this.JalapenoSideCount = 0;
 
     } else if (this.JalapenoWhole == true) {
       this.JalapenoSide = "Whole"
-      this.JalapenoSideCount=1;
+      this.JalapenoSideCount = 1;
 
     } else if (this.JalapenoLeft == true) {
       this.JalapenoSide = "Left"
-      this.JalapenoSideCount=1;
+      this.JalapenoSideCount = 1;
 
     } else if (this.JalapenoRight == true) {
       this.JalapenoSide = "Right"
-      this.JalapenoSideCount=1;
+      this.JalapenoSideCount = 1;
 
     }
 
 
     if (this.PineAppleNone == true) {
       this.PineAppelSude = "None"
-      this.PineAppelSudeCount=0;
+      this.PineAppelSudeCount = 0;
 
     } else if (this.PineAppleWhole == true) {
       this.PineAppelSude = "Whole"
-      this.PineAppelSudeCount=1;
+      this.PineAppelSudeCount = 1;
 
     } else if (this.PineAppleLeft == true) {
       this.PineAppelSude = "Left"
-      this.PineAppelSudeCount=1;
+      this.PineAppelSudeCount = 1;
 
     } else if (this.PineAppleRight == true) {
       this.PineAppelSude = "Right"
-      this.PineAppelSudeCount=1;
+      this.PineAppelSudeCount = 1;
 
     }
 
     if (this.BBQSauceNone == true) {
       this.BBQSide = "None"
-      this.BBQSideCount=0;
+      this.BBQSideCount = 0;
 
     } else if (this.BBQSauceWhole == true) {
-      this.BBQSideCount=1;
+      this.BBQSideCount = 1;
       this.BBQSide = "Whole"
 
     } else if (this.BBQSauceLeft == true) {
-      this.BBQSideCount=1;
+      this.BBQSideCount = 1;
       this.BBQSide = "Left"
 
     } else if (this.BBQSauceRight == true) {
-      this.BBQSideCount=1;
+      this.BBQSideCount = 1;
       this.BBQSide = "Right"
 
     }
@@ -2800,117 +3139,335 @@ export class Item_infoPage {
 
     if (this.DonairNone == true) {
       this.DonairSide = "None"
-      this.DonairSideCount=0;
-      
+      this.DonairSideCount = 0;
+
 
     } else if (this.DonairWhole == true) {
       this.DonairSide = "Whole"
-      this.DonairSideCount=1;
+      this.DonairSideCount = 1;
 
     } else if (this.DonairLeft == true) {
       this.DonairSide = "Left"
-      this.DonairSideCount=1;
+      this.DonairSideCount = 1;
 
     } else if (this.DonairRight == true) {
       this.DonairSide = "Right"
-      this.DonairSideCount=1;
+      this.DonairSideCount = 1;
 
     }
 
-    
+
     if (this.PizzaSauceNone == true) {
       this.PizzaSaiceSode = "None"
-      this.PizzaSaiceSodeCount=0;
+      this.PizzaSaiceSodeCount = 0;
 
     } else if (this.PizzaSauceWhole == true) {
       this.PizzaSaiceSode = "Whole"
-      this.PizzaSaiceSodeCount=1;
+      this.PizzaSaiceSodeCount = 1;
 
     } else if (this.PizzaSauceLeft == true) {
       this.PizzaSaiceSode = "Left"
-      this.PizzaSaiceSodeCount=1;
+      this.PizzaSaiceSodeCount = 1;
 
     } else if (this.PizzaSauceRight == true) {
       this.PizzaSaiceSode = "Right"
-      this.PizzaSaiceSodeCount=1;
+      this.PizzaSaiceSodeCount = 1;
+
+    }
+
+    console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeee", this.Pizza.SoloPrice)
+    console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeee", this.Pizza.SmallPrice)
+    console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeee", this.Pizza.MediumPrice)
+    console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeee", this.Pizza.LargePrice)
+    console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeee", this.Pizza.JumboPrice)
+
+    if (this.SoloPizzaChecked == true) {
+      this.FinalDoughPrice = this.Pizza.SoloPrice;
+    } else if (this.SmallPizzaChecked == true) {
+      this.FinalDoughPrice = this.Pizza.SmallPrice;
+
+    } else if (this.MediumPizzaChecked == true) {
+      this.FinalDoughPrice = this.Pizza.MediumPrice;
+
+    } else if (this.LargePizzaChecked == true) {
+      this.FinalDoughPrice = this.Pizza.LargePrice;
+
+    } else if (this.JumboPizzaChecked == true) {
+      this.FinalDoughPrice = this.Pizza.JumboPrice;
+
+    }
+
+    if (this.Pizza.FetaCheese == true) {
+      this.FetaCeseCount = 0;
+
+    }
+
+    if (this.Pizza.Ham == true) {
+      this.HamSideCount = 0;
+
+    }
+
+    if (this.Pizza.Salami == true) {
+      this.SalamiSideCount = 0;
+
+
+    }
+
+    if (this.Pizza.CrumbleBeacon == true) {
+      this.CurmbelBeconSideCount = 0;
+
+    }
+
+    if (this.Pizza.SlicedBeacon == true) {
+      this.SlicedBeaconSideCount = 0;
 
     }
 
 
-    if(this.SoloPizzaChecked == true){
-      this.FinalDoughPrice=5.00;
-    }else if (this.SmallPizzaChecked == true){
-      this.FinalDoughPrice=10.56;
+    if (this.Pizza.Peporoni == true) {
+      this.peporoniSideCount = 0;
 
-    }else if(this.MediumPizzaChecked == true){
-      this.FinalDoughPrice=15.90;
-
-    }else if(this.LargePizzaChecked == true){
-      this.FinalDoughPrice=20.99;
-
-    }else if (this.JumboPizzaChecked == true){
-      this.FinalDoughPrice=30.11;
 
     }
 
-  
-    this.FinalToppingPrice=this.HamSideCount+this.SalamiSideCount+this.CurmbelBeconSideCount+this.SlicedBeaconSideCount+this.peporoniSideCount+this.ItalinSausgeSideCount+this.GroundBeefSideCount+this.SeasonChickensIdeCount+this.ChorizoSideCount+this.MushrromSudeCount+this.RedonionSideCount+this.greeenPeperSideCount+this.TomatoeSideCount+this.OlivesIDeCount+this.HotpperpSideCount+this.JalapenoSideCount+this.PineAppelSudeCount+this.BBQSideCount+this.DonairSideCount+this.PizzaSaiceSodeCount;
-    this.FinalToppingPrice=this.FinalToppingPrice*this.ExtraToppingPrice;
-    this.GoatChesePrice=this.GoatCheesePrice*this.GoatCheseCount;
-    this.MozzerellaPrice=this.FinalMozPrice*this.MozerllaCount;
+    if (this.Pizza.ItalianSausge == true) {
+      this.ItalinSausgeSideCount = 0;
+
+
+    }
+
+
+    if (this.Pizza.GoundBeef == true) {
+      this.GroundBeefSideCount = 0;
+
+
+    }
+
+
+    if (this.Pizza.SeasonedChicken == true) {
+      this.SeasonChickensIdeCount = 0;
+
+
+    }
+
+
+    if (this.Pizza.Chorizo == true) {
+      this.ChorizoSideCount = 0;
+
+
+    }
+
+
+
+
+    if (this.Pizza.FreshMushRooms == true) {
+      this.MushrromSudeCount = 0;
+
+
+    }
+
+    if (this.Pizza.RedOnions == true) {
+      this.RedonionSideCount = 0;
+
+
+    }
+
+    if (this.Pizza.GreenPepper == true) {
+      this.greeenPeperSideCount = 0;
+
+    }
+
+    if (this.Pizza.Tomatoe == true) {
+      this.TomatoeSideCount = 0;
+
+
+    }
+
+    if (this.Pizza.Olives == true) {
+      this.OlivesIDeCount = 0;
+
+
+    }
+
+    if (this.Pizza.HotPepper == true) {
+      this.HotpperpSideCount = 0;
+
+
+    }
+
+    if (this.Pizza.Jalapeno == true) {
+      this.JalapenoSideCount = 0;
+
+
+    }
+
+    if (this.Pizza.PineApple == true) {
+      this.PineAppelSudeCount = 0;
+
+
+    }
+
+
+    if (this.Pizza.BBqsauce == true) {
+      this.BBQSideCount = 0
+
+
+    }
+
+
+    if (this.Pizza.DonairSauce == true) {
+      this.DonairSideCount = 0;
+
+
+    }
+
+
+    if (this.Pizza.PizzaSauce == true) {
+      this.PizzaSaiceSodeCount = 0;
+
+
+    }
+
+    if (this.Pizza.GoatCheese == true) {
+      this.GoatCheseCount = 0;
+
+
+    }
+
+
+
+    this.FinalToppingPrice = this.PizzaSaiceSodeCount + this.FetaCeseCount + this.HamSideCount + this.SalamiSideCount + this.CurmbelBeconSideCount + this.SlicedBeaconSideCount + this.peporoniSideCount + this.ItalinSausgeSideCount + this.GroundBeefSideCount + this.SeasonChickensIdeCount + this.ChorizoSideCount + this.MushrromSudeCount + this.RedonionSideCount + this.greeenPeperSideCount + this.TomatoeSideCount + this.OlivesIDeCount + this.HotpperpSideCount + this.JalapenoSideCount + this.PineAppelSudeCount + this.BBQSideCount + this.DonairSideCount;
+    this.FinalToppingPrice = this.FinalToppingPrice * this.ExtraToppingPrice;
+    this.GoatChesePrice = this.GoatCheesePrice * this.GoatCheseCount;
+    this.MozzerellaPrice = this.FinalMozPrice * this.MozerllaCount;
 
 
 
 
 
 
-    
 
-    console.log("Pizza Size",this.PizzaSize);
-    console.log("Pizza Count",this.PizzaCountLast);
-    console.log("Selected Crust ",this.SelecteFiunalPizzaCrust);
-    console.log("Mozeeral Stays",this.MozeraellaStaus);
 
-    console.log("Mozeralla Side",this.MozerellaSide);
-    console.log("Goat Cheewse Side",this.GoatCheeseSide);
-    console.log("Feta CHeese Side",this.FetaCheeseSide);
-    console.log("Ham Side ",this.HamSide);
-    console.log("Salami Side",this.SalamiSide);
 
-    console.log("C Beacon Side",this.CurmbelBeconSide);
-    console.log("Sliced Beacon Side",this.SlicedBeaconSide);
-    console.log("Peporni Side",this.peporoniSide);
 
-    console.log("ItalinSausgeSide Side",this.ItalinSausgeSide);
-    console.log("Ground BEef Side",this.GroundBeefSide);
+    console.log("Pizza Size", this.PizzaSize);
+    console.log("Pizza Count", this.PizzaCountLast);
+    console.log("Selected Crust ", this.SelecteFiunalPizzaCrust);
+    console.log("Mozeeral Stays", this.MozeraellaStaus);
 
-    console.log("SeasonChickensIde Side",this.SeasonChickensIde);
-    console.log("ChorizoSide Side",this.ChorizoSide);
-    console.log("MushrromSude side",this.MushrromSude);
+    console.log("Mozeralla Side", this.MozerellaSide);
+    console.log("Goat Cheewse Side", this.GoatCheeseSide);
+    console.log("Feta CHeese Side", this.FetaCheeseSide);
+    console.log("Ham Side ", this.HamSide);
+    console.log("Salami Side", this.SalamiSide);
 
-    console.log("RedonionSide Side",this.RedonionSide);
-    console.log("greeenPeperSide Suide",this.greeenPeperSide);
-    console.log("toamote Siode",this.TomatoeSide);
+    console.log("C Beacon Side", this.CurmbelBeconSide);
+    console.log("Sliced Beacon Side", this.SlicedBeaconSide);
+    console.log("Peporni Side", this.peporoniSide);
 
-    console.log("Olive SIdfe",this.OlivesIDe);
-    console.log("Hot Peper SIde",this.HotpperpSide);
-    console.log("Japeneo Side",this.JalapenoSide);
-    console.log("Pine Appe Side",this.PineAppelSude);
+    console.log("ItalinSausgeSide Side", this.ItalinSausgeSide);
+    console.log("Ground BEef Side", this.GroundBeefSide);
 
-    console.log("BBq Sie",this.BBQSide);
-    console.log("Donair Side",this.DonairSide);
-    console.log("PizaCCause Siode",this.PizzaSaiceSode);
+    console.log("SeasonChickensIde Side", this.SeasonChickensIde);
+    console.log("ChorizoSide Side", this.ChorizoSide);
+    console.log("MushrromSude side", this.MushrromSude);
+
+    console.log("RedonionSide Side", this.RedonionSide);
+    console.log("greeenPeperSide Suide", this.greeenPeperSide);
+    console.log("toamote Siode", this.TomatoeSide);
+
+    console.log("Olive SIdfe", this.OlivesIDe);
+    console.log("Hot Peper SIde", this.HotpperpSide);
+    console.log("Japeneo Side", this.JalapenoSide);
+    console.log("Pine Appe Side", this.PineAppelSude);
+
+    console.log("BBq Sie", this.BBQSide);
+    console.log("Donair Side", this.DonairSide);
+    console.log("PizaCCause Siode", this.PizzaSaiceSode);
     console.log("Crust price", this.CurstPriceeeee);
-    console.log("Sekected Toppings",this.FinalToppingPrice)
-    console.log("Final Mozeral Price",this.MozzerellaPrice)
-    console.log("Final Goat Price",this.GoatChesePrice)
-    console.log("Pizza Pirce",this.FinalDoughPrice)
+    console.log("Sekected Toppings", this.FinalToppingPrice)
+    console.log("Final Mozeral Price", this.MozzerellaPrice)
+    console.log("Final Goat Price", this.GoatChesePrice)
+    console.log("Pizza Pirce", this.FinalDoughPrice)
 
-    
-    
-    this.FinalPizzaaaPrice=this.FinalToppingPrice+this.MozzerellaPrice+this.GoatChesePrice+this.FinalDoughPrice+this.CurstPriceeeee;
-    this.FinalPizzaaaPrice=this.FinalPizzaaaPrice*this.PizzaCountLast;
-    console.log("Pizzaa FInallll Price",this.FinalPizzaaaPrice)
+
+
+    this.FinalPizzaaaPrice = parseFloat(this.FinalToppingPrice) + parseFloat(this.MozzerellaPrice) + parseFloat(this.GoatChesePrice) + parseFloat(this.FinalDoughPrice) + parseFloat(this.CurstPriceeeee);
+    console.log("Pizzaa FInallll Price LOl", this.FinalPizzaaaPrice, this.PizzaCountLast)
+    this.FinalPizzaaaPrice = parseFloat(this.FinalPizzaaaPrice) * parseFloat(this.PizzaCountLast);
+    this.FinalPizzaaaPrice = this.FinalPizzaaaPrice.toFixed(2);
+    console.log("Pizzaa FInallll Price", this.FinalPizzaaaPrice)
+
+    console.log(this.CurmbelBeconSideCount,"Counttttt")
+    let myObj = {
+      results: "None",
+      PizzaID: "N/A",
+      PizzaName: "N/A",
+      ImageURL: "N/A",
+      Description: "N/A",
+      SoloPrice: this.Pizza.SoloPrice,
+      SmallPrice: this.Pizza.SmallPrice,
+      MediumPrice:this.Pizza.MediumPrice,
+      LargePrice: this.Pizza.LargePrice,
+      JumboPrice: this.Pizza.JumboPrice,
+      CrustType: this.SelecteFiunalPizzaCrust,
+      MozerallCheese: this.MozerllaCount > 0 ? true : false,
+      MozerallCheese30: false,
+      MozerallCheese50: false,
+      MozerallCheese100:false,
+      GoatCheese: this.GoatChesePrice > 0? true : false,
+      FetaCheese:this.FetaCeseCount > 0 ? true : false,
+      Ham: this.HamSideCount > 0 ? true : false,
+      Salami: this.SalamiSideCount > 0  ? true : false,
+      CrumbleBeacon: this.CurmbelBeconSideCount > 0 ? true : false,
+      SlicedBeacon: this.SlicedBeaconSideCount > 0 ? true : false,
+      Peporoni: this.peporoniSideCount > 0 ? true : false,
+      ItalianSausge: this.ItalinSausgeSideCount > 0 ? true : false,
+      GoundBeef: this.GroundBeefSideCount > 0 ? true : false,
+      SeasonedChicken: this.SeasonChickensIdeCount > 0 ? true : false,
+      FreshMushRooms: this.MushrromSudeCount > 0 ? true : false,
+      RedOnions: this.RedonionSideCount > 0 ? true : false,
+      GreenPepper: this.greeenPeperSideCount > 0 ? true : false,
+      Tomatoe: this.TomatoeSideCount > 0 ? true : false,
+      Olives: this.OlivesIDeCount > 0 ? true : false,
+      HotPepper: this.HotpperpSideCount> 0 ? true : false,
+      Jalapeno: this.JalapenoSideCount > 0 ? true : false,
+      PineApple: this.PineAppelSudeCount > 0 ? true : false,
+      BBqsauce: this.BBQSideCount > 0 ? true : false,
+      DonairSauce: this.DonairSideCount > 0 ? true : false,
+      PizzaSauce: this.PizzaSaiceSodeCount > 0 ? true : false,
+      Chorizo: this.ChorizoSideCount > 0 ? true : false,
+      MozerallCheeseSide: this.MozerellaSide,
+      GoatCheeseSide: this.GoatCheeseSide,
+      FetaCheeseSide:this.FetaCheeseSide,
+      HamSide: this.HamSide,
+      SalamiSide: this.SalamiSide,
+      CrumbleBeaconSide: this.CurmbelBeconSide,
+      SlicedBeaconSide: this.SlicedBeaconSide,
+      PeporoniSide: this.peporoniSide,
+      ItalianSausgeSide: this.ItalinSausgeSide,
+      GoundBeefSide: this.GroundBeefSide,
+      SeasonedChickenSide: this.SeasonChickensIde,
+      FreshMushRoomsSide: this.MushrromSude,
+      RedOnionsSide: this.RedonionSide,
+      GreenPepperSide: this.greeenPeperSide,
+      TomatoeSide: this.TomatoeSide,
+      OlivesSide: this.OlivesIDe,
+      HotPepperSide: this.HotpperpSide,
+      JalapenoSide: this.JalapenoSide,
+      PineAppleSide: this.PineAppelSude,
+      BBqsauceSide: this.BBQSide,
+      DonairSauceSide: this.DonairSide,
+      PizzaSauceSide: this.PizzaSaiceSode,
+      ChorizoSide: this.ChorizoSide,
+      FianlOrderPrice: this.FinalPizzaaaPrice
+    };
+
+    let myJSON = JSON.stringify(myObj);
+    console.log("To Push", myJSON)
+   
+
+
 
 
 

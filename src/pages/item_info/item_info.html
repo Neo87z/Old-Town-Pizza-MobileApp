@@ -24,6 +24,19 @@
 			<p>
 				{{Pizza?.Description}}
 			</p>
+			
+			<!--<p>
+				Selected Cheese Toppings :- {{SelectedCheeseToppings}}
+			</p>
+			<p>
+				Selected Meat Toppings :- {{SelectedToppings}}
+			</p>
+			<p>
+				Selected Vegitable Toppings :- {{SelectedVegToppings}}
+			</p>
+			<p>
+				Selected Sauce  :- {{SelectedSauceToppings}}
+			</p>-->
 		</div>
 
 		<ion-row>
@@ -225,7 +238,7 @@
 							item-start></ion-radio>
 						<ion-label>
 							<h2>Pizza Sauce </h2>
-							<p>${{ExtraToppingPrice}}</p>
+
 						</ion-label>
 					</ion-item>
 
@@ -242,7 +255,7 @@
 							item-start></ion-radio>
 						<ion-label>
 							<h2>Mushrooms </h2>
-						
+
 							<p>${{ExtraToppingPrice}}</p>
 						</ion-label>
 					</ion-item>
@@ -257,15 +270,15 @@
 					</ion-item>
 
 					<ion-item class="shadow">
-						<ion-radio value="100223333332235" checked="{{GreenPepper}}" (click)="SelectedGreenPepperFromMenue()"
-							item-start></ion-radio>
+						<ion-radio value="100223333332235" checked="{{GreenPepper}}"
+							(click)="SelectedGreenPepperFromMenue()" item-start></ion-radio>
 						<ion-label>
 							<h2>Green Pepper </h2>
 							<p>${{ExtraToppingPrice}}</p>
 						</ion-label>
 					</ion-item>
 					<ion-item class="shadow">
-						<ion-radio value="1002235" checked="{{Tomatoes}}" (click)="SelectedTomatoesFrommenue()"
+						<ion-radio value="234234234234" checked="{{Tomatoes}}" (click)="SelectedTomatoesFrommenue()"
 							item-start></ion-radio>
 						<ion-label>
 							<h2>Tomatoes </h2>
@@ -273,7 +286,7 @@
 						</ion-label>
 					</ion-item>
 					<ion-item class="shadow">
-						<ion-radio value="1002235" checked="{{olives}}" (click)="SelectedOlivesFromMenue()"
+						<ion-radio value="234234234" checked="{{olives}}" (click)="SelectedOlivesFromMenue()"
 							item-start></ion-radio>
 						<ion-label>
 							<h2>Olives </h2>
@@ -281,7 +294,7 @@
 						</ion-label>
 					</ion-item>
 					<ion-item class="shadow">
-						<ion-radio value="1002235" checked="{{HotPeper}}" (click)="SelectedHotpeperFromMenue()"
+						<ion-radio value="1002342342342235" checked="{{HotPeper}}" (click)="SelectedHotpeperFromMenue()"
 							item-start></ion-radio>
 						<ion-label>
 							<h2>Hot Pepper </h2>
@@ -289,7 +302,7 @@
 						</ion-label>
 					</ion-item>
 					<ion-item class="shadow">
-						<ion-radio value="1002235" checked="{{Jalapeno}}" (click)="SelectedJalapenoFromMenue()"
+						<ion-radio value="3424234234" checked="{{Jalapeno}}" (click)="SelectedJalapenoFromMenue()"
 							item-start></ion-radio>
 						<ion-label>
 							<h2>Jalapeno</h2>
@@ -297,7 +310,7 @@
 						</ion-label>
 					</ion-item>
 					<ion-item class="shadow">
-						<ion-radio value="1002235" checked="{{PineApple}}" (click)="SelectedPineAppleFromMenue()"
+						<ion-radio value="1002455555235" checked="{{PineApple}}" (click)="SelectedPineAppleFromMenue()"
 							item-start></ion-radio>
 						<ion-label>
 							<h2>Pineapple</h2>
@@ -437,7 +450,7 @@
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
 						<ion-radio value="1002242233344" checked="{{SalamiNone}}"
-							(click)="ChnageSelecteSideSalami('Whole')" item-start></ion-radio>
+							(click)="ChnageSelecteSideSalami('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
@@ -476,7 +489,7 @@
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
 						<ion-radio value="334225" checked="{{CrumBeaconeNone}}"
-							(click)="ChnageSelecteSideCrumbleBeacon('Whole')" item-start></ion-radio>
+							(click)="ChnageSelecteSideCrumbleBeacon('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
@@ -516,7 +529,7 @@
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
 						<ion-radio value="100224232423422334" checked="{{SlicedBeaconNone}}"
-							(click)="ChangeClidedBeaconSelectedSide('Whole')" item-start></ion-radio>
+							(click)="ChangeClidedBeaconSelectedSide('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
@@ -555,7 +568,7 @@
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
 						<ion-radio value="100224223222222334" checked="{{PeporniNone}}"
-							(click)="ChangeSideSelectedPeporonio('Whole')" item-start></ion-radio>
+							(click)="ChangeSideSelectedPeporonio('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
@@ -594,7 +607,7 @@
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
 						<ion-radio value="10022422234333334" checked="{{ItalianSuageNone}}"
-							(click)="ChnageSideSeletecItalimSasuge('Whole')" item-start></ion-radio>
+							(click)="ChnageSideSeletecItalimSasuge('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
@@ -633,7 +646,7 @@
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
 						<ion-radio value="100224222222222334" checked="{{GroundBEefNone}}"
-							(click)="ChnageSideSelectedGroundBeef('Whole')" item-start></ion-radio>
+							(click)="ChnageSideSelectedGroundBeef('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
@@ -672,7 +685,7 @@
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
 						<ion-radio value="100224223333334" checked="{{SeasonChickenNone}}"
-							(click)="ChnageSideSelctedSeasonedCHien('Whole')" item-start></ion-radio>
+							(click)="ChnageSideSelctedSeasonedCHien('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
@@ -711,7 +724,7 @@
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
 						<ion-radio value="100224221231111334" checked="{{ChorizoNone}}"
-							(click)="ChnaageSideSelctedChorzio('Whole')" item-start></ion-radio>
+							(click)="ChnaageSideSelctedChorzio('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
@@ -1232,33 +1245,37 @@
 			<div *ngIf="showScrollFeta">
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
-						<ion-radio value="10022432343222222545554" checked="{{FetaCheeseNoneSelcted}}" (click)="ChangeFetaSelcteSideee('None')" item-start></ion-radio>
+						<ion-radio value="10022432343222222545554" checked="{{FetaCheeseNoneSelcted}}"
+							(click)="ChangeFetaSelcteSideee('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None </h2>
-							<p>$3.00</p>
+							<p>${{ExtraToppingPrice}}</p>
 						</ion-label>
 					</ion-item>
 
 					<ion-item class="shadow">
-						<ion-radio value="10022234444111134" checked="{{FetaHCeeseWholeSelcted}}" (click)="ChangeFetaSelcteSideee('Whole')" item-start></ion-radio>
+						<ion-radio value="10022234444111134" checked="{{FetaHCeeseWholeSelcted}}"
+							(click)="ChangeFetaSelcteSideee('Whole')" item-start></ion-radio>
 						<ion-label>
 							<h2>Whole </h2>
-							<p>$3.00</p>
+							<p>${{ExtraToppingPrice}}</p>
 						</ion-label>
 					</ion-item>
 
 					<ion-item class="shadow">
-						<ion-radio value="1002235" checked="{{FetaCheeseLEftSelected}}" (click)="ChangeFetaSelcteSideee('Left')" item-start></ion-radio>
+						<ion-radio value="1002235" checked="{{FetaCheeseLEftSelected}}"
+							(click)="ChangeFetaSelcteSideee('Left')" item-start></ion-radio>
 						<ion-label>
 							<h2>Left </h2>
-							<p>$3.00</p>
+							<p>${{ExtraToppingPrice}}</p>
 						</ion-label>
 					</ion-item>
 					<ion-item class="shadow">
-						<ion-radio value="1002235" checked="{{FetaCHeeseRightSelected}}" (click)="ChangeFetaSelcteSideee('Right')"  item-start></ion-radio>
+						<ion-radio value="1002235" checked="{{FetaCHeeseRightSelected}}"
+							(click)="ChangeFetaSelcteSideee('Right')" item-start></ion-radio>
 						<ion-label>
 							<h2>Right </h2>
-							<p>$3.00</p>
+							<p>${{ExtraToppingPrice}}</p>
 						</ion-label>
 					</ion-item>
 
@@ -1268,16 +1285,16 @@
 			<div *ngIf="GoatCHeeseSelected">
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
-						<ion-radio value="100224223443322234" checked="{{GoatCheeeseSelectedNone}}" (click)="ChnageGoatCheeseSide('None')"
-							item-start></ion-radio>
+						<ion-radio value="100224223443322234" checked="{{GoatCheeeseSelectedNone}}"
+							(click)="ChnageGoatCheeseSide('None')" item-start></ion-radio>
 						<ion-label>
 							<h2>None</h2>
 							<p></p>
 						</ion-label>
 					</ion-item>
 					<ion-item class="shadow">
-						<ion-radio value="10022422334" checked="{{GoatCheeeseSelectedWhole}}" (click)="ChnageGoatCheeseSide('Whole')"
-							item-start></ion-radio>
+						<ion-radio value="10022422334" checked="{{GoatCheeeseSelectedWhole}}"
+							(click)="ChnageGoatCheeseSide('Whole')" item-start></ion-radio>
 						<ion-label>
 							<h2>Whole</h2>
 							<p></p>
@@ -1285,7 +1302,8 @@
 					</ion-item>
 
 					<ion-item class="shadow">
-						<ion-radio value="100342234" checked="{{GoatCheeeseSlectLeft}}" (click)="ChnageGoatCheeseSide('Left')" item-start></ion-radio>
+						<ion-radio value="100342234" checked="{{GoatCheeeseSlectLeft}}"
+							(click)="ChnageGoatCheeseSide('Left')" item-start></ion-radio>
 						<ion-label>
 							<h2>Left </h2>
 							<p></p>
@@ -1293,7 +1311,8 @@
 					</ion-item>
 
 					<ion-item class="shadow">
-						<ion-radio value="102402235" checked="{{GoatCheeesesideRight}}" (click)="ChnageGoatCheeseSide('Right')" item-start></ion-radio>
+						<ion-radio value="102402235" checked="{{GoatCheeesesideRight}}"
+							(click)="ChnageGoatCheeseSide('Right')" item-start></ion-radio>
 						<ion-label>
 							<h2>Right </h2>
 							<p></p>
@@ -1302,7 +1321,7 @@
 
 				</ion-scroll>
 			</div>
-			
+
 			<div *ngIf="MozzerlaCheeseSelected">
 				<ion-scroll scrollX="true" no-lines radio-group *ngSwitchCase="'select_topins'">
 					<ion-item class="shadow">
