@@ -7,11 +7,16 @@ import { Observable } from 'rxjs';
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
+
+
 */
+
+
 export interface ApiResult {
   results: any;
   PizzaID: string;
   PizzaName: string;
+  SelectedPizzaSize: string;
   ImageURL: string;
   Description: string;
   SoloPrice: string;
@@ -83,11 +88,50 @@ export class PizzaDetailsProvider {
     return this.http.get<ApiResult>(`${environment.BaseAPiURL}/pizza/get-all-pizza-data`);
 
   }
-  getPizzaDetailsById(id:any){
+  getPizzaDetailsById(id: any) {
     console.log(id)
     return this.http.get(`${environment.BaseAPiURL}/pizza/get-pizza-data-by-ID/${id}`)
 
-    
+
   }
+
+  getCartDetailsById(id: any) {
+    console.log(id)
+    return this.http.get(`${environment.BaseAPiURL}/pizza/get-user-cart/${id}`)
+
+
+  }
+  async AddToCart(CartDetails: any) {
+    console.log(CartDetails, "Hereeeeeeeeeee")
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+
+
+    await this.http.post(`${environment.BaseAPiURL}/pizza/update-cart`, CartDetails)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  async RemoveItemFromCart(Data: any) {
+
+    console.log(Data, "Hereeeeeeeeeee")
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+
+
+    await this.http.post(`${environment.BaseAPiURL}/pizza/remove-item/${Data}`, Data)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+
 
 }

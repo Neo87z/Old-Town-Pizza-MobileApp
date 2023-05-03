@@ -379,6 +379,8 @@ export class Item_infoPage {
   private SelectedSauceToppings: any;
   private SelectedTopingsArraaySauce: Array<any> = [];
 
+  private SelectedPizzaSize : any;
+
 
   private FinalPizzaData: {
     results: any;
@@ -3183,17 +3185,22 @@ export class Item_infoPage {
 
     if (this.SoloPizzaChecked == true) {
       this.FinalDoughPrice = this.Pizza.SoloPrice;
+      this.SelectedPizzaSize="Solo"
     } else if (this.SmallPizzaChecked == true) {
       this.FinalDoughPrice = this.Pizza.SmallPrice;
+      this.SelectedPizzaSize="Small"
 
     } else if (this.MediumPizzaChecked == true) {
       this.FinalDoughPrice = this.Pizza.MediumPrice;
+      this.SelectedPizzaSize="Medium"
 
     } else if (this.LargePizzaChecked == true) {
       this.FinalDoughPrice = this.Pizza.LargePrice;
+      this.SelectedPizzaSize="Large"
 
     } else if (this.JumboPizzaChecked == true) {
       this.FinalDoughPrice = this.Pizza.JumboPrice;
+      this.SelectedPizzaSize="Jumbo"
 
     }
 
@@ -3398,94 +3405,87 @@ export class Item_infoPage {
     this.FinalPizzaaaPrice = this.FinalPizzaaaPrice.toFixed(2);
     console.log("Pizzaa FInallll Price", this.FinalPizzaaaPrice)
 
-    console.log(this.CurmbelBeconSideCount,"Counttttt")
+
+
+
+  }
+  async AddtoCartData() {
+    console.log(this.CurmbelBeconSideCount, "Counttttt")
     let myObj = {
-      results: "None",
-      PizzaID: "N/A",
-      PizzaName: "N/A",
-      ImageURL: "N/A",
-      Description: "N/A",
-      SoloPrice: this.Pizza.SoloPrice,
-      SmallPrice: this.Pizza.SmallPrice,
-      MediumPrice:this.Pizza.MediumPrice,
-      LargePrice: this.Pizza.LargePrice,
-      JumboPrice: this.Pizza.JumboPrice,
-      CrustType: this.SelecteFiunalPizzaCrust,
-      MozerallCheese: this.MozerllaCount > 0 ? true : false,
-      MozerallCheese30: false,
-      MozerallCheese50: false,
-      MozerallCheese100:false,
-      GoatCheese: this.GoatChesePrice > 0? true : false,
-      FetaCheese:this.FetaCeseCount > 0 ? true : false,
-      Ham: this.HamSideCount > 0 ? true : false,
-      Salami: this.SalamiSideCount > 0  ? true : false,
-      CrumbleBeacon: this.CurmbelBeconSideCount > 0 ? true : false,
-      SlicedBeacon: this.SlicedBeaconSideCount > 0 ? true : false,
-      Peporoni: this.peporoniSideCount > 0 ? true : false,
-      ItalianSausge: this.ItalinSausgeSideCount > 0 ? true : false,
-      GoundBeef: this.GroundBeefSideCount > 0 ? true : false,
-      SeasonedChicken: this.SeasonChickensIdeCount > 0 ? true : false,
-      FreshMushRooms: this.MushrromSudeCount > 0 ? true : false,
-      RedOnions: this.RedonionSideCount > 0 ? true : false,
-      GreenPepper: this.greeenPeperSideCount > 0 ? true : false,
-      Tomatoe: this.TomatoeSideCount > 0 ? true : false,
-      Olives: this.OlivesIDeCount > 0 ? true : false,
-      HotPepper: this.HotpperpSideCount> 0 ? true : false,
-      Jalapeno: this.JalapenoSideCount > 0 ? true : false,
-      PineApple: this.PineAppelSudeCount > 0 ? true : false,
-      BBqsauce: this.BBQSideCount > 0 ? true : false,
-      DonairSauce: this.DonairSideCount > 0 ? true : false,
-      PizzaSauce: this.PizzaSaiceSodeCount > 0 ? true : false,
-      Chorizo: this.ChorizoSideCount > 0 ? true : false,
-      MozerallCheeseSide: this.MozerellaSide,
-      GoatCheeseSide: this.GoatCheeseSide,
-      FetaCheeseSide:this.FetaCheeseSide,
-      HamSide: this.HamSide,
-      SalamiSide: this.SalamiSide,
-      CrumbleBeaconSide: this.CurmbelBeconSide,
-      SlicedBeaconSide: this.SlicedBeaconSide,
-      PeporoniSide: this.peporoniSide,
-      ItalianSausgeSide: this.ItalinSausgeSide,
-      GoundBeefSide: this.GroundBeefSide,
-      SeasonedChickenSide: this.SeasonChickensIde,
-      FreshMushRoomsSide: this.MushrromSude,
-      RedOnionsSide: this.RedonionSide,
-      GreenPepperSide: this.greeenPeperSide,
-      TomatoeSide: this.TomatoeSide,
-      OlivesSide: this.OlivesIDe,
-      HotPepperSide: this.HotpperpSide,
-      JalapenoSide: this.JalapenoSide,
-      PineAppleSide: this.PineAppelSude,
-      BBqsauceSide: this.BBQSide,
-      DonairSauceSide: this.DonairSide,
-      PizzaSauceSide: this.PizzaSaiceSode,
-      ChorizoSide: this.ChorizoSide,
-      FianlOrderPrice: this.FinalPizzaaaPrice
+
+
+      CartDetails: [{
+        PizzaID: this.Pizza.PizzaID,
+        PizzaName: this.Pizza.PizzaName,
+        SelectedPizzaSize : this.SelectedPizzaSize,
+        PizzaCount: this.PizzaCount,
+        ImageURL: this.Pizza.ImageURL,
+        Description: this.Pizza.Description,
+        SoloPrice: this.Pizza.SoloPrice,
+        SmallPrice: this.Pizza.SmallPrice,
+        MediumPrice: this.Pizza.MediumPrice,
+        LargePrice: this.Pizza.LargePrice,
+        JumboPrice: this.Pizza.JumboPrice,
+        CrustType: this.SelecteFiunalPizzaCrust,
+        MozerallCheese: this.MozerellaSide != "None" ? true : false,
+        MozerallCheese30: false,
+        MozerallCheese50: false,
+        MozerallCheese100: false,
+        GoatCheese: this.GoatCheeseSide != "None" ? true : false,
+        FetaCheese: this.FetaCheeseSide != "None" ? true : false,
+        Ham: this.HamSide != "None" ? true : false,
+        Salami: this.SalamiSide != "None" ? true : false,
+        CrumbleBeacon: this.CurmbelBeconSide != "None" ? true : false,
+        SlicedBeacon: this.SlicedBeaconSide != "None" ? true : false,
+        Peporoni: this.peporoniSide != "None" ? true : false,
+        ItalianSausge: this.ItalinSausgeSide != "None" ? true : false,
+        GoundBeef: this.GroundBeefSide != "None" ? true : false,
+        SeasonedChicken: this.SeasonChickensIde != "None" ? true : false,
+        FreshMushRooms: this.MushrromSude != "None" ? true : false,
+        RedOnions: this.RedonionSide != "None" ? true : false,
+        GreenPepper: this.greeenPeperSide != "None" ? true : false,
+        Tomatoe: this.TomatoeSide != "None" ? true : false,
+        Olives: this.OlivesIDe != "None" ? true : false,
+        HotPepper: this.HotpperpSide != "None" ? true : false,
+        Jalapeno: this.JalapenoSide != "None" ? true : false,
+        PineApple: this.PineAppelSude != "None" ? true : false,
+        BBqsauce: this.BBQSide != "None" ? true : false,
+        DonairSauce: this.DonairSide != "None" ? true : false,
+        PizzaSauce: this.PizzaSaiceSode != "None" ? true : false,
+        Chorizo: this.ChorizoSide != "None" ? true : false,
+        MozerallCheeseSide: this.MozerellaSide,
+        GoatCheeseSide: this.GoatCheeseSide,
+        FetaCheeseSide: this.FetaCheeseSide,
+        HamSide: this.HamSide,
+        SalamiSide: this.SalamiSide,
+        CrumbleBeaconSide: this.CurmbelBeconSide,
+        SlicedBeaconSide: this.SlicedBeaconSide,
+        PeporoniSide: this.peporoniSide,
+        ItalianSausgeSide: this.ItalinSausgeSide,
+        GoundBeefSide: this.GroundBeefSide,
+        SeasonedChickenSide: this.SeasonChickensIde,
+        FreshMushRoomsSide: this.MushrromSude,
+        RedOnionsSide: this.RedonionSide,
+        GreenPepperSide: this.greeenPeperSide,
+        TomatoeSide: this.TomatoeSide,
+        OlivesSide: this.OlivesIDe,
+        HotPepperSide: this.HotpperpSide,
+        JalapenoSide: this.JalapenoSide,
+        PineAppleSide: this.PineAppelSude,
+        BBqsauceSide: this.BBQSide,
+        DonairSauceSide: this.DonairSide,
+        PizzaSauceSide: this.PizzaSaiceSode,
+        ChorizoSide: this.ChorizoSide,
+        FianlOrderPrice: this.FinalPizzaaaPrice
+
+      }]
+
     };
 
     let myJSON = JSON.stringify(myObj);
     console.log("To Push", myJSON)
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    await this.PizzaService.AddToCart(myObj);
+    this.navCtrl.push(CartPage)
 
 
   }

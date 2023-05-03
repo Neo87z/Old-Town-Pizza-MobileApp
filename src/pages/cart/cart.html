@@ -10,41 +10,94 @@
 <ion-content class="bg_img">
 
 	<ion-list no-lines>
-		<ion-item class="shadow">
+		<ion-item *ngFor="let item of PizzaData; let i=index" class="shadow">
 			<div class="item_details d-flex">
 				<div class="img_box center_img">
 					<img src="assets/imgs/item_pizza1.png" class="crop_img">
 				</div>
 				<div class="text_box">
-					<h2>Farm house</h2>
+					<h2>{{PizzaData[i]?.PizzaName}}</h2>
 					<h3 class="d-flex">
-						<small>Medium | New Hand tossed</small>
+						<small>{{PizzaData[i]?.SelectedPizzaSize}}||{{PizzaData[i]?.CrustType}}</small>
 						<span class="end" text-end>
 							<img src="assets/imgs/veg_icon.png">
 						</span>
 					</h3>
 
 					<p>
-						Black Olives, Onion, capsicum, tomato, grilled mushroom, golden corn, Jalapeno Extra cheese
+						Cheese :-{{PizzaData[i]?.MozerallCheese ? 'Mozzarella Cheese(' +
+						PizzaData[i]?.MozerallCheeseSide + '),' : ''}}
+						{{PizzaData[i]?.GoatCheese ? 'Goat Cheese(' + PizzaData[i]?.GoatCheeseSide + '),' : ''}}
+						{{PizzaData[i]?.FetaCheese ? 'Feta Cheese(' + PizzaData[i]?.FetaCheeseSide + '),' : ''}}
+
+
+					</p>
+
+					<p style="height: 50px;">
+
+						Meat :-
+						{{PizzaData[i]?.Ham ? 'Ham (' + PizzaData[i]?.HamSide + '),' : ''}}
+						{{PizzaData[i]?.Salami ? 'Salami (' + PizzaData[i]?.SalamiSide + '),' : ''}}
+						{{PizzaData[i]?.CrumbleBeacon ? 'Crumble Bacon Cheese(' + PizzaData[i]?.CrumbleBeaconSide + '),'
+						: ''}}
+						{{PizzaData[i]?.SlicedBeacon ? 'Sliced Bacon(' + PizzaData[i]?.SlicedBeaconSide + '),' : ''}}
+						{{PizzaData[i]?.Peporoni ? 'Pepperoni(' + PizzaData[i]?.PeporoniSide + '),' : ''}}
+						{{PizzaData[i]?.ItalianSausge ? 'Italian Sausage(' + PizzaData[i]?.ItalianSausgeSide + '),' :
+						''}}
+						{{PizzaData[i]?.GoundBeef ? 'Ground Beef(' + PizzaData[i]?.GoundBeefSide + '),' : ''}}
+						{{PizzaData[i]?.SeasonedChicken ? 'Seasoned Chicken(' + PizzaData[i]?.SeasonedChickenSide + '),'
+						: ''}}
+						{{PizzaData[i]?.Chorizo ? 'Chorizo Sausage(' + PizzaData[i]?.ChorizoSide + '),' : ''}}
+
+
+
+					</p>
+					<p style="height: 50px;">
+						Vegetables :- {{PizzaData[i]?.FreshMushRooms ? 'Fresh Mushrooms(' +
+						PizzaData[i]?.FreshMushRoomsSide + '),' : ''}}
+						{{PizzaData[i]?.RedOnions ? 'Red Onion(' + PizzaData[i]?.RedOnionsSide + '),' : ''}}
+						{{PizzaData[i]?.GreenPepper ? 'Green Peppers(' + PizzaData[i]?.GreenPepperSide + '),' : ''}}
+						{{PizzaData[i]?.Tomatoe ? 'Tomatoes(' + PizzaData[i]?.TomatoeSide + '),' : ''}}
+						{{PizzaData[i]?.Olives ? 'Olives(' + PizzaData[i]?.OlivesSide + '),' : ''}}
+						{{PizzaData[i]?.HotPepper ? 'Hot Peppers(' + PizzaData[i]?.HotPepperSide + '),' : ''}}
+						{{PizzaData[i]?.Jalapeno ? 'Jalapeno(' + PizzaData[i]?.JalapenoSide + '),' : ''}}
+						{{PizzaData[i]?.PineApple ? 'Pineapple(' + PizzaData[i]?.PineAppleSide + '),' : ''}}
+						{{PizzaData[i]?.BBqsauce ? 'BBQ Sauce(' + PizzaData[i]?.BBqsauceSide + '),' : ''}}
+						{{PizzaData[i]?.DonairSauce ? 'Donair Sauce(' + PizzaData[i]?.DonairSauceSide + '),' : ''}}
+						{{PizzaData[i]?.PizzaSauce ? 'Pizza Sauce(' + PizzaData[i]?.PizzaSauceSide + '),' : ''}}
+
+
+					</p>
+					<p>
+						Sauce :-
+						{{PizzaData[i]?.BBqsauce ? 'BBQ Sauce(' + PizzaData[i]?.BBqsauceSide + '),' : ''}}
+						{{PizzaData[i]?.DonairSauce ? 'Donair Sauce(' + PizzaData[i]?.DonairSauceSide + '),' : ''}}
+						{{PizzaData[i]?.PizzaSauce ? 'Pizza Sauce(' + PizzaData[i]?.PizzaSauceSide + '),' : ''}}
+
+
 					</p>
 				</div>
 			</div>
+		
+		
 
 			<div class="edit_order">
 				<ion-row>
 					<ion-col col-3 text-center>
-						<h3>{{'edit_order' | translate}}</h3>
+						<h3>Edit Item</h3>
+						<h3 id="present-alert" (click)="RemoveItem(i)">Remove Item</h3>
 					</ion-col>
+
 					<ion-col col-6>
 						<div class="add_remove_btn_box d-flex">
-							<span class="text-center">-</span>
-							<strong class="text-center">1</strong>
 							<span class="text-center">+</span>
+							<strong class="text-center">1</strong>
+							<span class="text-center">-</span>
 						</div>
 					</ion-col>
 
 					<ion-col col-3 text-end>
-						<h2>$5.99</h2>
+						<h2>${{PizzaData[i]?.FianlOrderPrice}}</h2>
 					</ion-col>
 
 				</ion-row>
@@ -52,46 +105,7 @@
 		</ion-item>
 
 
-		<ion-item class="shadow">
-			<div class="item_details d-flex">
-				<div class="img_box center_img">
-					<img src="assets/imgs/item_icedcoke.png" class="crop_img">
-				</div>
-				<div class="text_box">
-					<h2> Iced Code</h2>
-					<h3 class="d-flex">
-						<small> Large</small>
-						<span class="end" text-end>
-							<img src="assets/imgs/veg_icon.png">
-						</span>
-					</h3>
 
-					<p>
-						No cutomisation available
-					</p>
-				</div>
-			</div>
-
-			<div class="edit_order">
-				<ion-row>
-					<ion-col col-3 text-center>
-						<h3>{{'edit_order' | translate}}</h3>
-					</ion-col>
-					<ion-col col-6>
-						<div class="add_remove_btn_box d-flex">
-							<span class="text-center">-</span>
-							<strong class="text-center">1</strong>
-							<span class="text-center">+</span>
-						</div>
-					</ion-col>
-
-					<ion-col col-3 text-end>
-						<h2>$1.99</h2>
-					</ion-col>
-
-				</ion-row>
-			</div>
-		</ion-item>
 	</ion-list>
 </ion-content>
 
@@ -99,8 +113,8 @@
 	<div class="offer d-flex">
 		<h2>
 			{{'select_offer_coupon_code' | translate}}
-			<span >{{'get_discount_with_your_order' | translate}}</span>
-		</h2> 
+			<span>{{'get_discount_with_your_order' | translate}}</span>
+		</h2>
 
 		<h3 class="end" (click)="offers_discounts()">
 			{{'explore' | translate}}
@@ -110,18 +124,18 @@
 	<div class="total_box">
 		<h3 class="d-flex">
 			{{'sub_total' | translate}}
-			<span class="end">$7.98</span>
+			<span class="end">${{TotalAmountDue}}</span>
 		</h3>
 		<h3 class="d-flex">
-			{{'tax' | translate}}(10%)
-			<span class="end">$0.80</span>
+			{{'tax' | translate}}(15%)
+			<span class="end">${{Tax}}</span>
 		</h3>
 	</div>
 
 	<button ion-button full no-margin class="btn" (click)="delivery_info()">
 		{{'cuntinue_to_payment' | translate}}
 		<strong>
-			$ 8.06
+			$ {{FinalAfterATx}}
 			<ion-icon text-end class="zmdi zmdi-arrow-right"></ion-icon>
 		</strong>
 	</button>
