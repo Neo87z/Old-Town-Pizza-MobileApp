@@ -75,7 +75,7 @@ export interface ApiResult {
   PizzaSauceSide: String;
   ChorizoSide: String;
   FianlOrderPrice: String;
-
+  OncePizzaPrice: String;
   __v: number;
 }
 @Injectable()
@@ -125,6 +125,38 @@ export class PizzaDetailsProvider {
 
 
     await this.http.post(`${environment.BaseAPiURL}/pizza/remove-item/${Data}`, Data)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  async UpdatePizzaCountCart(Data: any,Count: any) {
+
+    console.log(Data, "Hereeeeeeeeeee")
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+
+
+    await this.http.post(`${environment.BaseAPiURL}/pizza/update-pizzacount/${Data}/${Count}`, Data)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  async UpdateFinalPrice(Data: any,Count: any) {
+
+    console.log(Data, "Hereeeeeeeeeee")
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+
+
+    await this.http.post(`${environment.BaseAPiURL}/pizza/update-FinalPrice/${Data}/${Count}`, Data)
       .subscribe(data => {
         console.log(data);
       }, error => {

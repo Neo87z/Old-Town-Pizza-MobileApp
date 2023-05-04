@@ -33,6 +33,31 @@ export class CartPage {
 
   }
 
+  async DecreaseCount(index){
+
+    if(this.PizzaData[index].PizzaCount > 1 ){
+      this.PizzaData[index].PizzaCount =parseInt(this.PizzaData[index].PizzaCount) -1
+      await this.PizzaService.UpdatePizzaCountCart(this.PizzaData[index]._id,this.PizzaData[index].PizzaCount)
+      this.PizzaData[index].FianlOrderPrice = this.PizzaData[index].PizzaCount * parseFloat(this.PizzaData[index].OncePizzaPrice)
+      this.PizzaData[index].FianlOrderPrice=this.PizzaData[index].FianlOrderPrice.toFixed(2)
+      await this.PizzaService.UpdateFinalPrice(this.PizzaData[index]._id,this.PizzaData[index].FianlOrderPrice)
+      this.CalculatePrice()
+    
+    }
+
+    
+  }
+
+  async IncreaceCount(index){
+    this.PizzaData[index].PizzaCount =parseInt(this.PizzaData[index].PizzaCount) +1
+    await this.PizzaService.UpdatePizzaCountCart(this.PizzaData[index]._id,this.PizzaData[index].PizzaCount)
+    this.PizzaData[index].FianlOrderPrice = this.PizzaData[index].PizzaCount * parseFloat(this.PizzaData[index].OncePizzaPrice)
+    this.PizzaData[index].FianlOrderPrice=this.PizzaData[index].FianlOrderPrice.toFixed(2)
+    await this.PizzaService.UpdateFinalPrice(this.PizzaData[index]._id,this.PizzaData[index].FianlOrderPrice)
+    this.CalculatePrice()
+
+  }
+
   CalcTax(){
     this.Tax=(parseFloat(this.TotalAmountDue)/100)*15;
     this.Tax=this.Tax.toFixed(2)
@@ -47,6 +72,19 @@ export class CartPage {
 
   }
 
+  async CalculatePrice(){
+    this.TotalAmountDue=0;
+    this.PizzaData.forEach((element) => {
+
+
+      this.TotalAmountDue = parseFloat(this.TotalAmountDue) + parseFloat(element.FianlOrderPrice)
+      console.log(element.FianlOrderPrice);
+    });
+    this.TotalAmountDue=this.TotalAmountDue.toFixed(2)
+    this.CalcTax()
+
+  }
+
   async LoadCart() {
 
 
@@ -55,14 +93,9 @@ export class CartPage {
 
       this.PizzaData = [...this.PizzaData, ...res["Data"]];
       console.log(this.PizzaData)
+      this.CalculatePrice()
 
-      this.PizzaData.forEach((element) => {
-
-
-        this.TotalAmountDue = parseFloat(this.TotalAmountDue) + parseFloat(element.FianlOrderPrice)
-        console.log(element.FianlOrderPrice);
-      });
-      this.CalcTax()
+      
 
 
       console.log(this.PizzaData, "Firsdt")

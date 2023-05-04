@@ -90,15 +90,15 @@
 
 					<ion-col col-6>
 						<div class="add_remove_btn_box d-flex">
-							<span class="text-center">+</span>
-							<strong class="text-center">1</strong>
-							<span class="text-center">-</span>
+							<span class="text-center" (click)="DecreaseCount(i)" >-</span>
+							<strong class="text-center">{{PizzaData[i]?.PizzaCount}}</strong>
+							<span class="text-center" (click)="IncreaceCount(i)" >+</span>
 						</div>
 					</ion-col>
 
 					<ion-col col-3 text-end>
 						<h2>${{PizzaData[i]?.FianlOrderPrice}}</h2>
-					</ion-col>
+					</ion-col> 
 
 				</ion-row>
 			</div>

@@ -3476,7 +3476,8 @@ export class Item_infoPage {
         DonairSauceSide: this.DonairSide,
         PizzaSauceSide: this.PizzaSaiceSode,
         ChorizoSide: this.ChorizoSide,
-        FianlOrderPrice: this.FinalPizzaaaPrice
+        FianlOrderPrice: this.FinalPizzaaaPrice,
+        OncePizzaPrice: this.PizzaCount == 1 ? this.FinalPizzaaaPrice : parseFloat(this.FinalPizzaaaPrice)/this.PizzaCount
 
       }]
 

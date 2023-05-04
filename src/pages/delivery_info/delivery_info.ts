@@ -8,20 +8,30 @@ import { PaymentPage } from '../payment/payment';
   templateUrl: 'delivery_info.html'
 })
 export class Delivery_infoPage {
- public event = {
-     month: '',
-     time1: '',
-     time2: '',
-   }
+  public event = {
+    month: '',
+    time1: '',
+    time2: '',
+  }
+
+  private DeliverySelected: true;
+  private PickupSelected: true;
   constructor(public navCtrl: NavController) {
 
   }
-	
- my_profile(){
-        this.navCtrl.push(My_profilePage)
-  } 
- payment(){
-        this.navCtrl.push(PaymentPage)
+
+  ngOnInit(): void {
+    this.DeliverySelected = true;
+    this.PickupSelected = true;
+
+
+  }
+
+  my_profile() {
+    this.navCtrl.push(My_profilePage)
+  }
+  payment() {
+    this.navCtrl.push(PaymentPage)
   }
 
 }
