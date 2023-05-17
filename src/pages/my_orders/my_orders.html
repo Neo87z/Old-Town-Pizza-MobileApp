@@ -10,33 +10,39 @@
 <ion-content class="bg_img">
 	<ion-list no-lines>
 		<h2>{{'order_in_process' | translate}}</h2>
-		<ion-item class="shadow in_process" (click)="order_info()">
-			<div class="order_detail">
-				<h2 class="d-flex">{{'order_num' | translate}} 2214541 <span class="end">In Transist</span></h2>
-				<h3>2023, 11:20 am</h3>
-			</div>
-			<ion-row>
-				<ion-col col-4 text-start>
-					<p>
-						<small>{{'ordered' | translate}}</small>
-						2 {{'items' | translate}}
-					</p>
-				</ion-col>
 
-				<ion-col col-4 text-center>
-					<p>
-						<small>{{'payment' | translate}}</small>
-						$8.06
-					</p>
-				</ion-col>
 
-				<ion-col col-4 text-end>
-					<p>
-						Cash on Delivery
-					</p>
-				</ion-col>
-			</ion-row>
-		</ion-item>
+	
+		<div *ngFor="let item of PizzaDatNew">
+			<ion-item *ngIf="item.OrderDetails[0].OrderProgress === 'Pending'" class="shadow in_process" (click)="order_info()">
+				<div class="order_detail">
+					<h2 *ngIf="item.OrderDetails[0].OrderProgress === 'Pending'"  class="d-flex">{{'order_num' | translate}} 2214541 <span class="end">Preparing</span></h2>
+					<h2 *ngIf="item.OrderDetails[0].OrderProgress === 'OnRoute'" class="d-flex">{{'order_num' | translate}} 2214541 <span class="end">In Transist</span></h2>
+					<h3>2023, 11:20 am</h3>
+				</div>
+				<ion-row>
+					<ion-col col-4 text-start>
+						<p>
+							<small>{{'ordered' | translate}}</small>
+							2 {{'items' | translate}}
+						</p>
+					</ion-col>
+
+					<ion-col col-4 text-center>
+						<p>
+							<small>{{'payment' | translate}}</small>
+							$8.06
+						</p>
+					</ion-col>
+
+					<ion-col col-4 text-end>
+						<p>
+							Cash on Delivery
+						</p>
+					</ion-col>
+				</ion-row>
+			</ion-item>
+		</div>
 
 		<h2>{{'past_orders' | translate}}</h2>
 

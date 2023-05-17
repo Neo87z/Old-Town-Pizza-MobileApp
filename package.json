@@ -21,6 +21,8 @@
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
+    "@capacitor-community/stripe": "^5.0.1",
+    "@capacitor/core": "5.0.2",
     "@ionic-native/core": "4.3.2",
     "@ionic-native/in-app-browser": "^4.17.0",
     "@ionic-native/keyboard": "^4.18.0",
@@ -43,6 +45,7 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
+    "@capacitor/cli": "5.0.2",
     "@ionic/app-scripts": "^3.2.4",
     "typescript": "~2.6.2"
   },

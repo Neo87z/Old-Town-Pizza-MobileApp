@@ -15,15 +15,7 @@
 
 	<ion-list no-lines radio-group>
 		<h2>{{'select_payment_method' | translate}}</h2>
-		<ion-item class="shadow">
-			<ion-label class="d-flex">
-				<div class="img_box" text-center>
-					<img src="assets/imgs/payment__paypal.png">
-				</div>
-				<h3>{{'paypal' | translate}}</h3>
-			</ion-label>
-			<ion-radio value="payment__paypal" item-end></ion-radio>
-		</ion-item>
+	
 
 		<ion-item class="shadow">
 			<ion-label class="d-flex">
@@ -39,7 +31,7 @@
 				<div class="img_box" text-center>
 					<img src="assets/imgs/payment_cash.png">
 				</div>
-				<h3>{{'payment_cash' | translate}}</h3>
+				<h3>Cash</h3>
 			</ion-label>
 			<ion-radio value="payment_cash" checked="true" item-end></ion-radio>
 		</ion-item>
@@ -47,7 +39,7 @@
 </ion-content>
 
 <ion-footer no-border>
-	<button ion-button full no-margin class="btn" (click)="order_placed()">
+	<button ion-button full no-margin class="btn" (click)="placeOrder()">
 		{{'place_an_order' | translate}}
 		<strong>
 			$ 8.06

@@ -95,6 +95,15 @@ export class PizzaDetailsProvider {
 
   }
 
+
+
+  getORderForCustomer(id: any) {
+    console.log(id)
+    return this.http.get(`${environment.BaseAPiURL}/pizza/get-all-orders-for-customer/${id}`)
+
+
+  }
+
   getCartDetailsById(id: any) {
     console.log(id)
     return this.http.get(`${environment.BaseAPiURL}/pizza/get-user-cart/${id}`)
@@ -109,6 +118,22 @@ export class PizzaDetailsProvider {
 
 
     await this.http.post(`${environment.BaseAPiURL}/pizza/update-cart`, CartDetails)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+
+  async AddConfirmedOrder(CartDetails: any) {
+    console.log(CartDetails, "Hereeeeeeeeeee")
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+
+
+    await this.http.post(`${environment.BaseAPiURL}/pizza/add-order`, CartDetails)
       .subscribe(data => {
         console.log(data);
       }, error => {
@@ -132,7 +157,7 @@ export class PizzaDetailsProvider {
       });
   }
 
-  async UpdatePizzaCountCart(Data: any,Count: any) {
+  async UpdatePizzaCountCart(Data: any, Count: any) {
 
     console.log(Data, "Hereeeeeeeeeee")
     var headers = new Headers();
@@ -148,7 +173,7 @@ export class PizzaDetailsProvider {
       });
   }
 
-  async UpdateFinalPrice(Data: any,Count: any) {
+  async UpdateFinalPrice(Data: any, Count: any) {
 
     console.log(Data, "Hereeeeeeeeeee")
     var headers = new Headers();
