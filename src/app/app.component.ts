@@ -19,7 +19,10 @@ import { Constants } from '../models/constants.models';
 import { Vt_popupPage } from '../pages/vt_popup/vt_popup';
 import { SettingsPage } from '../pages/settings/settings';
 import { Helper } from '../models/helper.models';
+
 import { BuyAppAlertPage } from '../pages/buyappalert/buyappalert';
+
+
 
 
 @Component({
@@ -28,7 +31,7 @@ import { BuyAppAlertPage } from '../pages/buyappalert/buyappalert';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Sign_inPage;
+  rootPage: any = HomePage;
   rtlSide: string = "left"
 
   pages: Array<{ title: string, component: any }>;
@@ -132,10 +135,7 @@ export class MyApp {
     this.nav.setRoot(SettingsPage);
   }
 
-  developed_by() {
-    this.menu.close();
-    window.open("https://opuslab.works/", "_system", 'location=no');
-  }
+
   async presentModal() {
     let modal = this.modalCtrl.create(Vt_popupPage);
     modal.onDidDismiss((data) => { });

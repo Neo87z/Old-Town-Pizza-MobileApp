@@ -20,34 +20,20 @@
 		<div class="form">
 			<ion-list no-lines>
 				<ion-item>
-					<ion-label>{{'mobil_number' | translate}}</ion-label>
-					<ion-input type="number" value=""></ion-input>
+					<ion-label>Email Address</ion-label>
+					<ion-input type="name" [(ngModel)]="Emaiil"   value=""></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label>Password</ion-label>
+					<ion-input type="password"  [(ngModel)]="Password"  value=""></ion-input>
 				</ion-item>
 			</ion-list>
+			
 
-			<button ion-button block class="btn" (click)="register()">{{'continue' | translate}}
+			<button ion-button block class="btn" (click)="register()">Login
 				<ion-icon class="zmdi zmdi-arrow-right" text-end></ion-icon>
 			</button>
 		</div>
 	</div>
 </ion-content>
 
-<ion-footer no-border>
-	<div class="quick_login" text-center>
-		<h2>{{'or_quick_continue_with' | translate}}</h2>
-		<ion-row> 
-			<ion-col col-6>
-				<button no-margin ion-button icon-start block class="btn" (click)="home()">
-					<ion-icon text-start> <img src="assets/imgs/ic_facebook.png"></ion-icon>
-					{{'facebook' | translate}}
-				</button>
-			</ion-col>
-			<ion-col col-6>
-				<button no-margin ion-button icon-start block class="btn google" (click)="home()">
-					<ion-icon text-start><img src="assets/imgs/ic_google.png"></ion-icon>
-					{{'gmail' | translate}}
-				</button>
-			</ion-col>
-		</ion-row>
-	</div>
-</ion-footer>

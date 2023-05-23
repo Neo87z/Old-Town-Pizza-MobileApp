@@ -38,6 +38,7 @@ import { BuyAppAlertPage } from '../pages/buyappalert/buyappalert';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { PizzaDetailsProvider } from '../providers/pizza-details/pizza-details';
+import { ProvidersCustomerDataProvider } from '../providers/providers-customer-data/providers-customer-data';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -117,7 +118,8 @@ export function createTranslateLoader(http: HttpClient) {
     { provide: APP_CONFIG, useValue: BaseAppConfig },
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     
-    PizzaDetailsProvider
+    PizzaDetailsProvider,
+    ProvidersCustomerDataProvider
   ]
 })
 export class AppModule { }

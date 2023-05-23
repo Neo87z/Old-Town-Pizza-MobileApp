@@ -9,37 +9,57 @@
 
 <ion-content>
 	<div class="container">
+
 		<div class="banner" text-center>
-			<p>{{'register_now_text1' | translate}} <br>{{'register_now_text2' | translate}}</p>
+			<img src="assets/imgs/logo.png">
 		</div>
-
 		<div class="form">
-			<ion-list no-lines>
+			<ion-list no-lines class="custom-list">
 				<ion-item>
-					<ion-label>{{'mobil_number' | translate}}</ion-label>
-					<ion-input type="number" value=""></ion-input>
+					<ion-label>First Name</ion-label>
+					<ion-input type="name" [(ngModel)]="FirstName" value=""></ion-input>
 				</ion-item>
 				<ion-item>
-					<ion-label>{{'full_name' | translate}}</ion-label>
-					<ion-input type="name" value=""></ion-input>
+					<ion-label>Last Name</ion-label>
+					<ion-input type="name" [(ngModel)]="LastName"  value=""></ion-input>
 				</ion-item>
-
 				<ion-item>
 					<ion-label>{{'email_address' | translate}}</ion-label>
-					<ion-input type="email" value=""></ion-input>
+					<ion-input type="email" [(ngModel)]="Email" value=""></ion-input>
 				</ion-item>
+				<ion-item>
+					<ion-label>{{'mobil_number' | translate}}</ion-label>
+					<ion-input type="number" [(ngModel)]="MobileNumber"  value=""></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label>Password</ion-label>
+					<ion-input type="password" [(ngModel)]="Password" value=""></ion-input>
+				</ion-item>
+				
+				<ion-item>
+					<ion-label>Adrress</ion-label>
+					<ion-input type="name" [(ngModel)]="Address" value=""></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label>City</ion-label>
+					<ion-input type="name" [(ngModel)]="City"  value=""></ion-input>
+				</ion-item>
+				
 
 			</ion-list>
 
-			<button ion-button block class="btn" (click)="verification()">{{'continue' | translate}}
+			<button ion-button block class="btn" (click)="verification()">Register
 				<ion-icon class="zmdi zmdi-arrow-right" text-end></ion-icon>
 			</button>
+			
 		</div>
-
 		<h2 (click)="sign_in()" text-center>{{'back_to_sign_in' | translate}}</h2>
-		<p text-center>
-			{{'will_send_an_otp_on_above' | translate}}<br>
-			{{'given_phone_number' | translate}}
-		</p>
-	</div> 
+		
+		
+	</div>
 </ion-content>
+<style>
+	.custom-list {
+		margin-top: -30px; /* Adjust the value as needed */
+	}
+</style>
