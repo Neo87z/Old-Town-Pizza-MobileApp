@@ -27,6 +27,7 @@ import { RegisterPage } from '../pages/register/register';
 import { Select_locationPage } from '../pages/select_location/select_location';
 import { Sign_inPage } from '../pages/sign_in/sign_in';
 import { VerificationPage } from '../pages/verification/verification';
+import { OrderTypePage } from '../pages/order-type/order-type';
 import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -37,6 +38,8 @@ import { ManagelanguagePage } from '../pages/managelanguage/managelanguage';
 import { BuyAppAlertPage } from '../pages/buyappalert/buyappalert';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
+import {DeliveryPage} from '../pages/delivery/delivery';
+import {StorePage} from '../pages/store/store';
 import { PizzaDetailsProvider } from '../providers/pizza-details/pizza-details';
 import { ProvidersCustomerDataProvider } from '../providers/providers-customer-data/providers-customer-data';
 
@@ -70,7 +73,10 @@ export function createTranslateLoader(http: HttpClient) {
     Vt_popupPage,
     ManagelanguagePage,
     BuyAppAlertPage,
-    SettingsPage
+    SettingsPage,
+    OrderTypePage,
+    DeliveryPage,
+    StorePage
 
   ], imports: [
     BrowserModule,
@@ -110,7 +116,10 @@ export function createTranslateLoader(http: HttpClient) {
     Vt_popupPage,
     ManagelanguagePage,
     BuyAppAlertPage,
-    SettingsPage
+    SettingsPage,
+    OrderTypePage,
+    DeliveryPage,
+    StorePage
   ],
   providers: [
     StatusBar,

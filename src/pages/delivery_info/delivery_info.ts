@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { My_profilePage } from '../my_profile/my_profile';
 import { PaymentPage } from '../payment/payment';
+import { StorePage } from '../store/store';
 @Component({
   selector: 'page-delivery_info',
   templateUrl: 'delivery_info.html'
@@ -262,15 +263,15 @@ export class Delivery_infoPage {
     let myObj = {
 
 
-   
-        OrderType: this.OrderType,
-        WhenToDeliver: this.WhenToDeliver,
-        DeliverDate: this.DeliverDate,
-        DeliverTime: this.DeliverTime,
-        PreferdStrore: this.PreferdStrore,
-        Address: this.Address,
-        CartID : "64524983766b780eb43d0edf"
-      
+
+      OrderType: this.OrderType,
+      WhenToDeliver: this.WhenToDeliver,
+      DeliverDate: this.DeliverDate,
+      DeliverTime: this.DeliverTime,
+      PreferdStrore: this.PreferdStrore,
+      Address: this.Address,
+      CartID: "64524983766b780eb43d0edf"
+
     };
 
     console.log("Order Detaisls", myObj)
@@ -280,8 +281,12 @@ export class Delivery_infoPage {
 
   }
 
+  SelectOrderTIme() {
+    this.navCtrl.push(StorePage)
+  }
+
   my_profile() {
-    this.navCtrl.push(My_profilePage)
+    this.navCtrl.push(StorePage)
   }
   payment() {
     this.navCtrl.push(PaymentPage, {

@@ -31,6 +31,12 @@ import { BuyAppAlertPage } from '../pages/buyappalert/buyappalert';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+
+  private Login_Status: any;
+  private Show_Header : any;
+  private Customer_FirstName: any;
+  private Customer_LasteName: any;
+
   rootPage: any = HomePage;
   rtlSide: string = "left"
 
@@ -43,6 +49,23 @@ export class MyApp {
     events.subscribe('language:selection', (language) => {
       this.globalize(language);
     });
+  }
+
+  ngOnInit(): void {
+
+    this.Login_Status = window.localStorage.getItem('Login_Status')
+    if (this.Login_Status == "False") {
+      this.Customer_FirstName = "false"
+      this.Show_Header=false
+    } else {
+      this.Show_Header=true
+      this.Customer_FirstName = window.localStorage.getItem('FIRST_NAME')
+      this.Customer_FirstName=this.capitalizeFirstLetter(this.Customer_FirstName);
+    }
+
+  }
+  capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
 

@@ -10,7 +10,7 @@ export class Explore_menuPage implements OnInit {
   crust: string = "1";
   size: string = "1";
   all_categories: string = "pizza";
-
+  xyx: any =window.localStorage.getItem('USER')
   Pizza: any[] = [];
   constructor(private PizzaService:PizzaDetailsProvider,public navCtrl: NavController,private loadingCtrl:LoadingController) {
 

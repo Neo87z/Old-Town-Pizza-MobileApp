@@ -8,193 +8,99 @@
 </ion-header>
 
 <ion-content class="bg_img">
-	<ion-list no-lines radio-group>
-		<h2>Order Type</h2>
-		<ion-card class="shadow" (click)="StorePickUpSelected()">
-			<ion-row>
-				<ion-col col-12>
-					<ion-item>
-						<ion-radio value="go" checked="{{CusPickupSelected}}" (click)="StorePickUpSelected()"
-							item-start></ion-radio>
-						<ion-label>
-							<h3>Store Pickup</h3>
-						</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<p>Pickup the order from the store closets to you!</p>
-		</ion-card>
-		<ion-card class="shadow">
-			<ion-row>
-				<ion-col col-12>
-					<ion-item>
-						<ion-radio value="gso" (click)="DeliverSelcetd()" checked="{{CusDeloverySelected}}"
-							item-start></ion-radio>
-						<ion-label>
-							<h3>Delivery</h3>
-						</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<p>Out Designated Drivers Will Deliver The Order To Your Door!</p>
-		</ion-card>
 
 
-	</ion-list>
-	<ion-list no-lines radio-group>
-		<h2>{{'when_to_deliver' | translate}}</h2>
-		<ion-card class="shadow">
-			<ion-row>
-				<ion-col col-12>
-					<ion-item>
-						<ion-radio (click)="ChangeTime('ImmdeateDelivery')" checked="true" value="go"
-							item-start></ion-radio>
-						<ion-label>
-							<h3>Immediate Delivery</h3>
-						</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<p>Be ready with enaught Cash when our guy will deliver</p>
-		</ion-card>
-		<ion-card class="shadow">
-			<ion-row>
-				<ion-col col-6>
-					<ion-item>
-						<ion-radio (click)="ChangeTime('DeliveryAfter')" value="1" item-start></ion-radio>
-						<ion-label>
-							<h3>Delivery After</h3>
-						</ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col col-6>
-					<ion-item>
-						<div class="date_time d-flex" item-start>
-							<h3>
-								{{'select_time' | translate}}
-							</h3>
-							<ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.time1"
-								(ionChange)="handleTimeSelection()"></ion-datetime>
+	<ion-grid style="height: 90%">
+		<ion-row justify-content-center align-items-center style="height: 100%; flex-direction: column">
+			<ion-list no-lines radio-group>
+				<h2 style="text-align: center;">{{'when_to_deliver' | translate}}</h2>
+				<ion-card class="shadow">
+					<ion-row>
+						<ion-col col-12>
+							<ion-item>
+								<ion-radio (click)="ChangeTime('ImmdeateDelivery')" checked="true" value="go"
+									item-start></ion-radio>
+								<ion-label>
+									<h3>Immediate Delivery</h3>
+								</ion-label>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+					<p>Be ready with enaught Cash when our guy will deliver</p>
+				</ion-card>
+				<ion-card class="shadow">
+					<ion-row>
+						<ion-col col-6>
+							<ion-item>
+								<ion-radio (click)="ChangeTime('DeliveryAfter')" value="1" item-start></ion-radio>
+								<ion-label>
+									<h3>Delivery After</h3>
+								</ion-label>
+							</ion-item>
+						</ion-col>
+						<ion-col col-6>
+							<ion-item>
+								<div class="date_time d-flex" item-start>
+									<h3>
+										{{'select_time' | translate}}
+									</h3>
+									<ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.time1"
+										(ionChange)="handleTimeSelection()"></ion-datetime>
 
-							<ion-icon class="zmdi zmdi-caret-down"></ion-icon>
-						</div>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<p>We'll delvery as per your timings on given address</p>
-		</ion-card>
+									<ion-icon class="zmdi zmdi-caret-down"></ion-icon>
+								</div>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+					<p>We'll delvery as per your timings on given address</p>
+				</ion-card>
 
-		<ion-card class="shadow">
-			<ion-row>
-				<ion-col col-12>
-					<ion-item>
-						<ion-radio (click)="ChangeTime('Custrom')" value="2" item-start></ion-radio>
-						<ion-label>
-							<h3>Custom</h3>
-						</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row class="custom_row" (click)="ChangeTime('Custrom')">
-				<ion-col col-6 (click)="ChangeTime('Custrom')">
-					<ion-item  class="select_date">
-						<div (click)="ChangeTime('Custrom')" class="date_time d-flex" item-start>
-							<h3 (click)="ChangeTime('Custrom')">
-								{{'select_date' | translate}}
-							</h3>
-							<ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"
-								(ionChange)="HandleDateSelected()"></ion-datetime>
-							<ion-icon class="zmdi zmdi-caret-down"></ion-icon>
-						</div>
-					</ion-item>
-				</ion-col>
-				<ion-col col-6>
-					<ion-item>
-						<div class="date_time d-flex" item-start>
-							<h3>
-								{{'select_time' | translate}}
-							</h3>
-							<ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.time2"
-								(ionChange)="HadnleCustoemTime()"></ion-datetime>
-							<ion-icon class="zmdi zmdi-caret-down"></ion-icon>
-						</div>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<p>Get deliver on specila Date & times.</p>
-		</ion-card>
-	</ion-list>
-
-	<div *ngIf="CusPickupSelected">
-		<ion-list no-lines radio-group>
-			<h2>Choose Prefered Store</h2>
-			<ion-card class="shadow">
-				<ion-row>
-					<ion-col col-12>
-						<ion-item>
-							<ion-radio value="go" (click)="ChangeSelectecStore('Mount')" checked="true" item-start></ion-radio>
-							<ion-label>
-								<h3>Mount Pearl Store</h3>
-							</ion-label>
-						</ion-item>
-					</ion-col>
-				</ion-row>
-				<p>Pickup the order from the store located in Moutn Pearl</p>
-			</ion-card>
-			<ion-card class="shadow">
-				<ion-row>
-					<ion-col col-12>
-						<ion-item>
-							<ion-radio value="gso" (click)="ChangeSelectecStore('Freshwater')" item-start></ion-radio>
-							<ion-label>
-								<h3>Freshwater Store</h3>
-							</ion-label>
-						</ion-item>
-					</ion-col>
-				</ion-row>
-				<p>Pickup the order from the store located in Freshwater Road</p>
-			</ion-card>
-			<ion-card class="shadow">
-				<ion-row>
-					<ion-col col-12>
-						<ion-item>
-							<ion-radio value="g3so" (click)="ChangeSelectecStore('Higgins')" item-start></ion-radio>
-							<ion-label>
-								<h3>Portugal Cove Store</h3>
-							</ion-label>
-						</ion-item>
-					</ion-col>
-				</ion-row>
-				<p>Pickup the order from the store located in Higgis Line</p>
-			</ion-card>
-
-
-		</ion-list>
-	</div>
-
-	<div *ngIf="CusDeloverySelected">
-		<div class="saved_address">
-			<ion-list no-lines>
-				<h2 class="d-flex">{{'where_to_deliver' | translate}}
-					<span class="end" (click)="my_profile()">
-						{{'change' | translate}}
-						<ion-icon class="zmdi zmdi-chevron-right" text-end></ion-icon>
-					</span>
-				</h2>
-
-				<ion-item class="shadow">
-					<h3 class="d-flex"> Home</h3>
-					<p>266 Fresh Water Road</p>
-				</ion-item>
+				<ion-card class="shadow">
+					<ion-row>
+						<ion-col col-12>
+							<ion-item>
+								<ion-radio (click)="ChangeTime('Custrom')" value="2" item-start></ion-radio>
+								<ion-label>
+									<h3>Custom</h3>
+								</ion-label>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+					<ion-row class="custom_row" (click)="ChangeTime('Custrom')">
+						<ion-col col-6 (click)="ChangeTime('Custrom')">
+							<ion-item class="select_date">
+								<div (click)="ChangeTime('Custrom')" class="date_time d-flex" item-start>
+									<h3 (click)="ChangeTime('Custrom')">
+										{{'select_date' | translate}}
+									</h3>
+									<ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"
+										(ionChange)="HandleDateSelected()"></ion-datetime>
+									<ion-icon class="zmdi zmdi-caret-down"></ion-icon>
+								</div>
+							</ion-item>
+						</ion-col>
+						<ion-col col-6>
+							<ion-item>
+								<div class="date_time d-flex" item-start>
+									<h3>
+										{{'select_time' | translate}}
+									</h3>
+									<ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.time2"
+										(ionChange)="HadnleCustoemTime()"></ion-datetime>
+									<ion-icon class="zmdi zmdi-caret-down"></ion-icon>
+								</div>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+					<p>Get deliver on specila Date & times.</p>
+				</ion-card>
+				<button ion-button block class="btn" (click)="SelectOrderTIme()">Confirm Order Type
+					<ion-icon class="zmdi zmdi-arrow-right" text-end></ion-icon>
+				</button>
 			</ion-list>
-		</div>
-	</div>
+		</ion-row>
+	</ion-grid>
+
+
+
 </ion-content>
-<ion-footer no-border>
-	<div *ngIf="IsButtonDsiabled">
-		<button ion-button full no-margin class="btn" (click)="MakeOrder()">
-			{{ 'confirm_continue' | translate }}
-			<ion-icon text-end class="zmdi zmdi-arrow-right"></ion-icon>
-		</button>
-	</div>
-</ion-footer>

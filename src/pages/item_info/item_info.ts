@@ -3427,7 +3427,7 @@ export class Item_infoPage {
         LargePrice: this.Pizza.LargePrice,
         JumboPrice: this.Pizza.JumboPrice,
         CrustType: this.SelecteFiunalPizzaCrust,
-        MozerallCheese: this.MozerellaSide != "None" ? true : false,
+        MozerallCheese: this.MozeraellaStaus != "None" ? true : false,
         MozerallCheese30: false,
         MozerallCheese50: false,
         MozerallCheese100: false,

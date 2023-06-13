@@ -1,19 +1,24 @@
 <ion-menu *ngIf="rtlSide == 'left'" side="left" [content]="content">
+
+
     <ion-header>
 
-        <div class="profile_box">
-            <div class="profile_details">
-                <h3>{{'hey' | translate}}</h3>
-                <h2>Sam Smith</h2>
-                <h3>{{'have_a_nice_pizza' | translate}}</h3>
+        <div *ngIf="Show_Header">
+            <div class="profile_box">
+                <div class="profile_details">
+                    <h3>{{'hey' | translate}}</h3>
+                    <h2>{{Customer_FirstName}}</h2>
+                    <h3>{{'have_a_nice_pizza' | translate}}</h3>
+                </div>
             </div>
+
+            <ion-list no-lines>
+                <ion-item menuClose (click)="deliveryman_info()">
+                    <ion-icon class="zmdi zmdi-bike" text-start item-start></ion-icon>
+                    <h2>{{'track_current_order' | translate}}</h2>
+                </ion-item>
+            </ion-list>
         </div>
-        <ion-list no-lines>
-            <ion-item menuClose (click)="deliveryman_info()">
-                <ion-icon class="zmdi zmdi-bike" text-start item-start></ion-icon>
-                <h2>{{'track_current_order' | translate}}</h2>
-            </ion-item>
-        </ion-list>
         <div class="buy_this_app shadow" *ngIf="config.demoMode" menuClose (click)="buyThisApp()">
             <h2>
                 <!--                        <ion-icon class="zmdi zmdi-shopping-cart"></ion-icon>-->

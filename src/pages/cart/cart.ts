@@ -5,6 +5,7 @@ import { AlertController, NavController } from 'ionic-angular';
 import { Offers_discountsPage } from '../offers_discounts/offers_discounts';
 import { Delivery_infoPage } from '../delivery_info/delivery_info';
 import { PizzaDetailsProvider } from '../../providers/pizza-details/pizza-details';
+import { OrderTypePage } from '../order-type/order-type';
 @Component({
   selector: 'page-cart',
   templateUrl: 'cart.html'
@@ -137,10 +138,10 @@ export class CartPage {
     await alert.present();
   }
   offers_discounts() {
-    this.navCtrl.push(Offers_discountsPage)
+    this.navCtrl.push(Delivery_infoPage)
   }
   delivery_info() {
-    this.navCtrl.push(Delivery_infoPage)
+    this.navCtrl.push(OrderTypePage)
   }
 
 }
